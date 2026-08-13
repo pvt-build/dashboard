@@ -3,7 +3,13 @@
 Panel de una sola pantalla con ocho pestañas arriba. **Athlete OS no vive
 acá** — es otro OS y tiene su propio panel.
 
-Artifact: https://claude.ai/code/artifact/258b1b53-d69e-4ad1-81b9-814282f1a504
+**Live:** https://pvt-build.github.io/dashboard/
+**Repo:** `pvt-build/dashboard` · **Artifact:** https://claude.ai/code/artifact/258b1b53-d69e-4ad1-81b9-814282f1a504
+
+El repo es público (Pages no sirve desde repos privados en plan free) y el
+panel lleva `noindex, nofollow`: no aparece en buscadores, pero cualquiera con
+el link lo ve. Contiene nombres de clientes, montos y notas internas sobre
+cada engagement — tenerlo presente antes de compartir el link.
 
 ## Las ocho pestañas
 
