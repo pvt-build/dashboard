@@ -6,7 +6,7 @@
   "meta": {
     "os": "PRIVATE-OS",
     "modulo": "Business",
-    "ref": "PVT-BIZ-18",
+    "ref": "PVT-BIZ-19",
     "fecha": "14·08·26",
     "operador": "Patricio Rubio",
     "frescura": [
@@ -474,32 +474,60 @@
     ],
     "kpis": [
       {
-        "k": "Meses con cierre",
-        "v": "1",
-        "u": "/ 3",
-        "f": "Junio y agosto cerraron en cero",
-        "s": "brk"
-      },
-      {
-        "k": "Leads del trimestre",
+        "k": "1 · Leads del trimestre",
         "v": "19",
         "u": "",
         "f": "1 jun · 16 jul · 2 ago",
         "s": "mid"
       },
       {
-        "k": "Calls del trimestre",
+        "k": "2 · Calls realizadas",
         "v": "9",
         "u": "",
-        "f": "3 jun · 5 jul · 1 ago",
+        "f": "48% de los leads llegó a llamada",
         "s": "brk"
       },
       {
-        "k": "Horas en llamada",
-        "v": "5,2",
-        "u": "h",
-        "f": "311 min cronometrados",
-        "s": "live"
+        "k": "3 · Cierres",
+        "v": "2",
+        "u": "",
+        "f": "22% de las calls terminó en cliente",
+        "s": "brk"
+      },
+      {
+        "k": "4 · Revenue del trimestre",
+        "v": "$2.100",
+        "u": "",
+        "f": "Todo concentrado en julio",
+        "s": "mid"
+      },
+      {
+        "k": "5 · Revenue por lead",
+        "v": "$78",
+        "u": "",
+        "f": "Lo que vale cada lead que entra",
+        "s": "brk"
+      },
+      {
+        "k": "6 · Revenue por call",
+        "v": "$162",
+        "u": "",
+        "f": "Lo que vale cada hora de llamada",
+        "s": "mid"
+      },
+      {
+        "k": "7 · Ticket medio",
+        "v": "$1.050",
+        "u": "",
+        "f": "Media de los dos cerrados",
+        "s": "mid"
+      },
+      {
+        "k": "8 · Meses con cierre",
+        "v": "1",
+        "u": "/ 3",
+        "f": "Junio y agosto en cero",
+        "s": "brk"
       }
     ],
     "bandeja": {
@@ -560,7 +588,8 @@
         ],
         "concl": "No puedes tomar los 200. Pero el contenido los mueve de fríos a tibios sin costo marginal, y en 60-90 días esa bandeja es el pipeline que hoy no existe."
       }
-    }
+    },
+    "kpis_nota": "Se leen en orden: del lead que entra al peso que queda. Los tres primeros son el embudo en volumen; los tres del medio, lo que produce cada unidad."
   },
   "comercial": {
     "stats": [
@@ -599,7 +628,7 @@
         "v": "100",
         "u": "%",
         "f": "4 de 4 con asistencia registrada. Las otras 5 calls no tienen el campo lleno",
-        "s": "mid"
+        "s": "live"
       },
       {
         "k": "Toques al cierre",
@@ -1828,6 +1857,10 @@ body{background:var(--bg);color:var(--hi);font-family:var(--sans);
 .tile .k{font-size:var(--t-micro);font-weight:600;letter-spacing:.11em;
   text-transform:uppercase;color:var(--low);margin-bottom:var(--s2);line-height:1.4}
 .tile .n{font-size:var(--n-m);font-weight:700;letter-spacing:-.03em;line-height:1}
+.tile.live .n{color:var(--good)}
+.tile.mid .n{color:var(--hi)}
+.tile.brk .n{color:var(--danger)}
+.tile.blind .n{color:var(--low)}
 .tile .n em{font-style:normal;font-size:.44em;font-weight:500;letter-spacing:.01em;
   margin-left:3px;color:var(--mid)}
 .tile .f{margin-top:var(--s2);font-size:var(--t-xs);color:var(--mid);line-height:1.45}
@@ -2594,7 +2627,7 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   function card(t, inner){ return '<div class="glass card">'
     + (t?'<div class="card-t">'+esc(t)+'</div>':'') + inner + '</div>'; }
   function tile(t){
-    return '<div class="glass tile"><div class="k">'+esc(t.k)+'</div>'
+    return '<div class="glass tile '+esc(t.s||'')+'"><div class="k">'+esc(t.k)+'</div>'
       + '<div class="n">'+esc(t.v)+(t.u?'<em>'+esc(t.u)+'</em>':'')+'</div>'
       + '<div class="f">'+esc(t.f)+'</div>'
       + (t.s?'<div class="st s-'+t.s+'">'+esc(STATE[t.s])+'</div>':'')+'</div>';
@@ -2774,6 +2807,8 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 
     return vhead('Tendencia','qué produjo cada mes',t.lectura)
       + '<div class="tiles eight">'+t.kpis.map(tile).join('')+'</div>'
+      + (t.kpis_nota?'<div class="note" style="margin:calc(var(--s3) * -1) 0 var(--s4)">'
+          +esc(t.kpis_nota)+'</div>':'')
       + '<div class="stack" style="margin-top:var(--s3)">'
       + card('El embudo, mes a mes', gr
           + '<div class="note">Eje compartido: las tres series se miden con la misma vara, '
