@@ -131,6 +131,16 @@ def bloque_build(previo):
     b["stats"][2]["u"] = "/ %d" % len(b["sistemas"])
     b["stats"][2]["f"] = ", ".join(vivos) if vivos else "Ninguno"
 
+    # el inventario escrito a mano se sincroniza con lo que existe de verdad:
+    # se conserva la descripción de cada skill viva y se quitan las que ya no están
+    vivas = {d.name.replace("pvt-", "").replace("-agent", "") for d in dirs}
+    inv = {x["n"]: x for x in b.get("skills", [])}
+    b["skills"] = (
+        [inv[n] for n in sorted(vivas) if n in inv]
+        + [{"n": n, "c": "Sin clasificar", "d": "Skill nueva — falta describirla",
+            "nivel": "skill"} for n in sorted(vivas - set(inv))]
+    )
+
     b["skills_mes"] = [
         {"m": ABREV[int(k.split("-")[1]) - 1], "n": len(v), "l": ", ".join(sorted(v))}
         for k, v in sorted(por_mes.items())
@@ -266,11 +276,34 @@ def main():
 
     hoy = date.today().isoformat()
     data["meta"]["fecha"] = datetime.now().strftime("%d·%m·%y")
+
+    # El lag se recalcula SIEMPRE contra hoy, con o sin token. Antes solo se
+    # tocaba al refrescar desde Notion, así que una fuente vieja seguía
+    # diciendo "al día" — el semáforo mentía justo cuando más importaba.
     for f in data["meta"]["frescura"]:
         if f["n"].startswith("Filesystem"):
-            f["al"], f["lag"] = hoy, 0
+            f["al"] = hoy
         elif f["n"].startswith("CRM") and n_al:
-            f["al"], f["lag"] = n_al, lag(n_al)
+            f["al"] = n_al
+        f["lag"] = lag(f["al"])
+
+    # "día X de Y" del mes en curso, para que no quede congelado
+    import calendar
+    h = date.today()
+    if "tendencia" in data:
+        data["tendencia"]["dias"] = "día %d de %d" % (
+            h.day, calendar.monthrange(h.year, h.month)[1])
+
+    # días desde el último contacto de cada cliente
+    MESES_AB = {m: i + 1 for i, m in enumerate(ABREV)}
+    for f in data.get("clientes", {}).get("fichas", []):
+        t = (f.get("ult") or "").strip().lower().split()
+        if len(t) == 2 and t[1][:3] in MESES_AB:
+            try:
+                d_ult = date(h.year, MESES_AB[t[1][:3]], int(t[0]))
+                f["dias_sin"] = (h - d_ult).days
+            except ValueError:
+                pass
 
 
     nuevo = m.group(1) + "\n" + json.dumps(data, ensure_ascii=False, indent=2) + "\n" + m.group(3)
