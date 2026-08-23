@@ -2961,10 +2961,8 @@ body{background:var(--bg);color:var(--hi);font-family:var(--sans);
   border-bottom:1px solid var(--border)}
 .topnav-in{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);
   padding-top:env(safe-area-inset-top);
-  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;
   gap:var(--s4);min-height:var(--navh)}
-.brand{display:flex;align-items:baseline;gap:var(--s2);min-width:0}
-.brand b{font-size:var(--t-m);font-weight:700;letter-spacing:.10em;color:var(--hi);white-space:nowrap}
 .navdate{font-size:var(--t-micro);font-weight:600;letter-spacing:.11em;
   text-transform:uppercase;color:var(--low);white-space:nowrap;text-align:right}
 .tabs{display:flex;gap:3px;overflow-x:auto;scrollbar-width:none;position:relative;
@@ -4211,7 +4209,7 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 }
 @media(max-width:860px){
   .topnav-in{min-height:auto;padding-top:var(--s2);padding-bottom:var(--s2);
-    grid-template-columns:1fr auto;gap:var(--s2)}
+    grid-template-columns:1fr;gap:var(--s2)}
   .navdate{display:none}
   .tabs{grid-column:1/-1;width:100%}
   .tabs button{font-size:var(--t-m);padding:var(--s2) var(--s3)}
@@ -4347,7 +4345,6 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 
 <nav class="topnav">
   <div class="topnav-in">
-    <div class="brand"><b id="brand"></b></div>
     <div class="tabs" id="tabs"><span class="slider" id="slider"></span></div>
     <div class="navdate" id="navdate"></div>
   </div>
@@ -5225,7 +5222,6 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     {id:'backend',     l:'Backend',     r:vBackend}
   ];
 
-  document.getElementById('brand').textContent = D.meta.os;
   document.getElementById('navdate').textContent = D.meta.fecha;
   document.getElementById('footL').textContent = D.meta.os+' — '+D.meta.operador;
   document.getElementById('fresh').innerHTML = D.meta.frescura.map(function(f){

@@ -18,3 +18,13 @@ git add -A
 git commit -q -m "Refresco automático · $(date +%d-%m-%Y)"
 git push -q origin main
 echo "Panel actualizado y publicado en https://pvt-build.github.io/dashboard/"
+
+# El mismo panel vive en Vercel bajo /dashboard. Se copia siempre para que las
+# dos rutas no se separen; el deploy se dispara aparte con `desplegar-vercel.sh`.
+VRC="../privatebuild-os/dashboard"
+if [ -d "$VRC" ]; then
+  cp index.html manifest.webmanifest icon.png "$VRC/"
+  mkdir -p "$VRC/assets"
+  cp -R assets/logos "$VRC/assets/"
+  echo "Copia sincronizada en Webs/privatebuild-os/dashboard (falta desplegar a Vercel)."
+fi
