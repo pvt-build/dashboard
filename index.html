@@ -6,7 +6,7 @@
   "meta": {
     "os": "PRIVATE-OS",
     "modulo": "Business",
-    "ref": "PVT-BIZ-20",
+    "ref": "PVT-BIZ-21",
     "fecha": "22·08·26",
     "operador": "Patricio Rubio",
     "frescura": [
@@ -594,18 +594,18 @@
   "comercial": {
     "stats": [
       {
-        "k": "Close rate",
-        "v": "67",
+        "k": "Cierre en propuesta",
+        "v": "100",
         "u": "%",
-        "f": "2 de 3 que llegaron a precio",
+        "f": "2 de 2 · Kathe y Laura",
         "s": "live"
       },
       {
-        "k": "Call → propuesta",
-        "v": "23",
+        "k": "Discovery → propuesta",
+        "v": "66",
         "u": "%",
-        "f": "Solo 3 de 13 llegaron a precio",
-        "s": "brk"
+        "f": "Pablo quedó en discovery",
+        "s": "mid"
       },
       {
         "k": "Ciclo de venta",
@@ -691,7 +691,7 @@
       }
     ],
     "obj_lectura": "La objeción de timing es la que más aparece y la que peor se maneja: las dos veces terminó en standby. Standby no es una objeción vencida, es una call sin cerrar.",
-    "lectura": "El close rate está sano. Falla llegar a precio, y cuando llegas cedes la mitad del ticket.",
+    "lectura": "Cuando llegas a propuesta, cierras. El cuello no es cerrar: es que solo 5 procesos se abrieron en tres meses.",
     "caja": {
       "t": "Las dos series de plata, y por qué no coinciden",
       "barras": [
@@ -732,37 +732,28 @@
     },
     "funnel": [
       {
-        "n": "Alcance",
-        "v": null,
-        "u": "impresiones"
+        "n": "Procesos abiertos",
+        "v": 5,
+        "u": "conversaciones de venta"
       },
       {
-        "n": "Conversaciones",
-        "v": null,
-        "u": "DMs abiertos"
-      },
-      {
-        "n": "Leads",
-        "v": 27,
-        "u": "en CRM"
-      },
-      {
-        "n": "Calls",
-        "v": 13,
-        "u": "realizadas"
-      },
-      {
-        "n": "Propuestas",
+        "n": "Con discovery",
         "v": 3,
+        "u": "llegaron a diagnóstico"
+      },
+      {
+        "n": "Con propuesta",
+        "v": 2,
         "u": "llegaron a precio"
       },
       {
-        "n": "Cierres",
+        "n": "Cerrados",
         "v": 2,
         "u": "pagaron"
       }
     ],
-    "funnel_lectura": "El radar mide fuerza; esto mide eficiencia. Por ratio el peor tramo no es el cierre: es que de 13 llamadas solo 3 llegaron a precio."
+    "funnel_lectura": "Son procesos de venta, no llamadas sueltas. Discovery más propuesta cierra el 100%: los tres cierres del histórico siguieron ese camino.",
+    "nota_calls": "Antes este bloque contaba 13 llamadas mezclando venta y consultoría. Las de venta son 9 y forman 5 procesos: ese es el embudo real."
   },
   "canales": {
     "lista": [
@@ -1238,6 +1229,12 @@
     },
     "skills": [
       {
+        "n": "advisor",
+        "c": "Sin clasificar",
+        "d": "Skill nueva — falta describirla",
+        "nivel": "skill"
+      },
+      {
         "n": "architect",
         "c": "Meta",
         "d": "Estructura del OS y el organismo",
@@ -1256,10 +1253,28 @@
         "nivel": "agente"
       },
       {
+        "n": "athlete",
+        "c": "Sin clasificar",
+        "d": "Skill nueva — falta describirla",
+        "nivel": "skill"
+      },
+      {
         "n": "backlog",
         "c": "Operación",
         "d": "Cola de despacho con impacto 10k",
         "nivel": "sistema"
+      },
+      {
+        "n": "carousels",
+        "c": "Sin clasificar",
+        "d": "Skill nueva — falta describirla",
+        "nivel": "skill"
+      },
+      {
+        "n": "cco",
+        "c": "Sin clasificar",
+        "d": "Skill nueva — falta describirla",
+        "nivel": "skill"
       },
       {
         "n": "closing",
@@ -1298,6 +1313,12 @@
         "nivel": "sistema"
       },
       {
+        "n": "fathom",
+        "c": "Sin clasificar",
+        "d": "Skill nueva — falta describirla",
+        "nivel": "skill"
+      },
+      {
         "n": "finance",
         "c": "Operación",
         "d": "Caja, contable, inversión y billetera",
@@ -1316,6 +1337,18 @@
         "nivel": "sistema"
       },
       {
+        "n": "gems",
+        "c": "Sin clasificar",
+        "d": "Skill nueva — falta describirla",
+        "nivel": "skill"
+      },
+      {
+        "n": "hooks",
+        "c": "Sin clasificar",
+        "d": "Skill nueva — falta describirla",
+        "nivel": "skill"
+      },
+      {
         "n": "infoproduct",
         "c": "Contenido",
         "d": "Currícula y empaquetado de oferta",
@@ -1325,6 +1358,12 @@
         "n": "intake",
         "c": "Comercial",
         "d": "1 input → contenido + CRM + closing",
+        "nivel": "skill"
+      },
+      {
+        "n": "leverage",
+        "c": "Sin clasificar",
+        "d": "Skill nueva — falta describirla",
         "nivel": "skill"
       },
       {
@@ -1340,6 +1379,12 @@
         "nivel": "skill"
       },
       {
+        "n": "scout",
+        "c": "Sin clasificar",
+        "d": "Skill nueva — falta describirla",
+        "nivel": "skill"
+      },
+      {
         "n": "setter",
         "c": "Comercial",
         "d": "Setting en IG y WhatsApp · solo lectura",
@@ -1352,69 +1397,15 @@
         "nivel": "skill"
       },
       {
-        "n": "voice",
-        "c": "Meta",
-        "d": "Interpreta el input y sostiene la voz",
-        "nivel": "skill"
-      },
-      {
-        "n": "advisor",
-        "c": "Sin clasificar",
-        "d": "Skill nueva — falta describirla",
-        "nivel": "skill"
-      },
-      {
-        "n": "athlete",
-        "c": "Sin clasificar",
-        "d": "Skill nueva — falta describirla",
-        "nivel": "skill"
-      },
-      {
-        "n": "carousels",
-        "c": "Sin clasificar",
-        "d": "Skill nueva — falta describirla",
-        "nivel": "skill"
-      },
-      {
-        "n": "cco",
-        "c": "Sin clasificar",
-        "d": "Skill nueva — falta describirla",
-        "nivel": "skill"
-      },
-      {
-        "n": "fathom",
-        "c": "Sin clasificar",
-        "d": "Skill nueva — falta describirla",
-        "nivel": "skill"
-      },
-      {
-        "n": "gems",
-        "c": "Sin clasificar",
-        "d": "Skill nueva — falta describirla",
-        "nivel": "skill"
-      },
-      {
-        "n": "hooks",
-        "c": "Sin clasificar",
-        "d": "Skill nueva — falta describirla",
-        "nivel": "skill"
-      },
-      {
-        "n": "leverage",
-        "c": "Sin clasificar",
-        "d": "Skill nueva — falta describirla",
-        "nivel": "skill"
-      },
-      {
-        "n": "scout",
-        "c": "Sin clasificar",
-        "d": "Skill nueva — falta describirla",
-        "nivel": "skill"
-      },
-      {
         "n": "visuals",
         "c": "Sin clasificar",
         "d": "Skill nueva — falta describirla",
+        "nivel": "skill"
+      },
+      {
+        "n": "voice",
+        "c": "Meta",
+        "d": "Interpreta el input y sostiene la voz",
         "nivel": "skill"
       }
     ],
@@ -1596,6 +1587,122 @@
         }
       ],
       "concl": "La extensión no se pide al final: se construye desde la sesión 2. Kathe es la única con las cuatro condiciones a favor."
+    },
+    "contratos": {
+      "t": "Lo cerrado, cuánto y hasta cuándo",
+      "filas": [
+        {
+          "n": "Emma Clara",
+          "tcv": 1250,
+          "m": 3,
+          "ini": "jun",
+          "fin": "sept",
+          "ini_i": 0,
+          "e": "brk",
+          "d": "Renovación este mes. Sin sesiones registradas."
+        },
+        {
+          "n": "Kathe",
+          "tcv": 1050,
+          "m": 3,
+          "ini": "jul",
+          "fin": "oct",
+          "ini_i": 1,
+          "e": "live",
+          "d": "Renueva en septiembre. Es la más probable."
+        },
+        {
+          "n": "Laura",
+          "tcv": 1600,
+          "m": 3,
+          "ini": "jul",
+          "fin": "oct",
+          "ini_i": 1,
+          "e": "mid",
+          "d": "Va 2 de 12 sesiones con 15 días de silencio."
+        }
+      ],
+      "meses": [
+        "jun",
+        "jul",
+        "ago",
+        "sept",
+        "oct",
+        "nov"
+      ],
+      "tcv": 3900,
+      "mrr": 1300,
+      "concl": "Cada cierre de $1.500 son tres meses de trabajo, no un mes de caja. El TCV dice cuánto vendiste; el MRR dice de qué vives."
+    },
+    "contab": {
+      "t": "Cómo contar un cierre — las tres lecturas",
+      "filas": [
+        {
+          "n": "TCV · valor del contrato",
+          "v": "$3.900",
+          "d": "Lo firmado en total. Mide la venta, no la caja.",
+          "e": "mid"
+        },
+        {
+          "n": "MRR · mensualizado",
+          "v": "$1.300",
+          "d": "TCV dividido por los meses. De esto vives cada mes.",
+          "e": "live"
+        },
+        {
+          "n": "Cash collected",
+          "v": "$1.300",
+          "d": "Lo que entró. Coincide porque cobras 100% adelantado.",
+          "e": "live"
+        }
+      ],
+      "resp": "Cuéntalos mensualizados. Un cierre de $1.500 a 3 meses te da $500/mes de piso, y el mes que viene ese contrato ya está consumido: el próximo cierre no suma, reemplaza."
+    },
+    "pipeline": {
+      "t": "Lo que viene — agosto y septiembre",
+      "filas": [
+        {
+          "n": "Egly · Casabliss",
+          "t": "Cliente nuevo",
+          "cuando": "agosto",
+          "p": 70,
+          "e": "live",
+          "d": "Ya viene. Es el cierre más cercano del pipeline."
+        },
+        {
+          "n": "Emma Clara",
+          "t": "Renovación",
+          "cuando": "agosto",
+          "p": 30,
+          "e": "brk",
+          "d": "Termina este mes y no hay entregable documentado que mostrar."
+        },
+        {
+          "n": "Kathe",
+          "t": "Renovación",
+          "cuando": "septiembre",
+          "p": 80,
+          "e": "live",
+          "d": "Tiene resultado propio y visión de agencia global."
+        },
+        {
+          "n": "Nacho · Fénix",
+          "t": "Cliente nuevo",
+          "cuando": "pronto",
+          "p": 50,
+          "e": "mid",
+          "d": "Re-discovery hecho. Falta fecha y piso de precio."
+        },
+        {
+          "n": "Pablo · Buena Mesa",
+          "t": "Cliente nuevo",
+          "cuando": "pronto",
+          "p": 40,
+          "e": "mid",
+          "d": "Quedó en discovery desde junio. Nunca llegó a propuesta."
+        }
+      ],
+      "concl": "Cinco movimientos vivos. Si Egly y Kathe entran, septiembre queda cubierto; si además cierra uno de los dos nuevos, agosto es el mejor mes del histórico."
     }
   },
   "skills_area": {
@@ -1633,6 +1740,11 @@
       "architect",
       "backlog",
       "finance"
+    ],
+    "consultoria": [
+      "consulting",
+      "offer",
+      "crm"
     ]
   },
   "next": {
@@ -1815,6 +1927,123 @@
     ],
     "nota": "Los escalones se acumulan de arriba hacia abajo. El ticket de $1.580 es el de Laura ($1.500.000 CLP), no una aspiración.",
     "lectura": "Cuatro palancas que no requieren construir nada llevan el mes de $904 a $6.661. Ninguna es una oferta nueva."
+  },
+  "consultoria": {
+    "lectura": "Los cinco llegaron por cosas distintas y todos terminaron en el mismo lugar: marketing y comercial.",
+    "stats": [
+      {
+        "k": "Convergen en Mkt+Comercial",
+        "v": "5",
+        "u": "/ 5",
+        "f": "Sin excepción, incluidos los que no cerraron",
+        "s": "live"
+      },
+      {
+        "k": "Entran por otro dolor",
+        "v": "3",
+        "u": "/ 5",
+        "f": "Ordenarse, sostener cliente, vender más",
+        "s": "mid"
+      },
+      {
+        "k": "Con resultado medible",
+        "v": "1",
+        "u": "/ 3",
+        "f": "Solo Kathe tiene número propio",
+        "s": "brk"
+      },
+      {
+        "k": "El producto real",
+        "v": "1",
+        "u": "",
+        "f": "Sistema de marketing y ventas que genere caja",
+        "s": "live"
+      }
+    ],
+    "casos": [
+      {
+        "n": "Kathe · GMDS",
+        "entro": "Sostener al cliente que ya tenía",
+        "descubrio": "Necesitaba cerrar más negocios, no retener",
+        "foco": [
+          "Marketing",
+          "Comercial"
+        ],
+        "res": "Canal email desde cero: $939 en 5 días",
+        "e": "live"
+      },
+      {
+        "n": "Laura · STM",
+        "entro": "Ordenarse por dentro",
+        "descubrio": "Lo clave era el sistema comercial",
+        "foco": [
+          "Comercial"
+        ],
+        "res": "ICP A/B/C definido · reframe de eficiencia",
+        "e": "mid"
+      },
+      {
+        "n": "Emma Clara",
+        "entro": "Vender más",
+        "descubrio": "Era marketing más comercial",
+        "foco": [
+          "Marketing",
+          "Comercial"
+        ],
+        "res": "Sin entregable documentado",
+        "e": "brk"
+      },
+      {
+        "n": "Nacho · Fénix",
+        "entro": "Ordenar la operación familiar",
+        "descubrio": "El cuello es comercial, persona vs. sistema",
+        "foco": [
+          "Marketing",
+          "Comercial"
+        ],
+        "res": "En discovery",
+        "e": "mid"
+      },
+      {
+        "n": "Pablo · Buena Mesa",
+        "entro": "Crecer el negocio",
+        "descubrio": "Marketing más comercial",
+        "foco": [
+          "Marketing",
+          "Comercial"
+        ],
+        "res": "En discovery",
+        "e": "mid"
+      }
+    ],
+    "tesis": {
+      "t": "La tesis que sale de los cinco",
+      "d": "No es problema de qué vender. El problema del cliente es no tener un sistema de marketing y ventas lo bastante bueno para generar caja.",
+      "d2": "Por eso el cierre siempre es lógico: si el sistema genera caja y ventas, el cliente paga. La venta no se gana convenciendo, se gana mostrando el sistema que ya funcionó.",
+      "conse": "El caso de éxito es el activo comercial. Sin él no hay tracción; con él, la venta se explica sola."
+    },
+    "mejorar": [
+      {
+        "n": "Documentar el resultado de cada sesión",
+        "por": "Solo 1 de 3 tiene número propio que mostrar",
+        "e": "brk"
+      },
+      {
+        "n": "Entregable duro por sesión",
+        "por": "El cliente recibe chat y llamada; falta el activo que queda",
+        "e": "brk"
+      },
+      {
+        "n": "Roadmap conectado a Notion",
+        "por": "Existe la base y no todos la usan",
+        "e": "mid"
+      },
+      {
+        "n": "Cadencia que no dependa de recordarla",
+        "por": "Dos de tres perdieron ritmo",
+        "e": "brk"
+      }
+    ]
   }
 }
 </script>
@@ -2592,6 +2821,74 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 .sil.warn{color:var(--warn);border-color:rgba(232,179,57,.35)}
 .sil.brk{color:var(--danger);border-color:rgba(229,72,77,.4);background:rgba(229,72,77,.08)}
 
+/* ── LÍNEA DE CONTRATOS ── */
+.ct-h{display:grid;grid-template-columns:150px 1fr;gap:var(--s4);margin-bottom:var(--s2)}
+.ct-m{display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
+.ct-m span{font-size:var(--t-micro);font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--low);text-align:center}
+.ct-r{display:grid;grid-template-columns:150px 1fr 96px;gap:var(--s4);align-items:center;
+  padding:var(--s2) 0;border-bottom:1px solid var(--border)}
+.ct-r:last-child{border-bottom:0}
+.ct-g{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;height:26px}
+.ct-g i{border-radius:3px;background:var(--surface3);display:block}
+.ct-g i.on{background:var(--gold)}
+.ct-g i.on.live{background:var(--good)}
+.ct-g i.on.brk{background:var(--danger)}
+.ct-n{font-size:var(--t-m);font-weight:700}
+.ct-n span{display:block;margin-top:2px;font-size:var(--t-micro);font-weight:500;color:var(--low)}
+.ct-v{text-align:right}
+.ct-v b{display:block;font-size:var(--t-l);font-weight:700;letter-spacing:-.02em}
+.ct-v span{display:block;font-size:var(--t-micro);color:var(--low);margin-top:2px}
+
+/* ── LAS TRES LECTURAS ── */
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+.tres-c{padding:var(--s4);border-radius:var(--r-s);background:var(--surface2);
+  border:1px solid var(--border)}
+.tres-c.live{border-color:rgba(74,222,128,.3)}
+.tres-v{font-size:var(--n-s);font-weight:700;letter-spacing:-.03em;margin-bottom:var(--s1)}
+.tres-c.live .tres-v{color:var(--good)}
+.tres-n{font-size:var(--t-m);font-weight:700;margin-bottom:var(--s2)}
+.tres-d{font-size:var(--t-s);color:var(--mid);line-height:1.5;
+  padding-top:var(--s2);border-top:1px solid var(--border)}
+.resp{margin-top:var(--s4);padding:var(--s4);border-radius:var(--r-s);
+  background:rgba(216,168,71,.08);border:1px solid var(--gold-dim);
+  font-size:var(--t-l);color:var(--hi);line-height:1.55}
+
+/* ── PIPELINE ── */
+.pp{display:grid;grid-template-columns:1.3fr 116px 108px 1fr 1.5fr;gap:var(--s4);
+  align-items:center;padding:var(--s3) 0;border-bottom:1px solid var(--border)}
+.pp:last-child{border-bottom:0}
+.pp-t{font-size:var(--t-micro);font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--mid);border:1px solid var(--border);border-radius:var(--r-pill);
+  padding:4px 10px;text-align:center}
+.pp-c{font-size:var(--t-m);font-weight:700;text-align:center;color:var(--hi)}
+.pp-p{display:flex;align-items:center;gap:var(--s2)}
+.pp-p b{font-size:var(--t-l);font-weight:700;min-width:38px;text-align:right}
+.pp.live .pp-p b{color:var(--good)}
+.pp.brk .pp-p b{color:var(--danger)}
+
+/* ── CASOS DE CONSULTORÍA ── */
+.cs{padding:var(--s4);border-radius:var(--r-s);background:var(--surface2);
+  border:1px solid var(--border)}
+.cs + .cs{margin-top:var(--s2)}
+.cs-top{display:grid;grid-template-columns:1fr 1.3fr 1.3fr 1.2fr;gap:var(--s4);align-items:start}
+.cs-n{font-size:var(--t-l);font-weight:700}
+.cs-b b{display:block;font-size:var(--t-micro);font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--low);margin-bottom:var(--s1)}
+.cs-b p{font-size:var(--t-s);color:var(--mid);line-height:1.5}
+.foco{display:flex;gap:var(--s1);flex-wrap:wrap;margin-top:var(--s2)}
+.foco span{font-size:var(--t-micro);font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 9px;border-radius:var(--r-pill);background:rgba(216,168,71,.14);
+  color:var(--gold);border:1px solid var(--gold-dim)}
+.tesis{padding:var(--s5);border-radius:var(--r-s);
+  background:linear-gradient(160deg,var(--gold-glow),var(--surface2));
+  border:1px solid var(--gold-dim)}
+.tesis b{display:block;font-size:var(--t-xl);color:var(--gold);margin-bottom:var(--s3)}
+.tesis p{font-size:var(--t-l);color:var(--hi);line-height:1.6;margin-bottom:var(--s3)}
+.tesis .cs2{font-size:var(--t-l);color:var(--mid)}
+.tesis .cns{margin-top:var(--s3);padding-top:var(--s3);border-top:1px solid var(--gold-dim);
+  font-size:var(--t-l);font-weight:700;color:var(--hi)}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
   .radar-wrap{grid-template-columns:1fr;gap:var(--s4)}
@@ -2667,6 +2964,11 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .fc-top{grid-template-columns:1fr 100px;row-gap:var(--s2)}
   .fc-g{grid-template-columns:1fr}
   .lk{grid-template-columns:1fr 1fr}
+  .tres{grid-template-columns:1fr}
+  .pp{grid-template-columns:1fr 108px;row-gap:var(--s1)}
+  .pp-c,.pp-p,.pp .k2{grid-column:1/-1}
+  .cs-top{grid-template-columns:1fr;gap:var(--s3)}
+  .ct-r,.ct-h{grid-template-columns:1fr;row-gap:var(--s1)}
   details.ar > summary{grid-template-columns:26px 1fr 20px;row-gap:var(--s1)}
   details.ar > summary .k3,details.ar > summary .meter,details.ar > summary .k2{grid-column:2}
   .ar-body{padding-left:var(--s4)}
@@ -2953,9 +3255,10 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
       + card('Los ocho números del ciclo',
              '<div class="tiles eight">'+b.kpis.map(tile).join('')+'</div>')
       + card('Objeciones registradas en las 9 llamadas', ob)
-      + card('El embudo en ratios',
+      + card('El embudo de venta, proceso por proceso',
              '<div class="vread" style="margin:0 0 var(--s4)">'+esc(b.funnel_lectura||'')+'</div>'
-             + funnelHTML(b.funnel))
+             + funnelHTML(b.funnel)
+             + (b.nota_calls?'<div class="note">'+esc(b.nota_calls)+'</div>':''))
       + '</div>' + skArea('comercial');
   }
 
@@ -3067,9 +3370,46 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
         +'<div class="k2" style="color:var(--hi)">'+esc(f.q)+'</div></div>';
     });
     ph+='<div class="concl"><b>Conclusión</b>'+esc(pb.concl)+'</div>';
-    return vhead('Clientes','cómo los llevo al éxito',c.lectura)
+    /* la línea de contratos: cuánto se cerró y hasta dónde llega */
+    var ct=c.contratos;
+    var lin='<div class="ct-h"><div></div><div class="ct-m">'
+      + ct.meses.map(function(m){return '<span>'+esc(m)+'</span>'}).join('')+'</div></div>';
+    ct.filas.forEach(function(f){
+      var celdas='';
+      for(var i=0;i<ct.meses.length;i++)
+        celdas+='<i class="'+(i>=f.ini_i && i<f.ini_i+f.m ? 'on '+esc(f.e) : '')+'"></i>';
+      lin+='<div class="ct-r"><div class="ct-n">'+esc(f.n)
+        +'<span>'+esc(f.ini)+' → '+esc(f.fin)+' · '+f.m+' meses</span></div>'
+        +'<div class="ct-g">'+celdas+'</div>'
+        +'<div class="ct-v"><b>$'+money(f.tcv)+'</b><span>$'+money(Math.round(f.tcv/f.m))+'/mes</span></div></div>';
+    });
+    lin+='<div class="concl"><b>Conclusión</b>'+esc(ct.concl)+'</div>';
+
+    /* las tres formas de contar el mismo cierre */
+    var cb=c.contab;
+    var tr3='<div class="tres">'+cb.filas.map(function(f){
+      return '<div class="tres-c '+esc(f.e)+'"><div class="tres-v">'+esc(f.v)+'</div>'
+        +'<div class="tres-n">'+esc(f.n)+'</div><div class="tres-d">'+esc(f.d)+'</div></div>';
+    }).join('')+'</div><div class="resp">'+esc(cb.resp)+'</div>';
+
+    /* lo que viene */
+    var pl=c.pipeline, pp='';
+    pl.filas.forEach(function(f){
+      pp+='<div class="pp '+esc(f.e)+'"><div class="k1">'+esc(f.n)+'</div>'
+        +'<div class="pp-t">'+esc(f.t)+'</div>'
+        +'<div class="pp-c">'+esc(f.cuando)+'</div>'
+        +'<div class="pp-p"><div class="bar" style="flex:1"><i class="'
+        +(f.p>=60?'gold':'dgr')+'" style="width:'+f.p+'%"></i></div><b>'+f.p+'%</b></div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>';
+    });
+    pp+='<div class="concl"><b>Conclusión</b>'+esc(pl.concl)+'</div>';
+
+    return vhead('Clientes','cerrado, vigente y por venir',c.lectura)
       + tiles(c.stats)
       + '<div class="stack">'
+      + card(esc(ct.t), lin)
+      + card(esc(cb.t), tr3)
+      + card(esc(pl.t), pp)
       + card('Los tres, uno por uno', fi)
       + card(esc(pb.t), ph)
       + '</div>' + skArea('clientes');
@@ -3190,6 +3530,37 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
       + '</div>' + skArea('contenido');
   }
 
+  /* ── CONSULTORÍA — qué valoran y hacia dónde converge ── */
+  function vConsultoria(){
+    var C=D.consultoria, cs='';
+    (C.casos||[]).forEach(function(x){
+      cs+='<div class="cs"><div class="cs-top">'
+        +'<div><div class="cs-n">'+esc(x.n)+'</div>'
+        +'<div class="foco">'+x.foco.map(function(f){return '<span>'+esc(f)+'</span>'}).join('')+'</div></div>'
+        +'<div class="cs-b"><b>Entró buscando</b><p>'+esc(x.entro)+'</p></div>'
+        +'<div class="cs-b"><b>Lo que descubrimos</b><p>'+esc(x.descubrio)+'</p></div>'
+        +'<div class="cs-b"><b>Resultado</b><p class="'+(x.e==='live'?'s-live':x.e==='brk'?'s-brk':'')
+        +'">'+esc(x.res)+'</p></div></div></div>';
+    });
+    var t=C.tesis;
+    var th='<div class="tesis"><b>'+esc(t.t)+'</b><p>'+esc(t.d)+'</p>'
+      +'<div class="cs2">'+esc(t.d2)+'</div>'
+      +'<div class="cns">'+esc(t.conse)+'</div></div>';
+    var mj='';
+    (C.mejorar||[]).forEach(function(x,i){
+      mj+='<div class="gp '+esc(x.e)+'"><div class="gp-p">'+(i+1)+'</div>'
+        +'<div class="k1">'+esc(x.n)+'</div><div class="k2">'+esc(x.por)+'</div>'
+        +'<div class="gp-d"></div></div>';
+    });
+    return vhead('Consultoría','qué valoran y qué falta',C.lectura)
+      + tiles(C.stats)
+      + '<div class="stack">'
+      + card('Los cinco casos — por qué entraron y dónde terminaron', cs)
+      + card(null, th)
+      + card('Qué mejorar en la entrega', mj)
+      + '</div>' + skArea('consultoria');
+  }
+
   /* ── PUNTO CERO — dónde estoy, cómo vengo, a dónde puedo llegar ── */
   function vOS(){
     return '<div class="oz">'
@@ -3236,6 +3607,7 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     {id:'contenido', l:'Contenido',  cero:false, r:vContenido},
     {id:'canales',   l:'Canales',    r:vCanales},
     {id:'comercial', l:'Comercial',  r:vComercial},
+    {id:'consultoria', l:'Consultoría', r:vConsultoria},
     {id:'clientes',  l:'Clientes',   r:vClientes},
     {id:'infra',     l:'Infra',      r:vInfra}
   ];
@@ -3286,7 +3658,7 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   document.addEventListener('keydown',function(e){
     if(e.key==='ArrowRight'){ e.preventDefault(); go(cur+1); }
     if(e.key==='ArrowLeft'){ e.preventDefault(); go(cur-1); }
-    if(e.key>='1'&&e.key<='6') go(parseInt(e.key,10)-1);
+    if(e.key>='1'&&e.key<='7') go(parseInt(e.key,10)-1);
   });
   go(0);
 })();
