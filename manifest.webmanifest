@@ -1,0 +1,14 @@
+{
+  "name": "PRIVATE-OS · Business",
+  "short_name": "PRIVATE-OS",
+  "description": "Panel de negocio de Private Build",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0E1014",
+  "theme_color": "#0E1014",
+  "icons": [
+    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

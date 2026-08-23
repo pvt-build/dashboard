@@ -122,29 +122,31 @@ def bloque_build(previo):
         por_mes.setdefault(nace, []).append(d.name.replace("pvt-", "").replace("-agent", ""))
 
     b = json.loads(json.dumps(previo))
-    b["stats"][0]["v"] = str(len(dirs))
-    b["stats"][1]["v"] = "{:,.0f}".format(lineas).replace(",", ".")
-    b["stats"][1]["f"] = "+ %d archivos de referencia" % refs
 
-    vivos = [s["n"].split(" · ")[0] for s in b["sistemas"] if s["e"] == "live"]
-    b["stats"][2]["v"] = str(len(vivos))
-    b["stats"][2]["u"] = "/ %d" % len(b["sistemas"])
-    b["stats"][2]["f"] = ", ".join(vivos) if vivos else "Ninguno"
+    # Backend cuenta sistemas por área, no skills sueltas: el conteo sale de
+    # recorrer las 8 áreas y clasificar por estado.
+    sis = [x for a in b.get("areas", []) for x in a.get("sis", [])]
+    activos = sum(1 for x in sis if x["e"] == "live")
+    por_activar = sum(1 for x in sis if x["e"] == "brk")
+    cubiertas = sum(1 for a in b.get("areas", [])
+                    if any(x["e"] == "live" for x in a.get("sis", [])))
 
-    # el inventario escrito a mano se sincroniza con lo que existe de verdad:
-    # se conserva la descripción de cada skill viva y se quitan las que ya no están
-    vivas = {d.name.replace("pvt-", "").replace("-agent", "") for d in dirs}
-    inv = {x["n"]: x for x in b.get("skills", [])}
-    b["skills"] = (
-        [inv[n] for n in sorted(vivas) if n in inv]
-        + [{"n": n, "c": "Sin clasificar", "d": "Skill nueva — falta describirla",
-            "nivel": "skill"} for n in sorted(vivas - set(inv))]
-    )
+    def set_stat(clave, valor, pie=None):
+        for t in b.get("stats", []):
+            if t["k"] == clave:
+                t["v"] = str(valor)
+                if pie:
+                    t["f"] = pie
+                return
 
-    b["skills_mes"] = [
-        {"m": ABREV[int(k.split("-")[1]) - 1], "n": len(v), "l": ", ".join(sorted(v))}
-        for k, v in sorted(por_mes.items())
-    ]
+    set_stat("Sistemas activos", activos)
+    set_stat("Por activar", por_activar)
+    set_stat("Áreas cubiertas", cubiertas, "Con al menos un sistema vivo")
+
+    # el total de skills por grupo se contrasta con lo que existe de verdad
+    for g in b.get("grupos", {}).get("filas", []):
+        g["n"] = len(g.get("sk", []))
+
     return b, len(dirs), por_mes
 
 
@@ -156,7 +158,7 @@ def propagar_skills(data, n_skills, por_mes):
     patron = re.compile(r"\b\d+ skills\b")
     # el radar se dibuja desde radar.areas: hay una sola lista que tocar
     for a in data["radar"].get("areas", []):
-        if a["n"] == "Infra":
+        if a["n"] in ("Infra", "Backend"):
             for campo in ("r", "nota"):
                 if campo in a:
                     a[campo] = patron.sub("%d skills" % n_skills, a[campo])
@@ -253,7 +255,7 @@ def main():
     data = json.loads(m.group(2))
 
 
-    data["infra"], n_skills, por_mes = bloque_build(data["infra"])
+    data["backend"], n_skills, por_mes = bloque_build(data["backend"])
     if n_skills:
         propagar_skills(data, n_skills, por_mes)
         print("infra      ✓  %d skills contadas desde el filesystem" % n_skills)
