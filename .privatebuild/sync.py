@@ -125,11 +125,11 @@ def bloque_build(previo):
 
     # Backend cuenta sistemas por área, no skills sueltas: el conteo sale de
     # recorrer las 8 áreas y clasificar por estado.
-    sis = [x for a in b.get("areas", []) for x in a.get("sis", [])]
-    activos = sum(1 for x in sis if x["e"] == "live")
-    por_activar = sum(1 for x in sis if x["e"] == "brk")
-    cubiertas = sum(1 for a in b.get("areas", [])
-                    if any(x["e"] == "live" for x in a.get("sis", [])))
+    areas = b.get("areas", [])
+    activos = sum(1 for a in areas if a.get("e") == "live")
+    a_medias = sum(1 for a in areas if a.get("e") == "mid")
+    por_activar = sum(1 for a in areas if a.get("e") == "brk")
+    replicables = sum(1 for a in areas if a.get("cli"))
 
     def set_stat(clave, valor, pie=None):
         for t in b.get("stats", []):
@@ -139,13 +139,15 @@ def bloque_build(previo):
                     t["f"] = pie
                 return
 
-    set_stat("Sistemas activos", activos)
-    set_stat("Por activar", por_activar)
-    set_stat("Áreas cubiertas", cubiertas, "Con al menos un sistema vivo")
-
-    # el total de skills por grupo se contrasta con lo que existe de verdad
-    for g in b.get("grupos", {}).get("filas", []):
-        g["n"] = len(g.get("sk", []))
+    n = len(areas) or 8
+    set_stat("Sistemas activos", "%d" % activos)
+    set_stat("A medias", "%d" % a_medias)
+    set_stat("Por construir", "%d" % por_activar)
+    set_stat("Replicables a cliente", "%d" % replicables)
+    for t in b.get("stats", []):
+        if t["k"] in ("Sistemas activos", "A medias", "Por construir",
+                      "Replicables a cliente"):
+            t["u"] = "/ %d" % n
 
     return b, len(dirs), por_mes
 

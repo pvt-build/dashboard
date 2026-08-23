@@ -13,18 +13,18 @@
   "meta": {
     "os": "PRIVATE-OS",
     "modulo": "Business",
-    "ref": "PVT-BIZ-22",
-    "fecha": "22·08·26",
+    "ref": "PVT-BIZ-23",
+    "fecha": "23·08·26",
     "operador": "Patricio Rubio",
     "frescura": [
       {
         "n": "CRM · Notion",
         "al": "2026-08-09",
-        "lag": 13
+        "lag": 14
       },
       {
         "n": "Filesystem · OS",
-        "al": "2026-08-22",
+        "al": "2026-08-23",
         "lag": 0
       },
       {
@@ -321,7 +321,7 @@
       "ago"
     ],
     "parcial": 2,
-    "dias": "día 22 de 31",
+    "dias": "día 23 de 31",
     "series": [
       {
         "n": "Leads",
@@ -608,10 +608,17 @@
         "s": "mid"
       },
       {
-        "k": "Pipeline ponderado",
-        "v": "$3.913",
+        "k": "En pipeline",
+        "v": "12",
         "u": "",
-        "f": "6 movimientos vivos",
+        "f": "Ninguno es cliente todavía",
+        "s": "mid"
+      },
+      {
+        "k": "Ponderado",
+        "v": "$3.318",
+        "u": "",
+        "f": "Suma por probabilidad",
         "s": "live"
       },
       {
@@ -620,13 +627,6 @@
         "u": "%",
         "f": "2 de 2 · Kathe y Laura",
         "s": "live"
-      },
-      {
-        "k": "Slippage de ticket",
-        "v": "−54",
-        "u": "%",
-        "f": "$2.300 propuesto → $1.050 cobrado",
-        "s": "brk"
       }
     ],
     "kpis": [
@@ -762,58 +762,112 @@
     "funnel_lectura": "Son procesos de venta, no llamadas sueltas. Discovery más propuesta cierra el 100%: los tres cierres del histórico siguieron ese camino.",
     "nota_calls": "Antes este bloque contaba 13 llamadas mezclando venta y consultoría. Las de venta son 9 y forman 5 procesos: ese es el embudo real.",
     "pipeline": {
-      "t": "Pipeline — todo lo que todavía es venta",
-      "filas": [
+      "t": "Pipeline — solo lo que todavía no es cliente",
+      "grupos": [
         {
-          "n": "Egly · Casabliss",
-          "t": "Nuevo",
-          "cuando": "agosto",
-          "p": 70,
+          "g": "Cierre cercano",
           "e": "live",
-          "tk": 1580
+          "filas": [
+            {
+              "n": "Egly · Casabliss",
+              "t": "Nuevo",
+              "cuando": "agosto",
+              "p": 70,
+              "tk": 1580
+            },
+            {
+              "n": "Nacho · Fénix",
+              "t": "Reactivación",
+              "cuando": "pronto",
+              "p": 50,
+              "tk": 1580
+            },
+            {
+              "n": "Pablo · Buena Mesa",
+              "t": "Nuevo",
+              "cuando": "pronto",
+              "p": 40,
+              "tk": 1580
+            }
+          ]
         },
         {
-          "n": "Emma Clara",
-          "t": "Renovación",
-          "cuando": "agosto",
-          "p": 30,
-          "e": "brk",
-          "tk": 1250
-        },
-        {
-          "n": "Kathe",
-          "t": "Renovación",
-          "cuando": "septiembre",
-          "p": 80,
-          "e": "live",
-          "tk": 1050
-        },
-        {
-          "n": "Nacho · Fénix",
-          "t": "Reactivación",
-          "cuando": "pronto",
-          "p": 50,
+          "g": "Ex alumnas · reactivables",
           "e": "mid",
-          "tk": 1580
+          "filas": [
+            {
+              "n": "Isidora",
+              "t": "Ex alumna",
+              "cuando": "sin fecha",
+              "p": 20,
+              "tk": 1580
+            },
+            {
+              "n": "Dominique",
+              "t": "Ex alumna",
+              "cuando": "sin fecha",
+              "p": 15,
+              "tk": 1580
+            },
+            {
+              "n": "Valentina · Valfi",
+              "t": "Ex alumna",
+              "cuando": "sin fecha",
+              "p": 15,
+              "tk": 1580
+            }
+          ]
         },
         {
-          "n": "Pablo · Buena Mesa",
-          "t": "Nuevo",
-          "cuando": "pronto",
-          "p": 40,
-          "e": "mid",
-          "tk": 1580
-        },
-        {
-          "n": "Isidora · Domi · Valfi",
-          "t": "Ex alumnas",
-          "cuando": "sin fecha",
-          "p": 15,
+          "g": "Leads sin trabajar",
           "e": "brk",
-          "tk": 1580
+          "filas": [
+            {
+              "n": "Felipe · Agonas",
+              "t": "Seguimiento",
+              "cuando": "frío",
+              "p": 10,
+              "tk": 1580
+            },
+            {
+              "n": "Alfonsina",
+              "t": "Seguimiento",
+              "cuando": "frío",
+              "p": 10,
+              "tk": 1580
+            },
+            {
+              "n": "Fabián · HaDrones",
+              "t": "Lead",
+              "cuando": "frío",
+              "p": 10,
+              "tk": 1580
+            },
+            {
+              "n": "Martín · Aurest",
+              "t": "Lead",
+              "cuando": "frío",
+              "p": 10,
+              "tk": 1580
+            },
+            {
+              "n": "JP Rocha",
+              "t": "Lead",
+              "cuando": "frío",
+              "p": 5,
+              "tk": 1580
+            },
+            {
+              "n": "Dra. Javiera",
+              "t": "Lead",
+              "cuando": "frío",
+              "p": 5,
+              "tk": 1580
+            }
+          ]
         }
       ],
-      "concl": "Ponderado por probabilidad, el pipeline vale $3.913. Egly y Kathe son el 60% de eso."
+      "concl": "Doce movimientos vivos, y los tres de arriba valen más que los nueve de abajo juntos. La cola fría existe pero no se trabaja."
     },
     "cartera": {
       "t": "Cartera vigente — de dónde sale la caja hoy",
@@ -884,35 +938,43 @@
     }
   },
   "canales": {
-    "lectura": "Los leads vienen de un lado y los clientes de otro. Ahí está el leverage que no se ve en la suma.",
+    "lectura": "La red trae el volumen y el cierre. Instagram trae leads que no convierten.",
     "stats": [
       {
         "k": "Leads totales",
         "v": "27",
         "u": "",
         "f": "Histórico del CRM",
-        "s": "mid"
+        "s": "mid",
+        "delta": 2,
+        "dl": "vs mes anterior"
       },
       {
         "k": "Clientes",
         "v": "11",
         "u": "",
         "f": "41% de los leads pagó",
-        "s": "live"
+        "s": "live",
+        "delta": 0,
+        "dl": "sin cambio"
       },
       {
-        "k": "Mejor conversión",
-        "v": "LinkedIn",
-        "u": "",
-        "f": "1 lead, 1 cliente",
-        "s": "live"
+        "k": "Conversión global",
+        "v": "41",
+        "u": "%",
+        "f": "Leads que terminaron pagando",
+        "s": "live",
+        "delta": -4,
+        "dl": "vs jul"
       },
       {
-        "k": "Peor conversión",
-        "v": "Instagram",
-        "u": "",
-        "f": "6 leads, 1 cliente",
-        "s": "brk"
+        "k": "Canales activos",
+        "v": "1",
+        "u": "/ 4",
+        "f": "Solo Instagram se trabaja",
+        "s": "brk",
+        "delta": 0,
+        "dl": "sin cambio"
       }
     ],
     "torta_leads": [
@@ -927,7 +989,7 @@
         "c": "#E1306C"
       },
       {
-        "n": "LinkedIn",
+        "n": "Referido",
         "v": 1,
         "c": "#5B9BD5"
       },
@@ -944,7 +1006,7 @@
         "c": "#A9ADB4"
       },
       {
-        "n": "LinkedIn",
+        "n": "Referido",
         "v": 1,
         "c": "#5B9BD5"
       },
@@ -995,7 +1057,7 @@
           ]
         },
         {
-          "n": "LinkedIn",
+          "n": "Referido",
           "c": "#5B9BD5",
           "v": [
             0,
@@ -1013,13 +1075,13 @@
       "t": "Dónde está el leverage",
       "filas": [
         {
-          "n": "LinkedIn",
+          "n": "Referido",
           "conv": 100,
           "esf": "Cero",
           "tk": 1250,
           "lev": "Alto",
           "e": "live",
-          "d": "Un movimiento sin trabajarlo produjo un cliente."
+          "d": "Un conocido lo sugirió sin que lo pidieras. Es la mecánica que falta activar."
         },
         {
           "n": "Red personal",
@@ -1028,7 +1090,7 @@
           "tk": 1172,
           "lev": "Agotado",
           "e": "mid",
-          "d": "Convierte bien pero no se repone: ya la recorriste."
+          "d": "Convierte bien y no se repone."
         },
         {
           "n": "Instagram",
@@ -1040,17 +1102,95 @@
           "d": "Donde más publicas y donde menos convierte."
         },
         {
-          "n": "Web · funnel",
+          "n": "Scrapper",
           "conv": 0,
-          "esf": "Medio",
+          "esf": "Bajo",
           "tk": 0,
-          "lev": "Sin datos",
+          "lev": "Por probar",
           "e": "blind",
-          "d": "Publicado y sin tráfico que lo alimente."
+          "d": "El único que puede escalar sin más horas tuyas."
         }
       ],
-      "concl": "El esfuerzo está puesto donde peor convierte. Instagram pide más formatos; LinkedIn pedía solo aparecer."
-    }
+      "concl": "El 100% del referido no viene de LinkedIn como canal: viene de que alguien te vio y recomendó. La palanca es la mecánica de referidos, no publicar más ahí."
+    },
+    "lista": [
+      {
+        "n": "Red personal",
+        "ic": "red",
+        "color": "#A9ADB4",
+        "leads": 20,
+        "cli": 9,
+        "usd": 10550,
+        "pct": 85,
+        "tasa": 45,
+        "tk": 1172,
+        "delta": -5,
+        "por": "Gente que ya te conocía. Confían antes de la primera llamada.",
+        "acc": "Piso, no motor: ya la recorriste y no se repone sola.",
+        "cuello": "Se agota"
+      },
+      {
+        "n": "Referido",
+        "ic": "ref",
+        "color": "#5B9BD5",
+        "leads": 1,
+        "cli": 1,
+        "usd": 1250,
+        "pct": 10,
+        "tasa": 100,
+        "tk": 1250,
+        "delta": 0,
+        "por": "Seba Garrido lo sugirió tras ver dos posts en LinkedIn. La fuente es el referido, no el posteo.",
+        "acc": "El canal real es la recomendación; LinkedIn solo dio la señal de que existes.",
+        "cuello": "Sin mecánica activa"
+      },
+      {
+        "n": "Instagram",
+        "ic": "ig",
+        "color": "#E1306C",
+        "leads": 6,
+        "cli": 1,
+        "usd": 600,
+        "pct": 5,
+        "tasa": 17,
+        "tk": 600,
+        "delta": -8,
+        "por": "Donde publicas. Trae volumen de leads con el ticket más bajo.",
+        "acc": "17% de conversión con un formato de cinco activo. Falta reel y story.",
+        "cuello": "Un formato de cinco"
+      },
+      {
+        "n": "Web · funnel",
+        "ic": "web",
+        "color": "#4EC3A8",
+        "leads": 0,
+        "cli": 0,
+        "usd": 0,
+        "pct": 0,
+        "tasa": 0,
+        "tk": 0,
+        "delta": 0,
+        "por": "El nivelador está publicado pero nadie lo alimenta.",
+        "acc": "Todavía no es canal: es una página esperando tráfico.",
+        "cuello": "Sin tráfico"
+      },
+      {
+        "n": "Scrapper",
+        "ic": "scr",
+        "color": "#9B8AE6",
+        "leads": 0,
+        "cli": 0,
+        "usd": 0,
+        "pct": 0,
+        "tasa": 0,
+        "tk": 0,
+        "delta": 0,
+        "nuevo": true,
+        "por": "Scrapper de Claude sobre IG. Sirve igual para LinkedIn: es sistema, no canal manual.",
+        "acc": "Se estrena mañana. Va a ser la primera fuente de atribución que puedes escalar.",
+        "cuello": "Por estrenar"
+      }
+    ]
   },
   "contenido": {
     "circulos": [
@@ -1118,7 +1258,7 @@
         "s": "brk"
       }
     ],
-    "lectura": "El carrusel ya tiene sistema. El cuello se movió al long content, que es lo que alimenta comunidad y YouTube.",
+    "lectura": "Tienes más motor para construir que para vender. La decisión de cuenta y CTA es lo que falta fijar.",
     "motor": {
       "t": "El ciclo: de dónde sale el contenido y en qué se convierte",
       "nodos": [
@@ -1197,31 +1337,31 @@
       "t": "Producción de agosto",
       "stats": [
         {
-          "k": "Publicados esta semana",
+          "k": "Piezas del mes",
           "v": "5",
-          "u": "",
-          "f": "El mejor arranque del mes",
-          "s": "live"
+          "u": "/ 90",
+          "f": "Meta de todas las cadencias",
+          "s": "brk"
         },
         {
-          "k": "Sistema de carruseles",
-          "v": "1",
-          "u": "",
-          "f": "Armado y corriendo",
+          "k": "Carrusel",
+          "v": "10",
+          "u": "min",
+          "f": "Sistema armado y medido",
           "s": "live"
         },
         {
           "k": "Video corto",
-          "v": "0",
-          "u": "",
-          "f": "Reel sin producir",
+          "v": "30",
+          "u": "min",
+          "f": "Sistema por montar",
           "s": "brk"
         },
         {
-          "k": "Long content",
-          "v": "0",
-          "u": "",
-          "f": "Ningún video de YouTube",
+          "k": "Formatos activos",
+          "v": "1",
+          "u": "/ 5",
+          "f": "Solo carrusel",
           "s": "brk"
         }
       ],
@@ -1256,6 +1396,147 @@
     "idea": {
       "t": "Idea en el tintero — enganchar Miro",
       "d": "Tener el tablero visual y las métricas en un solo lugar, en vez de mover pantallazos a mano. Queda anotado para trabajarlo: primero el long content, después la integración."
+    },
+    "cuentas": {
+      "t": "Qué va en cada cuenta y por qué",
+      "bloques": [
+        {
+          "c": "Private Build",
+          "h": "@privatebuild.os",
+          "e": "live",
+          "para": "Llamar founders y operadores que necesitan sistema",
+          "items": [
+            {
+              "n": "Build in public",
+              "q": "Lo que construyo, en vivo",
+              "por": "Atrae founders: ven el sistema funcionando, no la promesa"
+            },
+            {
+              "n": "Dolores del nicho",
+              "q": "Lo que saben y les duele",
+              "por": "El lead se reconoce y responde"
+            },
+            {
+              "n": "Casos de éxito",
+              "q": "Resultado con número",
+              "por": "Es el activo comercial: la venta se explica sola"
+            },
+            {
+              "n": "Noticias del ecosistema",
+              "q": "Lo que cambia en IA y negocio",
+              "por": "Posiciona criterio, no solo método"
+            }
+          ]
+        },
+        {
+          "c": "Cuenta personal",
+          "h": "Marca personal",
+          "e": "mid",
+          "para": "Que la persona detrás del sistema exista",
+          "items": [
+            {
+              "n": "Pareja y vida",
+              "q": "Lo que sostiene al founder",
+              "por": "Genera identificación, no clientes"
+            },
+            {
+              "n": "Inspo viral",
+              "q": "Contenido de alcance",
+              "por": "Trae audiencia que después se filtra a Private"
+            },
+            {
+              "n": "Athlete OS",
+              "q": "El cuerpo como tesis",
+              "por": "Prueba de que el sistema se aplica a uno mismo"
+            }
+          ]
+        }
+      ],
+      "regla": "Si el contenido enseña el sistema, va a Private Build. Si muestra a la persona, va a la cuenta personal. La intersección — yo construyendo en mí — puede ir a las dos, con distinto ángulo.",
+      "error": "El error de esta semana: subiste a Instagram algo con CTA a comunidad. Ese contenido era para la comunidad, donde la gente ya está tibia. En Instagram el CTA es a DM."
+    },
+    "comunidad": {
+      "t": "Comunidad — qué decir, para qué y cuándo",
+      "canal": "Grupo de WhatsApp · avisos, sin chat generado",
+      "estado": "Con candado: no hay Skool, es WhatsApp y hoy solo recibe avisos.",
+      "filas": [
+        {
+          "d": "Lunes",
+          "q": "Build de la semana",
+          "por": "Qué se va a construir. Abre el arco de la semana",
+          "e": "brk"
+        },
+        {
+          "d": "Miércoles",
+          "q": "Gema táctica",
+          "por": "Algo aplicable hoy. Es lo que hace que valga estar",
+          "e": "brk"
+        },
+        {
+          "d": "Sábado AM",
+          "q": "Prueba social",
+          "por": "Resultado de un cliente o propio. Prepara el cierre",
+          "e": "brk"
+        },
+        {
+          "d": "Domingo",
+          "q": "Invitación",
+          "por": "El único día con CTA directo a llamada",
+          "e": "brk"
+        }
+      ],
+      "concl": "Cuatro toques semanales con roles distintos. Hoy tiraste «reacciones y les hago tutorial» y después subiste otra cosa: la promesa quedó abierta."
+    },
+    "mes": {
+      "t": "El contenido del mes",
+      "filas": [
+        {
+          "f": "Carrusel",
+          "cta": "DM",
+          "cuenta": "Private Build",
+          "min": 10,
+          "hechas": 5,
+          "meta": 20,
+          "e": "live"
+        },
+        {
+          "f": "Reel",
+          "cta": "Perfil",
+          "cuenta": "Private Build",
+          "min": 30,
+          "hechas": 0,
+          "meta": 20,
+          "e": "brk"
+        },
+        {
+          "f": "Story",
+          "cta": "DM directo",
+          "cuenta": "Ambas",
+          "min": 3,
+          "hechas": 0,
+          "meta": 30,
+          "e": "brk"
+        },
+        {
+          "f": "Mensaje comunidad",
+          "cta": "Llamada",
+          "cuenta": "WhatsApp",
+          "min": 10,
+          "hechas": 0,
+          "meta": 16,
+          "e": "brk"
+        },
+        {
+          "f": "Video largo",
+          "cta": "Recurso",
+          "cuenta": "YouTube",
+          "min": 90,
+          "hechas": 0,
+          "meta": 4,
+          "e": "brk"
+        }
+      ],
+      "concl": "Cinco piezas de 90 en el mes. El carrusel es el único con sistema y el único que corre."
     }
   },
   "skills_area": {
@@ -1485,9 +1766,16 @@
     "lectura": "Los cinco llegaron por cosas distintas y todos terminaron en el mismo lugar: marketing y comercial.",
     "stats": [
       {
+        "k": "Clientes en programa",
+        "v": "3",
+        "u": "",
+        "f": "Emma Clara, Kathe y Laura",
+        "s": "live"
+      },
+      {
         "k": "Convergen en Mkt+Comercial",
-        "v": "5",
-        "u": "/ 5",
+        "v": "3",
+        "u": "/ 3",
         "f": "Sin excepción",
         "s": "live"
       },
@@ -1495,78 +1783,15 @@
         "k": "Con resultado medible",
         "v": "1",
         "u": "/ 3",
-        "f": "Solo Kathe tiene número",
+        "f": "Solo Kathe tiene número propio",
         "s": "brk"
       },
       {
-        "k": "Sesiones entregadas",
-        "v": "6",
-        "u": "/ 28",
-        "f": "Suma de los tres programas",
-        "s": "brk"
-      },
-      {
-        "k": "En camino a extender",
+        "k": "Con día fijo de llamada",
         "v": "1",
         "u": "/ 3",
-        "f": "Kathe cumple 2 de 5 pasos",
+        "f": "Solo Emma Clara, los lunes",
         "s": "brk"
-      }
-    ],
-    "casos": [
-      {
-        "n": "Kathe · GMDS",
-        "entro": "Sostener al cliente que ya tenía",
-        "descubrio": "Necesitaba cerrar más negocios, no retener",
-        "foco": [
-          "Marketing",
-          "Comercial"
-        ],
-        "res": "Canal email desde cero: $939 en 5 días",
-        "e": "live"
-      },
-      {
-        "n": "Laura · STM",
-        "entro": "Ordenarse por dentro",
-        "descubrio": "Lo clave era el sistema comercial",
-        "foco": [
-          "Comercial"
-        ],
-        "res": "ICP A/B/C definido · reframe de eficiencia",
-        "e": "mid"
-      },
-      {
-        "n": "Emma Clara",
-        "entro": "Vender más",
-        "descubrio": "Era marketing más comercial",
-        "foco": [
-          "Marketing",
-          "Comercial"
-        ],
-        "res": "Sin entregable documentado",
-        "e": "brk"
-      },
-      {
-        "n": "Nacho · Fénix",
-        "entro": "Ordenar la operación familiar",
-        "descubrio": "El cuello es comercial, persona vs. sistema",
-        "foco": [
-          "Marketing",
-          "Comercial"
-        ],
-        "res": "En discovery",
-        "e": "mid"
-      },
-      {
-        "n": "Pablo · Buena Mesa",
-        "entro": "Crecer el negocio",
-        "descubrio": "Marketing más comercial",
-        "foco": [
-          "Marketing",
-          "Comercial"
-        ],
-        "res": "En discovery",
-        "e": "mid"
       }
     ],
     "tesis": {
@@ -1599,48 +1824,117 @@
     ],
     "fichas": [
       {
-        "n": "Kathe · GMDS Agency",
-        "est": "Avanza",
-        "url": "https://pvt-build.github.io/consulting-sabrent/",
-        "etapa": "Sesión 4 de 4",
-        "prog": 100,
-        "dias_sin": 12,
-        "logro": "Canal email desde cero: $939 en 5 días",
-        "nec": "Horizonte nuevo, no más sesiones",
+        "n": "Marjorie · Emma Clara",
+        "est": "Activo",
+        "url": "https://pvt-build.github.io/consulting-emmaclara/",
+        "dia": "Lunes",
+        "ritmo": "Semanal, día fijo",
+        "etapa": "En curso",
+        "prog": 60,
+        "logro": "Marketing y comercial como foco declarado",
+        "nec": "Documentar el resultado por escrito",
         "foco": [
           "Marketing",
           "Comercial"
         ],
-        "e": "live"
+        "e": "live",
+        "radar": [
+          {
+            "l": "Claridad",
+            "v": 0.7
+          },
+          {
+            "l": "Sistema",
+            "v": 0.5
+          },
+          {
+            "l": "Ejecución",
+            "v": 0.6
+          },
+          {
+            "l": "Medición",
+            "v": 0.3
+          },
+          {
+            "l": "Autonomía",
+            "v": 0.4
+          }
+        ]
+      },
+      {
+        "n": "Kathe · GMDS Agency",
+        "est": "Activo",
+        "url": "https://pvt-build.github.io/consulting-sabrent/",
+        "dia": "Variable",
+        "ritmo": "Semanal, siempre mueve la call",
+        "etapa": "Sesión 4",
+        "prog": 100,
+        "logro": "Canal email desde cero: $939 en 5 días",
+        "nec": "Horizonte nuevo y fecha estable",
+        "foco": [
+          "Marketing",
+          "Comercial"
+        ],
+        "e": "live",
+        "radar": [
+          {
+            "l": "Claridad",
+            "v": 0.9
+          },
+          {
+            "l": "Sistema",
+            "v": 0.8
+          },
+          {
+            "l": "Ejecución",
+            "v": 1
+          },
+          {
+            "l": "Medición",
+            "v": 0.9
+          },
+          {
+            "l": "Autonomía",
+            "v": 0.8
+          }
+        ]
       },
       {
         "n": "Laura Sandoval · STM",
-        "est": "Frenado",
+        "est": "Activo",
         "url": "https://pvt-build.github.io/consulting-laurastm/",
+        "dia": "Fin de semana",
+        "ritmo": "Semanal, tienen segundo proyecto",
         "etapa": "Sesión 2 de 12",
         "prog": 17,
-        "dias_sin": 15,
-        "logro": "ICP A/B/C y reframe de eficiencia",
-        "nec": "Fecha en el calendario",
+        "logro": "ICP A/B/C y reframe de eficiencia vs. confianza",
+        "nec": "Cerrar el diagrama de mensajes",
         "foco": [
           "Comercial"
         ],
-        "e": "brk"
-      },
-      {
-        "n": "Marjorie · Emma Clara",
-        "est": "Frenado",
-        "url": "https://pvt-build.github.io/consulting-emmaclara/",
-        "etapa": "Sin sesiones registradas",
-        "prog": 0,
-        "dias_sin": null,
-        "logro": "Sin entregable documentado",
-        "nec": "Retomar contacto antes de que termine",
-        "foco": [
-          "Marketing",
-          "Comercial"
-        ],
-        "e": "brk"
+        "e": "mid",
+        "radar": [
+          {
+            "l": "Claridad",
+            "v": 0.8
+          },
+          {
+            "l": "Sistema",
+            "v": 0.3
+          },
+          {
+            "l": "Ejecución",
+            "v": 0.4
+          },
+          {
+            "l": "Medición",
+            "v": 0.2
+          },
+          {
+            "l": "Autonomía",
+            "v": 0.3
+          }
+        ]
       }
     ],
     "pasos": {
@@ -1683,155 +1977,221 @@
         }
       ],
       "concl": "Los cinco pasos ocurren dentro del contrato, no al final. Hoy solo el paso 1 está cubierto en un cliente."
+    },
+    "cuello": {
+      "t": "El cuello de cada uno y lo que se repite",
+      "filas": [
+        {
+          "n": "Emma Clara",
+          "c": "Medición",
+          "d": "Sabe qué hacer y no registra el resultado.",
+          "e": "mid"
+        },
+        {
+          "n": "Kathe",
+          "c": "Agenda",
+          "d": "Ejecuta perfecto pero mueve la call cada semana.",
+          "e": "mid"
+        },
+        {
+          "n": "Laura",
+          "c": "Sistema",
+          "d": "Claridad alta, construcción detenida en la sesión 2.",
+          "e": "brk"
+        }
+      ],
+      "repite": [
+        {
+          "n": "Medición",
+          "v": 3,
+          "d": "Los tres tienen la medición como punto más bajo."
+        },
+        {
+          "n": "Autonomía",
+          "v": 3,
+          "d": "Ninguno corre el sistema sin ti todavía."
+        },
+        {
+          "n": "Claridad",
+          "v": 0,
+          "d": "Ninguno falla acá: el diagnóstico funciona."
+        }
+      ],
+      "propios": [
+        {
+          "n": "No dejo el resultado por escrito en la sesión",
+          "e": "brk"
+        },
+        {
+          "n": "No fijo día de llamada al arrancar el programa",
+          "e": "brk"
+        },
+        {
+          "n": "Entrego claridad rápido y sistema lento",
+          "e": "mid"
+        }
+      ],
+      "concl": "El patrón es uno: entregas claridad excelente y medición pobre. Los tres suben en entender y se quedan en medir."
     }
   },
   "daily": {
-    "lectura": "El negocio se mueve por cadencia, no por pendientes. Esto es lo que tiene que pasar sí o sí.",
+    "lectura": "El negocio se mueve por cadencia. Lo diario sostiene, el domingo construye.",
     "stats": [
       {
         "k": "Acciones diarias",
-        "v": "3",
+        "v": "6",
         "u": "",
-        "f": "Setting, carrusel, lectura",
+        "f": "Setting, carrusel, reel, stories, entreno, lectura",
         "s": "live"
       },
       {
-        "k": "Cada dos días",
-        "v": "2",
-        "u": "",
-        "f": "Reel y mensaje de comunidad",
+        "k": "Días de comunidad",
+        "v": "4",
+        "u": "/ 7",
+        "f": "Lun, mié, sáb AM y dom",
         "s": "mid"
       },
       {
-        "k": "Semanales",
-        "v": "11",
+        "k": "Bloques del domingo",
+        "v": "6",
         "u": "",
-        "f": "De discovery calls a Athlete OS",
+        "f": "El día que construye el sistema",
         "s": "mid"
       },
       {
-        "k": "Carga semanal",
-        "v": "32",
-        "u": "acciones",
-        "f": "Suma de todas las cadencias",
-        "s": "mid"
+        "k": "Cumplimiento",
+        "v": "—",
+        "u": "",
+        "f": "Sin registro: es el hueco",
+        "s": "blind"
       }
     ],
     "ritmos": [
       {
-        "c": "Cada día",
-        "n": 3,
+        "c": "Todos los días",
+        "n": 6,
         "e": "live",
+        "why": "Lo que sostiene el negocio vivo. Si se cae un día, se nota a la semana.",
         "items": [
           {
             "n": "5 mensajes de setting",
             "a": "Setting",
             "w": 5,
-            "u": "msg"
+            "why": "Es el único tramo que produce llamadas"
           },
           {
             "n": "1 carrusel",
             "a": "Marketing",
             "w": 1,
-            "u": "pieza"
+            "why": "El formato con sistema armado"
           },
-          {
-            "n": "1 capítulo del libro actual",
-            "a": "Founder",
-            "w": 1,
-            "u": "cap"
-          }
-        ]
-      },
-      {
-        "c": "Cada dos días",
-        "n": 2,
-        "e": "mid",
-        "items": [
           {
             "n": "1 reel",
             "a": "Marketing",
             "w": 1,
-            "u": "pieza"
+            "why": "Alcance frío, lo que no llega por carrusel"
           },
           {
-            "n": "1 mensaje en comunidad",
-            "a": "Comunidad",
+            "n": "Stories",
+            "a": "Marketing",
             "w": 1,
-            "u": "msg"
+            "why": "Donde vive el CTA directo a DM"
+          },
+          {
+            "n": "Entreno",
+            "a": "Athlete",
+            "w": 1,
+            "why": "El cuerpo sostiene la carga comercial"
+          },
+          {
+            "n": "1 capítulo de lectura",
+            "a": "Founder",
+            "w": 1,
+            "why": "El músculo que no se entrena se atrofia"
           }
         ]
       },
       {
-        "c": "Cada semana",
-        "n": 11,
+        "c": "Lunes, miércoles y sábado AM",
+        "n": 1,
         "e": "mid",
+        "why": "La comunidad necesita ritmo para que la gente vuelva. Sin cadencia, es una lista muerta.",
         "items": [
           {
-            "n": "3 a 5 discovery calls",
-            "a": "Comercial",
-            "w": 4,
-            "u": "calls"
+            "n": "Mensaje en comunidad",
+            "a": "Comunidad",
+            "w": 1,
+            "why": "Avisos y nutrición, no chat"
+          }
+        ]
+      },
+      {
+        "c": "Domingo — el día que construye",
+        "n": 6,
+        "e": "mid",
+        "why": "Todo lo que no se puede hacer entre semana porque exige bloque largo y cabeza fría.",
+        "items": [
+          {
+            "n": "Jornada de grabación",
+            "a": "Marketing",
+            "w": 1,
+            "why": "Un bloque produce la semana entera"
           },
           {
-            "n": "1 a 2 cierres",
-            "a": "Comercial",
-            "w": 2,
-            "u": "cierres"
+            "n": "Edición de carruseles",
+            "a": "Marketing",
+            "w": 1,
+            "why": "Sale de la misma jornada"
           },
           {
             "n": "Mejora de producto",
-            "a": "Consultoría",
+            "a": "Producto",
             "w": 1,
-            "u": "mejora"
+            "why": "Consultoría e infoproducto se alimentan de la semana"
           },
           {
             "n": "1 sistema nuevo",
             "a": "Backend",
             "w": 1,
-            "u": "sistema"
+            "why": "El stack crece o se queda"
           },
           {
-            "n": "3 videos de infoproducto",
-            "a": "Producto",
-            "w": 3,
-            "u": "videos"
-          },
-          {
-            "n": "1 jornada de grabación",
-            "a": "Marketing",
+            "n": "Sesión de finanzas",
+            "a": "Backend",
             "w": 1,
-            "u": "jornada"
+            "why": "La caja se mira antes de que duela"
           },
           {
-            "n": "1 día de edición",
-            "a": "Marketing",
+            "n": "Mejora al Athlete OS",
+            "a": "Athlete",
             "w": 1,
-            "u": "día"
+            "why": "El otro OS también necesita mantención"
+          }
+        ]
+      },
+      {
+        "c": "Cada semana, sin día fijo",
+        "n": 3,
+        "e": "brk",
+        "why": "Depende de la agenda del otro, por eso no tiene día propio.",
+        "items": [
+          {
+            "n": "3 a 5 discovery calls",
+            "a": "Comercial",
+            "w": 4,
+            "why": "El cuello: sin esto no hay cierres"
+          },
+          {
+            "n": "1 a 2 cierres",
+            "a": "Comercial",
+            "w": 2,
+            "why": "Donde se convierte todo lo anterior"
           },
           {
             "n": "1 instancia de networking",
             "a": "Comunidad",
             "w": 1,
-            "u": "evento"
-          },
-          {
-            "n": "1 sesión de finanzas y contable",
-            "a": "Backend",
-            "w": 1,
-            "u": "sesión"
-          },
-          {
-            "n": "1 mejora al Athlete OS",
-            "a": "Athlete",
-            "w": 1,
-            "u": "mejora"
-          },
-          {
-            "n": "Revisión del panel",
-            "a": "Backend",
-            "w": 1,
-            "u": "revisión"
+            "why": "Lead, cliente, atleta o founder"
           }
         ]
       }
@@ -1856,8 +2216,8 @@
             1,
             1,
             1,
-            0,
-            0
+            1,
+            1
           ],
           "c": "gold"
         },
@@ -1869,8 +2229,8 @@
             1,
             1,
             1,
-            0,
-            0
+            1,
+            1
           ],
           "c": "gold"
         },
@@ -1878,116 +2238,38 @@
           "n": "Reel",
           "d": [
             1,
-            0,
             1,
-            0,
             1,
-            0,
-            0
+            1,
+            1,
+            1,
+            1
           ],
-          "c": "blue"
+          "c": "gold"
         },
         {
-          "n": "Comunidad",
-          "d": [
-            0,
-            1,
-            0,
-            1,
-            0,
-            1,
-            0
-          ],
-          "c": "teal"
-        },
-        {
-          "n": "Discovery",
+          "n": "Stories",
           "d": [
             1,
             1,
             1,
             1,
-            0,
-            0,
-            0
+            1,
+            1,
+            1
           ],
-          "c": "good"
+          "c": "gold"
         },
         {
-          "n": "Grabación",
-          "d": [
-            0,
-            0,
-            0,
-            1,
-            0,
-            0,
-            0
-          ],
-          "c": "purple"
-        },
-        {
-          "n": "Edición",
-          "d": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            0,
-            0
-          ],
-          "c": "purple"
-        },
-        {
-          "n": "Producto",
-          "d": [
-            0,
-            0,
-            1,
-            0,
-            0,
-            0,
-            0
-          ],
-          "c": "blue"
-        },
-        {
-          "n": "Backend",
+          "n": "Entreno",
           "d": [
             1,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "c": "teal"
-        },
-        {
-          "n": "Finanzas",
-          "d": [
-            0,
-            0,
-            0,
-            0,
             1,
-            0,
-            0
-          ],
-          "c": "warn"
-        },
-        {
-          "n": "Athlete",
-          "d": [
-            0,
-            0,
-            0,
-            0,
-            0,
             1,
-            0
+            1,
+            1,
+            1,
+            1
           ],
           "c": "warn"
         },
@@ -2003,405 +2285,335 @@
             1
           ],
           "c": "low"
+        },
+        {
+          "n": "Comunidad",
+          "d": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "c": "teal"
+        },
+        {
+          "n": "Discovery",
+          "d": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "c": "good"
+        },
+        {
+          "n": "Grabación",
+          "d": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "c": "purple"
+        },
+        {
+          "n": "Edición",
+          "d": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "c": "purple"
+        },
+        {
+          "n": "Producto",
+          "d": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "c": "blue"
+        },
+        {
+          "n": "Backend",
+          "d": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "c": "teal"
+        },
+        {
+          "n": "Finanzas",
+          "d": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "c": "warn"
+        },
+        {
+          "n": "Athlete OS",
+          "d": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "c": "warn"
         }
       ],
-      "concl": "El sábado carga comunidad y Athlete; el domingo solo lectura. Lunes a viernes es el motor."
+      "concl": "Seis cosas diarias sostienen. El domingo carga seis bloques de construcción. Entre semana solo entran las calls."
     },
-    "brief": {
-      "t": "El daily brief hoy — qué cubre y qué no",
-      "estado": "Corre todos los días a las 6:30 y llega al correo.",
+    "cumpl": {
+      "t": "Dónde se registra el cumplimiento",
+      "estado": "Hoy no se registra en ninguna parte. El brief avisa vencimientos, no cadencias.",
       "filas": [
         {
-          "n": "Vencimientos y caja",
-          "e": "live",
-          "d": "Lo trae de Finanzas/estado.py"
+          "n": "Check diario en Notion",
+          "d": "Una fila por día con las 6 acciones. Es el registro más barato.",
+          "e": "brk"
         },
         {
-          "n": "Agenda del día",
-          "e": "live",
-          "d": "Calendario conectado"
+          "n": "El morning brief pregunta",
+          "d": "Que el brief liste las cadencias del día y pida el check.",
+          "e": "brk"
         },
         {
-          "n": "Pendientes del backlog",
-          "e": "live",
-          "d": "Base de Notion"
-        },
-        {
-          "n": "Las cadencias de esta lista",
-          "e": "brk",
-          "d": "No las conoce. Es el hueco principal"
-        },
-        {
-          "n": "Estado del panel",
-          "e": "brk",
-          "d": "No mira frescura ni cuellos"
-        },
-        {
-          "n": "Silencio con clientes",
-          "e": "brk",
-          "d": "No avisa que Laura lleva 15 días"
+          "n": "El panel muestra la racha",
+          "d": "Días seguidos cumpliendo cada cadencia, como el Athlete OS.",
+          "e": "brk"
         }
       ],
-      "concl": "El brief cubre lo que vence, no lo que hay que empujar. Las cadencias de arriba son exactamente lo que le falta."
+      "concl": "Sin registro no hay racha, y sin racha la cadencia depende de acordarse. Es el mismo problema que el Athlete OS ya resolvió."
     }
   },
   "backend": {
-    "lectura": "Ocho áreas, cada una con lo que ya corre y lo que falta construir. Los rojos son huecos, no tareas.",
+    "lectura": "Ocho áreas, cada una con su sistema y las skills que lo operan. Rojo es hueco, no tarea.",
     "stats": [
       {
         "k": "Sistemas activos",
-        "v": "7",
-        "u": "",
-        "f": "Corriendo hoy",
-        "s": "live"
-      },
-      {
-        "k": "Por activar",
-        "v": "8",
-        "u": "",
-        "f": "Definidos y sin montar",
+        "v": "2",
+        "u": "/ 8",
+        "f": "Comercial y Consultoría",
         "s": "brk"
       },
       {
-        "k": "Áreas cubiertas",
+        "k": "A medias",
         "v": "3",
         "u": "/ 8",
-        "f": "Con al menos un sistema vivo",
+        "f": "Setting, Onboarding, Backend",
+        "s": "mid"
+      },
+      {
+        "k": "Por construir",
+        "v": "3",
+        "u": "/ 8",
+        "f": "Marketing, Producto, Comunidad",
         "s": "brk"
       },
       {
-        "k": "Corren solos",
-        "v": "1",
-        "u": "/ 6",
-        "f": "Solo el morning brief",
-        "s": "brk"
+        "k": "Replicables a cliente",
+        "v": "6",
+        "u": "/ 8",
+        "f": "Los que el cliente también necesita",
+        "s": "live"
       }
     ],
     "areas": [
       {
         "a": "Marketing",
-        "sis": [
-          {
-            "n": "Repositorio de contenido",
-            "e": "mid",
-            "st": "Notion",
-            "apps": [
-              "Notion"
-            ]
-          },
-          {
-            "n": "Pipeline de video",
-            "e": "brk",
-            "st": "Por activar",
-            "apps": [
-              "OBS",
-              "Whisper",
-              "YouTube"
-            ]
-          },
-          {
-            "n": "Medición de piezas",
-            "e": "brk",
-            "st": "Por activar",
-            "apps": [
-              "Notion"
-            ]
-          }
-        ]
+        "sis": "Motor de contenido",
+        "e": "brk",
+        "sk": [
+          "content",
+          "design",
+          "carousels",
+          "hooks",
+          "gems",
+          "video"
+        ],
+        "apps": [
+          "Notion",
+          "OBS"
+        ],
+        "est": "Repositorio sí, medición y video no",
+        "cli": true
       },
       {
         "a": "Setting",
-        "sis": [
-          {
-            "n": "Setter de IG y WhatsApp",
-            "e": "mid",
-            "st": "Solo lectura",
-            "apps": [
-              "Instagram",
-              "WhatsApp"
-            ]
-          },
-          {
-            "n": "Registro de conversaciones",
-            "e": "brk",
-            "st": "Por activar",
-            "apps": [
-              "Notion"
-            ]
-          }
-        ]
+        "sis": "Setter IG + WhatsApp",
+        "e": "mid",
+        "sk": [
+          "setter",
+          "intake"
+        ],
+        "apps": [
+          "Instagram",
+          "WhatsApp"
+        ],
+        "est": "Solo lectura, no registra",
+        "cli": true
       },
       {
         "a": "Comercial",
-        "sis": [
-          {
-            "n": "CRM",
-            "e": "live",
-            "st": "Activo",
-            "apps": [
-              "Notion"
-            ]
-          },
-          {
-            "n": "Llamadas comerciales",
-            "e": "live",
-            "st": "Activo",
-            "apps": [
-              "Notion",
-              "Fathom"
-            ]
-          },
-          {
-            "n": "Nivelador · funnel",
-            "e": "live",
-            "st": "Publicado",
-            "apps": [
-              "GitHub"
-            ]
-          }
-        ]
+        "sis": "CRM + Llamadas",
+        "e": "live",
+        "sk": [
+          "crm",
+          "closing",
+          "offer"
+        ],
+        "apps": [
+          "Notion",
+          "Fathom"
+        ],
+        "est": "Corriendo con datos reales",
+        "cli": true
       },
       {
         "a": "Onboarding",
-        "sis": [
-          {
-            "n": "Estándar de cliente",
-            "e": "mid",
-            "st": "Escrito, parcial",
-            "apps": [
-              "Notion"
-            ]
-          },
-          {
-            "n": "Roadmap del cliente",
-            "e": "mid",
-            "st": "Base creada",
-            "apps": [
-              "Notion"
-            ]
-          }
-        ]
+        "sis": "Estándar de cliente",
+        "e": "mid",
+        "sk": [
+          "consulting",
+          "crm"
+        ],
+        "apps": [
+          "Notion"
+        ],
+        "est": "Escrito, aplicado a medias",
+        "cli": true
       },
       {
         "a": "Producto",
-        "sis": [
-          {
-            "n": "Currícula del infoproducto",
-            "e": "mid",
-            "st": "En armado",
-            "apps": [
-              "Notion",
-              "Claude"
-            ]
-          },
-          {
-            "n": "VAULT",
-            "e": "brk",
-            "st": "Por activar",
-            "apps": [
-              "Notion"
-            ]
-          }
-        ]
+        "sis": "Currícula + VAULT",
+        "e": "brk",
+        "sk": [
+          "infoproduct"
+        ],
+        "apps": [
+          "Notion",
+          "Claude"
+        ],
+        "est": "En armado, VAULT sin montar",
+        "cli": false
       },
       {
         "a": "Consultoría",
-        "sis": [
-          {
-            "n": "Sesiones por cliente",
-            "e": "live",
-            "st": "Activo",
-            "apps": [
-              "Notion",
-              "Fathom"
-            ]
-          },
-          {
-            "n": "Paneles de cliente",
-            "e": "live",
-            "st": "3 publicados",
-            "apps": [
-              "GitHub"
-            ]
-          },
-          {
-            "n": "Biblioteca de recursos",
-            "e": "brk",
-            "st": "Por activar",
-            "apps": [
-              "Notion"
-            ]
-          }
-        ]
+        "sis": "Sesiones + paneles",
+        "e": "live",
+        "sk": [
+          "consulting",
+          "fathom"
+        ],
+        "apps": [
+          "Notion",
+          "Fathom",
+          "GitHub"
+        ],
+        "est": "3 paneles publicados",
+        "cli": true
       },
       {
         "a": "Comunidad",
-        "sis": [
-          {
-            "n": "Skool",
-            "e": "mid",
-            "st": "Activo y mudo",
-            "apps": [
-              "Skool"
-            ]
-          },
-          {
-            "n": "Mecánica de referidos",
-            "e": "brk",
-            "st": "Escrita, dormida",
-            "apps": [
-              "Notion"
-            ]
-          }
-        ]
+        "sis": "WhatsApp · avisos",
+        "e": "brk",
+        "sk": [
+          "comunidad"
+        ],
+        "apps": [
+          "WhatsApp"
+        ],
+        "est": "Sin cadencia ni mecánica",
+        "cli": true,
+        "lock": true
       },
       {
         "a": "Backend",
-        "sis": [
-          {
-            "n": "Business Panel",
-            "e": "live",
-            "st": "Publicado",
-            "apps": [
-              "GitHub",
-              "Claude"
-            ]
-          },
-          {
-            "n": "Morning brief",
-            "e": "live",
-            "st": "Corre solo",
-            "apps": [
-              "Claude",
-              "Gmail"
-            ]
-          },
-          {
-            "n": "Finanzas",
-            "e": "brk",
-            "st": "estado.py roto",
-            "apps": [
-              "Python"
-            ]
-          },
-          {
-            "n": "Sync de Notion",
-            "e": "brk",
-            "st": "Falta token",
-            "apps": [
-              "Notion"
-            ]
-          }
-        ]
+        "sis": "Panel + Morning + Finanzas",
+        "e": "mid",
+        "sk": [
+          "arsenal",
+          "architect",
+          "backlog",
+          "finance",
+          "asistente"
+        ],
+        "apps": [
+          "GitHub",
+          "Claude",
+          "Gmail"
+        ],
+        "est": "Panel y morning sí, finanzas roto",
+        "cli": false
       }
     ],
-    "grupos": {
-      "t": "El arsenal por grupos",
-      "url": "https://pvt-build.github.io/arsenal/",
+    "criterio": "Un sistema está **activo** si corre con datos reales hoy. **A medias** si existe pero depende de que lo dispares o le falta una pieza. **Por construir** si está definido y no montado.",
+    "copy": {
+      "t": "Lo que el cliente necesita copiar",
+      "d": "Seis de las ocho áreas son las mismas que tu cliente tiene que montar. Ahí está el producto: el sistema copypaste con sus skills.",
       "filas": [
         {
-          "g": "Meta",
-          "n": 4,
-          "d": "Auditan y ordenan el resto",
-          "rel": "Alta",
-          "apps": [
-            "Claude"
-          ],
-          "sk": [
-            "founder",
-            "architect",
-            "arsenal",
-            "voice"
-          ],
+          "a": "Marketing",
+          "q": "Motor de contenido",
+          "e": "brk"
+        },
+        {
+          "a": "Setting",
+          "q": "Bandeja que setea",
+          "e": "mid"
+        },
+        {
+          "a": "Comercial",
+          "q": "CRM + registro de llamadas",
           "e": "live"
         },
         {
-          "g": "Comercial",
-          "n": 5,
-          "d": "Del DM al cierre",
-          "rel": "Alta",
-          "apps": [
-            "Notion",
-            "Fathom",
-            "Instagram"
-          ],
-          "sk": [
-            "crm",
-            "closing",
-            "setter",
-            "intake",
-            "offer"
-          ],
+          "a": "Onboarding",
+          "q": "Estándar de cliente",
+          "e": "mid"
+        },
+        {
+          "a": "Consultoría",
+          "q": "Panel de progreso",
           "e": "live"
         },
         {
-          "g": "Contenido",
-          "n": 6,
-          "d": "De la gema a la pieza publicada",
-          "rel": "Alta",
-          "apps": [
-            "Notion",
-            "Canva"
-          ],
-          "sk": [
-            "content",
-            "design",
-            "hooks",
-            "carousels",
-            "gems",
-            "video"
-          ],
-          "e": "mid"
-        },
-        {
-          "g": "Cliente",
-          "n": 2,
-          "d": "Entrega y aprendizajes",
-          "rel": "Media",
-          "apps": [
-            "Notion",
-            "Fathom"
-          ],
-          "sk": [
-            "consulting",
-            "fathom"
-          ],
-          "e": "mid"
-        },
-        {
-          "g": "Operación",
-          "n": 4,
-          "d": "Caja, agenda y cola de trabajo",
-          "rel": "Media",
-          "apps": [
-            "Gmail",
-            "Notion"
-          ],
-          "sk": [
-            "finance",
-            "asistente",
-            "backlog",
-            "funnel"
-          ],
-          "e": "mid"
-        },
-        {
-          "g": "Personal",
-          "n": 3,
-          "d": "Cuerpo, relación y decisiones",
-          "rel": "Baja",
-          "apps": [
-            "Notion"
-          ],
-          "sk": [
-            "athlete",
-            "relacion",
-            "leverage"
-          ],
-          "e": "mid"
+          "a": "Comunidad",
+          "q": "Cadencia de avisos",
+          "e": "brk"
         }
       ],
-      "concl": "Seis grupos. Meta y Comercial son los que más se invocan; Contenido es el que más superficie tiene y menos corre solo."
+      "concl": "Dos de los seis están listos para entregar. El resto se vende antes de existir, y eso es lo que hay que cerrar."
     }
   }
 }
@@ -3334,6 +3546,78 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 .gr-sk span{font-size:9.5px;padding:2px 7px;border-radius:var(--r-pill);
   background:var(--surface3);color:var(--mid)}
 
+/* ── RESUMEN GLOBAL ── */
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+.res-c{padding:var(--s4);border-radius:var(--r-m);background:var(--surface2);
+  border:1px solid var(--border);cursor:pointer;transition:border-color .15s}
+.res-c:hover{border-color:var(--border-hi)}
+.res-t{display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:var(--s2);margin-bottom:var(--s3);border-bottom:1px solid var(--border)}
+.res-t b{font-size:var(--t-xl);font-weight:700}
+.res-t .go{font-size:var(--t-micro);color:var(--low)}
+.res-k{display:grid;grid-template-columns:1fr auto;gap:var(--s2);padding:var(--s1) 0;
+  font-size:var(--t-s);color:var(--mid)}
+.res-k b{font-weight:700}
+.res-k b.live{color:var(--good)}.res-k b.brk{color:var(--danger)}
+.res-k b.mid{color:var(--hi)}.res-k b.blind{color:var(--low)}
+
+/* ── BADGE DE VARIACIÓN ── */
+.dt{font-size:var(--t-micro);font-weight:700;letter-spacing:.04em;padding:2px 7px;
+  border-radius:var(--r-pill);display:inline-block}
+.dt.up{color:var(--good);background:rgba(74,222,128,.14)}
+.dt.dn{color:var(--danger);background:rgba(229,72,77,.14)}
+.dt.eq{color:var(--low);background:var(--surface3)}
+
+/* ── LOGO DE CANAL ── */
+.lg{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;
+  justify-content:center;flex:0 0 auto;font-size:var(--t-m);font-weight:700;color:#0E1014}
+.cn-top2{display:flex;align-items:center;gap:var(--s3);margin-bottom:var(--s3)}
+.cn-top2 .nm{flex:1}
+.cn-top2 .nm b{display:block;font-size:var(--t-l);font-weight:700}
+.cn-top2 .nm span{font-size:var(--t-micro);color:var(--low)}
+.cn-nums{display:flex;gap:var(--s5);align-items:baseline}
+.cn-num{text-align:right}
+.cn-num b{display:block;font-size:var(--n-s);font-weight:700;letter-spacing:-.03em}
+.cn-num span{font-size:var(--t-micro);font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--low)}
+
+/* ── MATRIZ DE CUENTAS ── */
+.cta{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.cta-c{padding:var(--s5);border-radius:var(--r-m);background:var(--surface2);
+  border:1px solid var(--border)}
+.cta-c.live{border-color:var(--gold-dim)}
+.cta-h b{font-size:var(--t-xl);font-weight:700;display:block}
+.cta-h span{font-size:var(--t-s);color:var(--low)}
+.cta-p{font-size:var(--t-s);color:var(--mid);margin:var(--s2) 0 var(--s3);
+  padding-bottom:var(--s3);border-bottom:1px solid var(--border)}
+.cta-i{padding:var(--s2) 0}
+.cta-i + .cta-i{border-top:1px solid var(--border)}
+.cta-i b{font-size:var(--t-m);font-weight:700;display:block}
+.cta-i .q{font-size:var(--t-s);color:var(--mid);margin-top:2px}
+.cta-i .w{font-size:var(--t-xs);color:var(--low);margin-top:3px;font-style:italic}
+.regla{margin-top:var(--s4);padding:var(--s4);border-radius:var(--r-s);
+  background:rgba(216,168,71,.08);border:1px solid var(--gold-dim);
+  font-size:var(--t-l);color:var(--hi);line-height:1.55}
+.errr{margin-top:var(--s2);padding:var(--s4);border-radius:var(--r-s);
+  background:rgba(229,72,77,.08);border:1px solid rgba(229,72,77,.3);
+  font-size:var(--t-s);color:var(--mid);line-height:1.55}
+
+/* ── RADAR MINI DE CLIENTE ── */
+.mini{width:118px;height:118px;flex:0 0 auto}
+.mini polygon.g{fill:none;stroke:var(--border);stroke-width:1}
+.mini polygon.v{fill:rgba(216,168,71,.2);stroke:var(--gold);stroke-width:1.5}
+.mini text{font-family:var(--sans);font-size:7px;font-weight:700;fill:var(--low)}
+
+/* ── ÁREA DEL BACKEND ── */
+.ba{display:grid;grid-template-columns:26px 120px 1.2fr 1fr 90px;gap:var(--s3);
+  align-items:center;padding:var(--s3) 0;border-bottom:1px solid var(--border)}
+.ba:last-child{border-bottom:0}
+.ba-e{width:10px;height:10px;border-radius:3px;background:var(--low);margin:0 auto}
+.ba-e.live{background:var(--good)}.ba-e.mid{background:var(--warn)}.ba-e.brk{background:var(--danger)}
+.ba-cl{font-size:var(--t-micro);font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  text-align:center;border-radius:var(--r-pill);padding:3px 8px;border:1px solid var(--border);color:var(--low)}
+.ba-cl.si{color:var(--blue);border-color:rgba(91,155,213,.35)}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
   .radar-wrap{grid-template-columns:1fr;gap:var(--s4)}
@@ -3423,6 +3707,11 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .lv-h span:nth-child(n+4){display:none}
   .bk{grid-template-columns:1fr 1fr}
   .gr{grid-template-columns:1fr 56px;row-gap:var(--s1)}
+  .res{grid-template-columns:1fr}
+  .cta{grid-template-columns:1fr}
+  .ba{grid-template-columns:26px 1fr;row-gap:var(--s1)}
+  .ba .k2,.ba-cl,.gr-sk{grid-column:2}
+  .cn-nums{gap:var(--s3)}
   .gr .k2,.gr-r,.gr-sk{grid-column:1/-1}
   details.ar > summary{grid-template-columns:26px 1fr 20px;row-gap:var(--s1)}
   details.ar > summary .k3,details.ar > summary .meter,details.ar > summary .k2{grid-column:2}
@@ -3538,6 +3827,29 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     var key='<div class="bg-key">'+series.map(function(se){
       return '<span><i style="background:var(--'+se.c+')"></i>'+esc(se.n)+'</span>'; }).join('')+'</div>';
     return key+out+'</svg>';
+  }
+  function delta(v,l){
+    if(v==null) return '';
+    var c=v>0?'up':v<0?'dn':'eq', t=v>0?'▲ +'+v:v<0?'▼ '+v:'=';
+    return '<span class="dt '+c+'" title="'+esc(l||'')+'">'+t+'</span>';
+  }
+  /* radar chico para cada cliente, mismos ejes para todos */
+  function radarMini(ejes){
+    var C=59,R=40,N=ejes.length;
+    var pt=function(i,v){var a=-Math.PI/2+i*2*Math.PI/N;
+      return [C+Math.cos(a)*R*v,C+Math.sin(a)*R*v];};
+    var poly=function(f){return ejes.map(function(e,i){
+      var p=pt(i,typeof f==='number'?f:e.v); return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' ');};
+    var s='<svg class="mini" viewBox="0 0 118 118">';
+    [0.5,1].forEach(function(g){ s+='<polygon class="g" points="'+poly(g)+'"/>'; });
+    s+='<polygon class="v" points="'+poly()+'"/>';
+    ejes.forEach(function(e,i){
+      var lp=pt(i,1.30), a=-Math.PI/2+i*2*Math.PI/N, cx=Math.cos(a);
+      var an=Math.abs(cx)<.3?'middle':(cx>0?'start':'end');
+      s+='<text x="'+lp[0].toFixed(1)+'" y="'+(lp[1]+2).toFixed(1)+'" text-anchor="'+an+'">'
+        +esc(e.l.slice(0,7).toUpperCase())+'</text>';
+    });
+    return s+'</svg>';
   }
   function vhead(t,em,read){
     return '<div class="vhead"><h1 class="vtitle">'+esc(t)+'<em> · '+esc(em)+'</em></h1>'
@@ -3704,13 +4016,16 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
       + '<div class="concl"><b>Conclusión</b>'+esc(cj.concl)+'</div>';
 
     var pl=b.pipeline, pp='';
-    pl.filas.forEach(function(f){
-      pp+='<div class="pp '+esc(f.e)+'"><div class="k1">'+esc(f.n)+'</div>'
-        +'<div class="pp-t">'+esc(f.t)+'</div>'
-        +'<div class="pp-c">'+esc(f.cuando)+'</div>'
-        +'<div class="pp-p"><div class="bar" style="flex:1"><i class="'
-        +(f.p>=60?'gold':'dgr')+'" style="width:'+f.p+'%"></i></div><b>'+f.p+'%</b></div>'
-        +'<div class="lv-v">$'+money(f.tk)+'</div></div>';
+    (pl.grupos||[]).forEach(function(g){
+      pp+='<div class="card-t" style="margin-top:var(--s4)">'+esc(g.g)+'</div>';
+      g.filas.forEach(function(f){
+        pp+='<div class="pp '+esc(g.e)+'"><div class="k1">'+esc(f.n)+'</div>'
+          +'<div class="pp-t">'+esc(f.t)+'</div>'
+          +'<div class="pp-c">'+esc(f.cuando)+'</div>'
+          +'<div class="pp-p"><div class="bar" style="flex:1"><i class="'
+          +(f.p>=60?'gold':'dgr')+'" style="width:'+f.p+'%"></i></div><b>'+f.p+'%</b></div>'
+          +'<div class="lv-v">$'+money(f.tk)+'</div></div>';
+      });
     });
     pp+='<div class="concl"><b>Conclusión</b>'+esc(pl.concl)+'</div>';
 
@@ -3782,39 +4097,6 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   }
 
 
-  /* ── CANALES ── */
-  function vCanales(){
-    var c=D.canales, rows='';
-    c.lista.forEach(function(x){
-      rows+='<div class="cn'+(x.hot?' hot':'')+'">'
-        +'<div class="cn-top"><div class="cn-n">'
-        +'<span class="cn-dot" style="background:'+esc(x.color||'#A9ADB4')+'"></span>'
-        +esc(x.n)+'</div>'
-        +'<div class="cn-m"><b>'+x.leads+' → '+x.cli+'</b><span>leads · clientes</span></div>'
-        +'<div class="cn-m'+(x.tasa>=50?' gold':'')+'"><b>'+x.tasa+'%</b><span>conversión</span></div>'
-        +'<div class="cn-m"><b>'+(x.tk?'$'+money(x.tk):'—')+'</b><span>ticket medio</span></div></div>'
-        +'<div class="cn-txt"><div><b>Por qué pasó</b><p>'+esc(x.por)+'</p></div>'
-        +'<div><b>Qué hacer</b><p>'+esc(x.acc)+'</p></div></div>'
-        +(x.cuello?'<div class="cn-cue"><b>Cuello</b>'+esc(x.cuello)+'</div>':'')
-        +'</div>';
-    });
-    var ch='<div class="chain">'+c.cadena.map(function(x){
-      return '<div class="chain-i"><div class="n">'+esc(x.n)+'</div>'
-        +'<div class="d">'+esc(x.d)+'</div></div>'; }).join('')+'</div>';
-    var o=c.origen, omax=Math.max.apply(null,o.filas.map(function(f){return f.v}))||1, og='';
-    o.filas.forEach(function(f){
-      og+='<div class="og"><div><div class="k1">'+esc(f.n)+'</div>'
-        +'<div class="og-bar"><i class="'+(f.w==='brk'?'brk':'')+'" style="width:'
-        +Math.round(f.v/omax*100)+'%"></i></div></div>'
-        +'<div class="og-v '+(f.w==='brk'?'brk':'')+'">'+f.v+'</div>'
-        +'<div class="k2">'+esc(f.d)+'</div></div>';
-    });
-    og+='<div class="concl"><b>Conclusión</b>'+esc(o.concl)+'</div>';
-    return vhead('Canales','el origen y el camino',c.lectura)
-      + '<div class="stack">' + card('Cada canal, su tasa y su razón', rows)
-      + card(esc(o.t), og)
-      + card('Cómo llegó el único referido real', ch) + '</div>' + skArea('canales');
-  }
 
   /* ── CONTENIDO · motor, formatos e ikigai ── */
   function vContenido(){
@@ -3893,8 +4175,42 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
           });
           return sh+'</div>';
         })())
-      + card(esc(c.idea.t),'<div class="idea"><b>Pendiente de decidir</b><p>'
-          +esc(c.idea.d)+'</p></div>')
+      + card(esc(c.cuentas.t), (function(){
+          var q='<div class="cta">'+c.cuentas.bloques.map(function(b){
+            return '<div class="cta-c '+esc(b.e)+'"><div class="cta-h"><b>'+esc(b.c)+'</b>'
+              +'<span>'+esc(b.h)+'</span></div>'
+              +'<div class="cta-p">'+esc(b.para)+'</div>'
+              + b.items.map(function(i){
+                  return '<div class="cta-i"><b>'+esc(i.n)+'</b>'
+                    +'<div class="q">'+esc(i.q)+'</div>'
+                    +'<div class="w">'+esc(i.por)+'</div></div>'; }).join('')
+              +'</div>'; }).join('')+'</div>';
+          return q+'<div class="regla">'+esc(c.cuentas.regla)+'</div>'
+            +'<div class="errr">'+esc(c.cuentas.error)+'</div>';
+        })())
+      + card(esc(c.mes.t), (function(){
+          var m=c.mes, h='<div class="lv-h"><span>Formato</span><span>CTA</span>'
+            +'<span>Cuenta</span><span>Minutos</span><span>Del mes</span><span>Estado</span></div>';
+          m.filas.forEach(function(f){
+            h+='<div class="lv '+esc(f.e)+'"><div class="k1">'+esc(f.f)+'</div>'
+              +'<div class="lv-b">'+esc(f.cta)+'</div>'
+              +'<div class="k2">'+esc(f.cuenta)+'</div>'
+              +'<div class="lv-v">'+f.min+'′</div>'
+              +'<div class="lv-v">'+f.hechas+' / '+f.meta+'</div>'
+              +'<div class="lv-b">'+(f.e==='live'?'corre':'sin montar')+'</div></div>';
+          });
+          return h+'<div class="concl"><b>Conclusión</b>'+esc(m.concl)+'</div>';
+        })())
+      + card(esc(c.comunidad.t), (function(){
+          var cm=c.comunidad, h='<div class="note" style="margin:0 0 var(--s4)">🔒 '
+            +esc(cm.canal)+' — '+esc(cm.estado)+'</div>';
+          cm.filas.forEach(function(f){
+            h+='<div class="ins"><div class="ins-a">'+esc(f.d)+'</div>'
+              +'<div class="k2" style="color:var(--hi)">'+esc(f.q)+'</div>'
+              +'<div class="k2">'+esc(f.por)+'</div></div>';
+          });
+          return h+'<div class="concl"><b>Conclusión</b>'+esc(cm.concl)+'</div>';
+        })())
       + card('Dónde apunta — los tres territorios',
              '<div class="ik-wrap"><div>'+s+'</div>'+side+'</div>')
       + '</div>' + skArea('contenido');
@@ -3906,10 +4222,12 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     var D_=D.daily, rt='<div class="rit">';
     D_.ritmos.forEach(function(r){
       rt+='<div class="rit-c '+esc(r.e)+'"><div class="rit-h"><b>'+esc(r.c)+'</b>'
-        +'<span>'+r.n+'</span></div>';
+        +'<span>'+r.n+'</span></div>'
+        +'<div class="note" style="margin:0 0 var(--s3)">'+esc(r.why||'')+'</div>';
       r.items.forEach(function(i){
         rt+='<div class="rit-i"><div class="q">'+i.w+'</div>'
-          +'<div class="t">'+esc(i.n)+'</div>'
+          +'<div class="t">'+esc(i.n)
+          +'<div class="k3" style="font-weight:400;margin-top:2px">'+esc(i.why||'')+'</div></div>'
           +'<div class="a">'+esc(i.a)+'</div></div>';
       });
       rt+='</div>';
@@ -3925,11 +4243,11 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     });
     sm+='</div><div class="concl"><b>Conclusión</b>'+esc(w.concl)+'</div>';
 
-    var br=D_.brief, bh='';
+    var br=D_.cumpl, bh='';
     br.filas.forEach(function(f){
       bh+='<div class="rw rw-sy"><span class="dot '+esc(f.e)+'"></span>'
         +'<div class="k1">'+esc(f.n)+'</div><div class="k2">'+esc(f.d)+'</div>'
-        +'<div class="k3">'+(f.e==='live'?'lo cubre':'falta')+'</div></div>';
+        +'<div class="k3">'+(f.e==='live'?'existe':'falta')+'</div></div>';
     });
     bh+='<div class="concl"><b>Conclusión</b>'+esc(br.concl)+'</div>';
 
@@ -3999,9 +4317,27 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     });
     lh+='<div class="concl"><b>Conclusión</b>'+esc(lv.concl)+'</div>';
 
+    var rows='';
+    c.lista.forEach(function(x){
+      var ini={red:'RP',ref:'RF',ig:'IG',web:'WB',scr:'SC'}[x.ic]||'··';
+      rows+='<div class="cn'+(x.nuevo?' hot':'')+'">'
+        +'<div class="cn-top2">'
+        +'<div class="lg" style="background:'+esc(x.color)+'">'+ini+'</div>'
+        +'<div class="nm"><b>'+esc(x.n)+'</b><span>'+esc(x.cuello)+'</span></div>'
+        +'<div class="cn-nums">'
+        +'<div class="cn-num"><b>'+x.leads+'</b><span>leads</span></div>'
+        +'<div class="cn-num"><b>'+x.cli+'</b><span>clientes</span></div>'
+        +'<div class="cn-num"><b class="'+(x.tasa>=50?'s-live':x.tasa>=30?'':'s-brk')+'">'
+        +x.tasa+'%</b><span>conv '+delta(x.delta)+'</span></div>'
+        +'<div class="cn-num"><b>'+(x.tk?'$'+money(x.tk):'—')+'</b><span>ticket</span></div>'
+        +'</div></div>'
+        +'<div class="cn-txt"><div><b>Por qué pasó</b><p>'+esc(x.por)+'</p></div>'
+        +'<div><b>Qué hacer</b><p>'+esc(x.acc)+'</p></div></div></div>';
+    });
     return vhead('Canales','de dónde viene cada uno',c.lectura)
       + tiles(c.stats)
       + '<div class="stack">'
+      + card('Cada canal, sus números y qué hacer', rows)
       + card('Distribución — leads contra clientes', pies)
       + card(esc(m.t), barras+'<div class="concl"><b>Conclusión</b>'+esc(m.concl)+'</div>')
       + card(esc(lv.t), lh)
@@ -4011,87 +4347,84 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   /* ── BACKEND ── */
   function vBackend(){
     var B=D.backend;
-    var bk='<div class="bk">';
+    var bk='<div class="lv-h"><span></span><span>Área</span><span>Sistema</span>'
+      +'<span>Skills que lo operan</span><span>Cliente</span></div>';
     B.areas.forEach(function(a){
-      bk+='<div class="bk-c"><div class="bk-a">'+esc(a.a)+'</div>';
-      a.sis.forEach(function(x){
-        bk+='<div class="bk-s"><span class="bk-d '+esc(x.e)+'"></span><div>'
-          +'<div class="bk-n">'+esc(x.n)+'</div>'
-          +'<div class="bk-st">'+esc(x.st)+'</div>'
-          +'<div class="apps">'+x.apps.map(function(p){
-              return '<span class="app">'+esc(p)+'</span>'; }).join('')+'</div>'
-          +'</div></div>';
-      });
-      bk+='</div>';
+      bk+='<div class="ba"><span class="ba-e '+esc(a.e)+'"></span>'
+        +'<div class="k1">'+esc(a.a)+(a.lock?' 🔒':'')+'</div>'
+        +'<div><div class="bk-n">'+esc(a.sis)+'</div>'
+        +'<div class="bk-st">'+esc(a.est)+'</div>'
+        +'<div class="apps">'+a.apps.map(function(x){
+            return '<span class="app">'+esc(x)+'</span>'; }).join('')+'</div></div>'
+        +'<div class="gr-sk">'+a.sk.map(function(x){
+            return '<span>'+esc(x)+'</span>'; }).join('')+'</div>'
+        +'<div class="ba-cl'+(a.cli?' si':'')+'">'+(a.cli?'replicable':'interno')+'</div></div>';
     });
-    bk+='</div>';
+    bk+='<div class="note">'+esc(B.criterio)+'</div>';
 
-    var g=B.grupos, gh='';
-    g.filas.forEach(function(f){
-      gh+='<div class="gr"><div class="gr-g">'+esc(f.g)+'</div>'
-        +'<div class="gr-n">'+f.n+'</div>'
-        +'<div class="k2">'+esc(f.d)+'<div class="apps" style="margin-top:5px">'
-        + f.apps.map(function(p){return '<span class="app">'+esc(p)+'</span>'}).join('')+'</div></div>'
-        +'<div class="gr-r '+esc(f.rel)+'">'+esc(f.rel)+'</div>'
-        +'<div class="gr-sk">'+f.sk.map(function(k){
-            return '<span>'+esc(k)+'</span>'; }).join('')+'</div></div>';
+    var cp=B.copy, gh='';
+    cp.filas.forEach(function(f){
+      gh+='<div class="ins"><div class="ins-a">'+esc(f.a)+'</div>'
+        +'<div class="k2" style="color:var(--hi)">'+esc(f.q)+'</div>'
+        +'<div class="lv-b '+esc(f.e)+'">'+(f.e==='live'?'listo':f.e==='mid'?'a medias':'por construir')+'</div></div>';
     });
-    gh+='<div class="concl"><b>Conclusión</b>'+esc(g.concl)+'</div>'
+    gh='<div class="k2" style="margin-bottom:var(--s4)">'+esc(cp.d)+'</div>'+gh
+      +'<div class="concl"><b>Conclusión</b>'+esc(cp.concl)+'</div>'
       +'<div class="lk" style="margin-top:var(--s4)">'
-      +'<a class="lk-c" href="'+esc(g.url)+'" target="_blank" rel="noopener">'
-      +'<div class="lk-n">Ver el arsenal completo ↗</div>'
-      +'<div class="lk-d">Mapa de skills, capas y handoffs</div></a></div>';
+      +'<a class="lk-c" href="https://pvt-build.github.io/arsenal/" target="_blank" rel="noopener">'
+      +'<div class="lk-n">El arsenal ↗</div>'
+      +'<div class="lk-d">Para explicar el sistema, no para copiarlo</div></a></div>';
 
-    return vhead('Backend','lo que corre y lo que falta',B.lectura)
+    return vhead('Backend','área, sistema y skills',B.lectura)
       + tiles(B.stats)
       + '<div class="stack">'
-      + card('Sistemas por área — verde corre, ámbar a medias, rojo por construir', bk)
-      + card(esc(g.t), gh)
+      + card('Las 8 áreas y su sistema', bk)
+      + card(esc(cp.t), gh)
       + '</div>' + skArea('backend');
   }
 
-  /* ── CONSULTORÍA — qué valoran y hacia dónde converge ── */
+  /* ── CONSULTORÍA ── */
   function vConsultoria(){
-    var C=D.consultoria, cs='';
-    (C.casos||[]).forEach(function(x){
-      cs+='<div class="cs"><div class="cs-top">'
-        +'<div><div class="cs-n">'+esc(x.n)+'</div>'
-        +'<div class="foco">'+x.foco.map(function(f){return '<span>'+esc(f)+'</span>'}).join('')+'</div></div>'
-        +'<div class="cs-b"><b>Entró buscando</b><p>'+esc(x.entro)+'</p></div>'
-        +'<div class="cs-b"><b>Lo que descubrimos</b><p>'+esc(x.descubrio)+'</p></div>'
-        +'<div class="cs-b"><b>Resultado</b><p class="'+(x.e==='live'?'s-live':x.e==='brk'?'s-brk':'')
-        +'">'+esc(x.res)+'</p></div></div></div>';
-    });
-    var t=C.tesis;
-    var th='<div class="tesis"><b>'+esc(t.t)+'</b><p>'+esc(t.d)+'</p>'
-      +'<div class="cs2">'+esc(t.d2)+'</div>'
-      +'<div class="cns">'+esc(t.conse)+'</div></div>';
-    var mj='';
-    (C.mejorar||[]).forEach(function(x,i){
-      mj+='<div class="gp '+esc(x.e)+'"><div class="gp-p">'+(i+1)+'</div>'
-        +'<div class="k1">'+esc(x.n)+'</div><div class="k2">'+esc(x.por)+'</div>'
-        +'<div class="gp-d"></div></div>';
-    });
-    var fi='';
+    var C=D.consultoria, fi='';
     (C.fichas||[]).forEach(function(x){
-      fi+='<div class="fc '+(x.est==='Avanza'?'Avanza':'Frenado')+'">'
+      fi+='<div class="fc '+(x.e==='live'?'Avanza':'Frenado')+'">'
         +'<div class="fc-top"><div class="fc-n">'+esc(x.n)
-        +'<span>'+esc(x.etapa)+'</span></div>'
-        +'<div class="fc-m"><b class="'+(x.e==='live'?'s-live':'s-brk')+'">'+esc(x.est)+'</b>'
-        +'<span>estado</span></div>'
-        +'<div class="fc-m"><b>'+(x.dias_sin!=null?x.dias_sin+'d':'—')+'</b><span>silencio</span></div>'
+        +'<span>'+esc(x.etapa)+' · '+esc(x.ritmo)+'</span></div>'
+        +'<div class="fc-m"><b>'+esc(x.dia)+'</b><span>día de call</span></div>'
+        +'<div class="fc-m"><b>'+x.prog+'%</b><span>progreso</span></div>'
         +'<div class="fc-m"><a class="ar-go" href="'+esc(x.url)+'" target="_blank" '
         +'rel="noopener" style="text-decoration:none;display:inline-block">panel ↗</a></div></div>'
-        +'<div class="fc-g">'
+        +'<div style="display:flex;gap:var(--s5);align-items:center">'
+        + radarMini(x.radar)
+        +'<div style="flex:1"><div class="fc-g">'
         +'<div><b>Qué logró</b><p>'+esc(x.logro)+'</p></div>'
-        +'<div class="key"><b>Qué necesita</b><p>'+esc(x.nec)+'</p></div>'
-        +'<div class="fc-bar"><div class="lbl"><span>Progreso</span><span>'+x.prog+'%</span></div>'
-        +'<div class="bar"><i class="'+(x.prog>=80?'gold':'dgr')+'" style="width:'
-        +Math.max(x.prog,2)+'%"></i></div></div>'
-        +'<div class="fc-bar"><div class="foco">'+x.foco.map(function(f){
-            return '<span>'+esc(f)+'</span>'; }).join('')+'</div></div>'
-        +'</div></div>';
+        +'<div class="key"><b>Qué necesita</b><p>'+esc(x.nec)+'</p></div></div>'
+        +'<div class="foco" style="margin-top:var(--s3)">'+x.foco.map(function(f){
+            return '<span>'+esc(f)+'</span>'; }).join('')+'</div></div></div></div>';
     });
+
+    var cu=C.cuello, ch='';
+    cu.filas.forEach(function(f){
+      ch+='<div class="rw rw-sy"><span class="dot '+esc(f.e)+'"></span>'
+        +'<div class="k1">'+esc(f.n)+'</div>'
+        +'<div class="k3">'+esc(f.c)+'</div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>';
+    });
+    var rp='<div class="card-t" style="margin-top:var(--s5)">Lo que se repite en los tres</div>';
+    cu.repite.forEach(function(f){
+      rp+='<div class="og"><div><div class="k1">'+esc(f.n)+'</div>'
+        +'<div class="og-bar"><i class="'+(f.v>=3?'brk':'')+'" style="width:'
+        +Math.round(f.v/3*100)+'%"></i></div></div>'
+        +'<div class="og-v '+(f.v>=3?'brk':'')+'">'+f.v+'/3</div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>';
+    });
+    var pr='<div class="card-t" style="margin-top:var(--s5)">Pendientes míos, no del cliente</div>';
+    cu.propios.forEach(function(f,i){
+      pr+='<div class="gp '+esc(f.e)+'"><div class="gp-p">'+(i+1)+'</div>'
+        +'<div class="k1">'+esc(f.n)+'</div><div class="k2"></div><div class="gp-d"></div></div>';
+    });
+    ch+=rp+pr+'<div class="concl"><b>Conclusión</b>'+esc(cu.concl)+'</div>';
+
     var ps=C.pasos, ph='';
     ps.filas.forEach(function(f){
       ph+='<div class="gd"><div class="gd-p">'+esc(f.p)+'</div>'
@@ -4101,20 +4434,55 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     });
     ph+='<div class="concl"><b>Conclusión</b>'+esc(ps.concl)+'</div>';
 
+    var t=C.tesis;
     return vhead('Consultoría','entrega y producto',C.lectura)
       + tiles(C.stats)
       + '<div class="stack">'
-      + card('Los tres del programa', fi)
+      + card('Los tres — progreso y radar de cada uno', fi)
+      + card(esc(cu.t), ch)
       + card(esc(ps.t), ph)
-      + card('Los cinco casos — por qué entraron y dónde terminaron', cs)
-      + card(null, th)
-      + card('Qué mejorar en la entrega', mj)
+      + card(null,'<div class="tesis"><b>'+esc(t.t)+'</b><p>'+esc(t.d)+'</p>'
+          +'<div class="cs2">'+esc(t.d2)+'</div>'
+          +'<div class="cns">'+esc(t.conse)+'</div></div>')
       + '</div>' + skArea('consultoria');
   }
 
   /* ── PUNTO CERO — dónde estoy, cómo vengo, a dónde puedo llegar ── */
+  /* resumen de cada pestaña, para leer el negocio sin entrar a ninguna */
+  function resumenGlobal(){
+    var R=[
+     {v:'daily',n:'Daily',k:[
+       {l:'Acciones diarias',v:'6',e:'live'},{l:'Domingo construye',v:'6 bloques',e:'mid'},
+       {l:'Cumplimiento',v:'sin registro',e:'blind'}]},
+     {v:'contenido',n:'Contenido',k:[
+       {l:'Piezas del mes',v:'5 / 90',e:'brk'},{l:'Formatos activos',v:'1 / 5',e:'brk'},
+       {l:'Carrusel',v:'10 min',e:'live'}]},
+     {v:'canales',n:'Canales',k:[
+       {l:'Leads',v:'27',e:'mid'},{l:'Clientes',v:'11',e:'live'},
+       {l:'Canales activos',v:'1 / 4',e:'brk'}]},
+     {v:'comercial',n:'Comercial',k:[
+       {l:'MRR vigente',v:'$1.300',e:'mid'},{l:'En pipeline',v:'12',e:'mid'},
+       {l:'Cierre en propuesta',v:'100%',e:'live'}]},
+     {v:'consultoria',n:'Consultoría',k:[
+       {l:'En programa',v:'3',e:'live'},{l:'Con resultado',v:'1 / 3',e:'brk'},
+       {l:'Día fijo de call',v:'1 / 3',e:'brk'}]},
+     {v:'backend',n:'Backend',k:[
+       {l:'Sistemas activos',v:'2 / 8',e:'brk'},{l:'A medias',v:'3 / 8',e:'mid'},
+       {l:'Replicables',v:'6 / 8',e:'live'}]}
+    ];
+    return '<div class="res">'+R.map(function(r){
+      return '<div class="res-c" data-go="'+r.v+'">'
+        +'<div class="res-t"><b>'+esc(r.n)+'</b><span class="go">ver ›</span></div>'
+        + r.k.map(function(x){
+            return '<div class="res-k"><span>'+esc(x.l)+'</span>'
+              +'<b class="'+x.e+'">'+esc(x.v)+'</b></div>'; }).join('')
+        +'</div>'; }).join('')+'</div>';
+  }
+
   function vOS(){
     return '<div class="oz">'
+      + '<div class="oz-s"><span>00</span>El negocio de un vistazo</div>'
+      + card(null, resumenGlobal())
       + '<div class="oz-s"><span>01</span>Dónde estoy</div>' + vRadar()
       + '<div class="oz-s"><span>02</span>Cómo vengo</div>'  + vTendencia()
       + '<div class="oz-s"><span>03</span>A dónde puedo llegar</div>' + vProyecciones()
@@ -4201,7 +4569,8 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     btns[k].addEventListener('click',function(e){
       go(parseInt(e.currentTarget.getAttribute('data-i'),10)); });
   stage.addEventListener('click',function(e){
-    var b=e.target.closest('.ar-go'); if(!b) return;
+    var b=e.target.closest('.ar-go,.res-c'); if(!b) return;
+    if(b.tagName==='A') return;
     e.preventDefault(); e.stopPropagation();
     var i=VIEWS.findIndex(function(v){return v.id===b.getAttribute('data-go')});
     if(i>=0) go(i);
