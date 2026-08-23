@@ -13,7 +13,7 @@
   "meta": {
     "os": "PRIVATE-OS",
     "modulo": "Business",
-    "ref": "PVT-BIZ-23",
+    "ref": "PVT-BIZ-24",
     "fecha": "23·08·26",
     "operador": "Patricio Rubio",
     "frescura": [
@@ -283,7 +283,7 @@
         "n": "Infra",
         "e": "mid",
         "et": "Sobrada, hay que adelgazarla",
-        "r": "30 skills y 6 sistemas. El siguiente movimiento es podar, no construir.",
+        "r": "31 skills y 6 sistemas. El siguiente movimiento es podar, no construir.",
         "falta": [
           {
             "q": "Base de tareas Private Build",
@@ -308,7 +308,7 @@
         ],
         "v": 0.75,
         "t": 0.85,
-        "nota": "30 skills, 6 sistemas, 1 agente. Sobra superficie",
+        "nota": "31 skills, 6 sistemas, 1 agente. Sobra superficie",
         "ver": "infra"
       }
     ],
@@ -608,24 +608,24 @@
         "s": "mid"
       },
       {
-        "k": "En pipeline",
-        "v": "12",
-        "u": "",
-        "f": "Ninguno es cliente todavía",
+        "k": "Valor de cartera",
+        "v": "$3.900",
+        "u": "TCV",
+        "f": "Lo firmado en total",
         "s": "mid"
       },
       {
-        "k": "Ponderado",
-        "v": "$3.318",
+        "k": "LTV actual",
+        "v": "$1.300",
         "u": "",
-        "f": "Suma por probabilidad",
-        "s": "live"
+        "f": "Promedio por cliente, 3 meses",
+        "s": "brk"
       },
       {
-        "k": "Cierre en propuesta",
-        "v": "100",
-        "u": "%",
-        "f": "2 de 2 · Kathe y Laura",
+        "k": "LTV si renuevan",
+        "v": "$2.600",
+        "u": "",
+        "f": "Emma y Egly ya vienen",
         "s": "live"
       }
     ],
@@ -935,6 +935,98 @@
         }
       ],
       "resp": "Cuéntalos mensualizados. Un cierre de $1.500 a 3 meses te da $500/mes de piso, y el mes que viene ese contrato ya está consumido: el próximo cierre no suma, reemplaza."
+    },
+    "ltv": {
+      "t": "LTV — cuánto vale un cliente y cuánto podría valer",
+      "filas": [
+        {
+          "n": "Emma Clara",
+          "m": 3,
+          "tcv": 1250,
+          "ren": "Renueva",
+          "ltv": 2500,
+          "e": "live",
+          "d": "Última sesión este lunes. La renovación ya está hablada."
+        },
+        {
+          "n": "Egly · Casabliss",
+          "m": 3,
+          "tcv": 1580,
+          "ren": "Renueva",
+          "ltv": 3160,
+          "e": "live",
+          "d": "Viene en agosto y ya renovó una vez."
+        },
+        {
+          "n": "Kathe",
+          "m": 3,
+          "tcv": 1050,
+          "ren": "Probable",
+          "ltv": 2100,
+          "e": "mid",
+          "d": "Tiene resultado propio y visión de agencia global."
+        },
+        {
+          "n": "Laura · STM",
+          "m": 3,
+          "tcv": 1600,
+          "ren": "Depende",
+          "ltv": 1600,
+          "e": "brk",
+          "d": "Va 2 de 12 sesiones. La renovación se juega en la entrega."
+        }
+      ],
+      "act": 1300,
+      "pot": 2340,
+      "concl": "Hoy un cliente vale $1.300 porque nadie pasó de 3 meses. Con Emma y Egly renovando, el promedio sube a $2.340 sin cerrar a nadie nuevo. Duplicar el LTV es más barato que duplicar el pipeline."
+    },
+    "wins": {
+      "t": "Wins de venta — lo que ya funcionó en llamada",
+      "filas": [
+        {
+          "n": "Riesgo antes del precio",
+          "tipo": "Reframe",
+          "q": "Laura",
+          "d": "Ubicar el costo de no actuar antes del primer reveal de precio. Cerró sin descuento.",
+          "e": "live"
+        },
+        {
+          "n": "Co-decisor en vivo",
+          "tipo": "Movimiento",
+          "q": "Laura",
+          "d": "Sumar a Jairo a la misma llamada en vez de mandarle la propuesta después.",
+          "e": "live"
+        },
+        {
+          "n": "Link de pago con la call abierta",
+          "tipo": "Cierre",
+          "q": "Laura",
+          "d": "Se cerró en 1h40 repartida en dos llamadas del mismo día.",
+          "e": "live"
+        },
+        {
+          "n": "Diagnóstico antes de mostrar nada",
+          "tipo": "Estructura",
+          "q": "Laura",
+          "d": "Bloque 100% diagnóstico y autopsia de intentos previos.",
+          "e": "live"
+        },
+        {
+          "n": "Aislar persona vs. sistema",
+          "tipo": "Reframe",
+          "q": "Nacho",
+          "d": "Separar «el problema eres tú» de «el problema es que no hay proceso». Abrió la conversación.",
+          "e": "live"
+        },
+        {
+          "n": "Pain funnel con los tres tiempos",
+          "tipo": "Estructura",
+          "q": "Nacho",
+          "d": "Costo de no decidir aterrizado en algo que le duele de verdad.",
+          "e": "live"
+        }
+      ],
+      "concl": "Los seis salieron de dos llamadas. El patrón es el mismo: diagnóstico largo, riesgo antes del precio y cerrar en vivo."
     }
   },
   "canales": {
@@ -1763,34 +1855,34 @@
     "lectura": "Cuatro palancas que no requieren construir nada llevan el mes de $904 a $6.661. Ninguna es una oferta nueva."
   },
   "consultoria": {
-    "lectura": "Los cinco llegaron por cosas distintas y todos terminaron en el mismo lugar: marketing y comercial.",
+    "lectura": "Los tres llegaron por dolores distintos y los tres terminaron en el mismo lugar: marketing y comercial.",
     "stats": [
       {
-        "k": "Clientes en programa",
+        "k": "En programa",
         "v": "3",
         "u": "",
         "f": "Emma Clara, Kathe y Laura",
         "s": "live"
       },
       {
-        "k": "Convergen en Mkt+Comercial",
-        "v": "3",
-        "u": "/ 3",
-        "f": "Sin excepción",
+        "k": "Sesiones entregadas",
+        "v": "18",
+        "u": "/ 36",
+        "f": "Suma de los tres programas",
+        "s": "mid"
+      },
+      {
+        "k": "Cierran este mes",
+        "v": "1",
+        "u": "",
+        "f": "Emma Clara, sesión 12 de 12",
         "s": "live"
       },
       {
-        "k": "Con resultado medible",
+        "k": "Con bloqueo declarado",
         "v": "1",
         "u": "/ 3",
-        "f": "Solo Kathe tiene número propio",
-        "s": "brk"
-      },
-      {
-        "k": "Con día fijo de llamada",
-        "v": "1",
-        "u": "/ 3",
-        "f": "Solo Emma Clara, los lunes",
+        "f": "Laura: segundo proyecto",
         "s": "brk"
       }
     ],
@@ -1825,40 +1917,29 @@
     "fichas": [
       {
         "n": "Marjorie · Emma Clara",
-        "est": "Activo",
+        "est": "Cierra",
         "url": "https://pvt-build.github.io/consulting-emmaclara/",
         "dia": "Lunes",
         "ritmo": "Semanal, día fijo",
-        "etapa": "En curso",
-        "prog": 60,
-        "logro": "Marketing y comercial como foco declarado",
-        "nec": "Documentar el resultado por escrito",
-        "foco": [
-          "Marketing",
-          "Comercial"
-        ],
+        "ses": 12,
+        "tot": 12,
+        "prog": 100,
         "e": "live",
+        "nicho": "E-commerce · retail",
+        "crec": "$939 en 5 días con el canal email",
+        "logro": "Canal email desde cero y unit economics por canal",
+        "apretar": "Cerrar con el resultado por escrito para justificar la renovación",
+        "mejorar": "Nunca se documentó sesión a sesión: el resultado existe y no está registrado",
+        "bloqueo": null,
         "radar": [
-          {
-            "l": "Claridad",
-            "v": 0.7
-          },
-          {
-            "l": "Sistema",
-            "v": 0.5
-          },
-          {
-            "l": "Ejecución",
-            "v": 0.6
-          },
-          {
-            "l": "Medición",
-            "v": 0.3
-          },
-          {
-            "l": "Autonomía",
-            "v": 0.4
-          }
+          0.6,
+          0.2,
+          0.7,
+          0.5,
+          0.3,
+          0.7,
+          0.2,
+          0.4
         ]
       },
       {
@@ -1867,124 +1948,62 @@
         "url": "https://pvt-build.github.io/consulting-sabrent/",
         "dia": "Variable",
         "ritmo": "Semanal, siempre mueve la call",
-        "etapa": "Sesión 4",
-        "prog": 100,
-        "logro": "Canal email desde cero: $939 en 5 días",
-        "nec": "Horizonte nuevo y fecha estable",
-        "foco": [
-          "Marketing",
-          "Comercial"
-        ],
-        "e": "live",
+        "ses": 4,
+        "tot": 12,
+        "prog": 33,
+        "e": "mid",
+        "nicho": "Agencia · servicios",
+        "crec": "2 canales nuevos operativos",
+        "logro": "Submit rate identificado: 0,54% contra objetivo de 5-10%",
+        "apretar": "Fijar día de llamada: mover la call cada semana rompe el ritmo",
+        "mejorar": "Ejecuta 5/5 pero la agenda depende de ella, no del programa",
+        "bloqueo": null,
         "radar": [
-          {
-            "l": "Claridad",
-            "v": 0.9
-          },
-          {
-            "l": "Sistema",
-            "v": 0.8
-          },
-          {
-            "l": "Ejecución",
-            "v": 1
-          },
-          {
-            "l": "Medición",
-            "v": 0.9
-          },
-          {
-            "l": "Autonomía",
-            "v": 0.8
-          }
+          0.7,
+          0.4,
+          0.8,
+          0.6,
+          0.4,
+          0.8,
+          0.3,
+          0.5
         ]
       },
       {
         "n": "Laura Sandoval · STM",
-        "est": "Activo",
+        "est": "Frenado",
         "url": "https://pvt-build.github.io/consulting-laurastm/",
         "dia": "Fin de semana",
         "ritmo": "Semanal, tienen segundo proyecto",
-        "etapa": "Sesión 2 de 12",
+        "ses": 2,
+        "tot": 12,
         "prog": 17,
-        "logro": "ICP A/B/C y reframe de eficiencia vs. confianza",
-        "nec": "Cerrar el diagrama de mensajes",
-        "foco": [
-          "Comercial"
-        ],
-        "e": "mid",
+        "e": "brk",
+        "nicho": "Tecnología · B2B",
+        "crec": "ICP A/B/C definido, sin métrica todavía",
+        "logro": "Reframe de eficiencia vs. confianza: venden resultado, no atributo",
+        "apretar": "Cerrar el diagrama de mensajes antes de tocar automatización",
+        "mejorar": "Claridad alta y construcción detenida: 2 de 12 sesiones",
+        "bloqueo": "Laura y Jairo tienen un segundo proyecto que compite por el tiempo",
         "radar": [
-          {
-            "l": "Claridad",
-            "v": 0.8
-          },
-          {
-            "l": "Sistema",
-            "v": 0.3
-          },
-          {
-            "l": "Ejecución",
-            "v": 0.4
-          },
-          {
-            "l": "Medición",
-            "v": 0.2
-          },
-          {
-            "l": "Autonomía",
-            "v": 0.3
-          }
+          0.4,
+          0.3,
+          0.5,
+          0.3,
+          0.2,
+          0.4,
+          0.1,
+          0.2
         ]
       }
     ],
-    "pasos": {
-      "t": "De 3 meses a 6 — el paso a paso",
-      "filas": [
-        {
-          "p": "1",
-          "n": "Documentar el resultado en la sesión 2",
-          "d": "Un número propio del cliente, por escrito.",
-          "q": "Kathe sí · Laura y Marjorie no",
-          "e": "brk"
-        },
-        {
-          "p": "2",
-          "n": "Nombrar el siguiente techo en la sesión 4",
-          "d": "Qué queda afuera del alcance actual.",
-          "q": "Solo Kathe lo declaró",
-          "e": "mid"
-        },
-        {
-          "p": "3",
-          "n": "Sostener cadencia hasta la 8",
-          "d": "El que pierde ritmo deja de sentir avance.",
-          "q": "Dos de tres lo perdieron",
-          "e": "brk"
-        },
-        {
-          "p": "4",
-          "n": "Abrir la conversación en la sesión 9",
-          "d": "Antes del último mes, nunca después.",
-          "q": "Cero conversaciones abiertas",
-          "e": "brk"
-        },
-        {
-          "p": "5",
-          "n": "Proponer con el resultado en la mano",
-          "d": "La extensión se justifica con el número del paso 1.",
-          "q": "Pendiente",
-          "e": "blind"
-        }
-      ],
-      "concl": "Los cinco pasos ocurren dentro del contrato, no al final. Hoy solo el paso 1 está cubierto en un cliente."
-    },
     "cuello": {
       "t": "El cuello de cada uno y lo que se repite",
       "filas": [
         {
           "n": "Emma Clara",
-          "c": "Medición",
-          "d": "Sabe qué hacer y no registra el resultado.",
+          "c": "Registro",
+          "d": "Resultado logrado y nunca documentado.",
           "e": "mid"
         },
         {
@@ -1995,26 +2014,26 @@
         },
         {
           "n": "Laura",
-          "c": "Sistema",
-          "d": "Claridad alta, construcción detenida en la sesión 2.",
+          "c": "Tiempo",
+          "d": "Segundo proyecto compitiendo con el programa.",
           "e": "brk"
         }
       ],
       "repite": [
         {
-          "n": "Medición",
+          "n": "Comunidad",
           "v": 3,
-          "d": "Los tres tienen la medición como punto más bajo."
+          "d": "Los tres tienen comunidad como sistema más débil."
         },
         {
-          "n": "Autonomía",
+          "n": "Setting",
           "v": 3,
-          "d": "Ninguno corre el sistema sin ti todavía."
+          "d": "Ninguno tiene cadencia de mensajes propia."
         },
         {
-          "n": "Claridad",
+          "n": "Comercial",
           "v": 0,
-          "d": "Ninguno falla acá: el diagnóstico funciona."
+          "d": "Es donde más suben: el diagnóstico funciona."
         }
       ],
       "propios": [
@@ -2031,8 +2050,18 @@
           "e": "mid"
         }
       ],
-      "concl": "El patrón es uno: entregas claridad excelente y medición pobre. Los tres suben en entender y se quedan en medir."
-    }
+      "concl": "Los tres suben en Comercial y se caen en Comunidad y Setting. Es el mismo patrón que tu propio radar."
+    },
+    "ejes": [
+      "Marketing",
+      "Setting",
+      "Comercial",
+      "Onboarding",
+      "Producto",
+      "Entrega",
+      "Comunidad",
+      "Backend"
+    ]
   },
   "daily": {
     "lectura": "El negocio se mueve por cadencia. Lo diario sostiene, el domingo construye.",
@@ -2417,42 +2446,43 @@
     }
   },
   "backend": {
-    "lectura": "Ocho áreas, cada una con su sistema y las skills que lo operan. Rojo es hueco, no tarea.",
+    "lectura": "Ocho sistemas. Cada uno con sus skills, su agente, su resultado y si ya es transferible.",
     "stats": [
       {
         "k": "Sistemas activos",
         "v": "2",
         "u": "/ 8",
-        "f": "Comercial y Consultoría",
+        "f": "Comercial y Entrega",
         "s": "brk"
       },
       {
-        "k": "A medias",
-        "v": "3",
+        "k": "Con SOP escrito",
+        "v": "4",
         "u": "/ 8",
-        "f": "Setting, Onboarding, Backend",
+        "f": "El resto sin documentar",
         "s": "mid"
       },
       {
-        "k": "Por construir",
-        "v": "3",
+        "k": "Transferibles",
+        "v": "2",
         "u": "/ 8",
-        "f": "Marketing, Producto, Comunidad",
+        "f": "Listos para dárselos a un cliente",
         "s": "brk"
       },
       {
-        "k": "Replicables a cliente",
-        "v": "6",
+        "k": "Urgencia alta",
+        "v": "3",
         "u": "/ 8",
-        "f": "Los que el cliente también necesita",
-        "s": "live"
+        "f": "Marketing, Setting y Comunidad",
+        "s": "brk"
       }
     ],
     "areas": [
       {
         "a": "Marketing",
-        "sis": "Motor de contenido",
+        "sis": "Contenido",
         "e": "brk",
+        "urg": "Alta",
         "sk": [
           "content",
           "design",
@@ -2461,106 +2491,131 @@
           "gems",
           "video"
         ],
-        "apps": [
+        "agente": "Manual",
+        "res": "5 piezas en el mes",
+        "sop": "Pendiente",
+        "transf": "Pendiente",
+        "con": [
           "Notion",
-          "OBS"
-        ],
-        "est": "Repositorio sí, medición y video no",
-        "cli": true
+          "Claude",
+          "OBS",
+          "Canva"
+        ]
       },
       {
         "a": "Setting",
-        "sis": "Setter IG + WhatsApp",
-        "e": "mid",
+        "sis": "Bandeja que setea",
+        "e": "brk",
+        "urg": "Alta",
         "sk": [
           "setter",
           "intake"
         ],
-        "apps": [
+        "agente": "Manual",
+        "res": "Sin registro",
+        "sop": "Pendiente",
+        "transf": "Pendiente",
+        "con": [
           "Instagram",
-          "WhatsApp"
-        ],
-        "est": "Solo lectura, no registra",
-        "cli": true
+          "WhatsApp",
+          "Claude"
+        ]
       },
       {
         "a": "Comercial",
-        "sis": "CRM + Llamadas",
+        "sis": "CRM y llamadas",
         "e": "live",
+        "urg": "Media",
         "sk": [
           "crm",
           "closing",
           "offer"
         ],
-        "apps": [
+        "agente": "Semi",
+        "res": "27 leads · 9 calls",
+        "sop": "Escrito",
+        "transf": "Listo",
+        "con": [
           "Notion",
-          "Fathom"
-        ],
-        "est": "Corriendo con datos reales",
-        "cli": true
+          "Fathom",
+          "Claude"
+        ]
       },
       {
         "a": "Onboarding",
         "sis": "Estándar de cliente",
         "e": "mid",
+        "urg": "Media",
         "sk": [
           "consulting",
           "crm"
         ],
-        "apps": [
+        "agente": "Manual",
+        "res": "3 de 3 con página",
+        "sop": "Escrito",
+        "transf": "Parcial",
+        "con": [
           "Notion"
-        ],
-        "est": "Escrito, aplicado a medias",
-        "cli": true
+        ]
       },
       {
         "a": "Producto",
-        "sis": "Currícula + VAULT",
+        "sis": "Currícula e infoproducto",
         "e": "brk",
+        "urg": "Media",
         "sk": [
           "infoproduct"
         ],
-        "apps": [
+        "agente": "Manual",
+        "res": "Sin lanzar",
+        "sop": "Pendiente",
+        "transf": "Pendiente",
+        "con": [
           "Notion",
           "Claude"
-        ],
-        "est": "En armado, VAULT sin montar",
-        "cli": false
+        ]
       },
       {
-        "a": "Consultoría",
-        "sis": "Sesiones + paneles",
+        "a": "Entrega",
+        "sis": "Sesiones y paneles",
         "e": "live",
+        "urg": "Baja",
         "sk": [
           "consulting",
           "fathom"
         ],
-        "apps": [
+        "agente": "Semi",
+        "res": "3 paneles publicados",
+        "sop": "Escrito",
+        "transf": "Listo",
+        "con": [
           "Notion",
           "Fathom",
           "GitHub"
-        ],
-        "est": "3 paneles publicados",
-        "cli": true
+        ]
       },
       {
         "a": "Comunidad",
         "sis": "WhatsApp · avisos",
         "e": "brk",
+        "urg": "Alta",
+        "lock": true,
         "sk": [
           "comunidad"
         ],
-        "apps": [
+        "agente": "Manual",
+        "res": "Sin cadencia",
+        "sop": "Pendiente",
+        "transf": "Pendiente",
+        "con": [
           "WhatsApp"
-        ],
-        "est": "Sin cadencia ni mecánica",
-        "cli": true,
-        "lock": true
+        ]
       },
       {
         "a": "Backend",
-        "sis": "Panel + Morning + Finanzas",
+        "sis": "Panel, morning y finanzas",
         "e": "mid",
+        "urg": "Baja",
         "sk": [
           "arsenal",
           "architect",
@@ -2568,53 +2623,18 @@
           "finance",
           "asistente"
         ],
-        "apps": [
+        "agente": "Auto",
+        "res": "Morning corre solo",
+        "sop": "Escrito",
+        "transf": "Parcial",
+        "con": [
           "GitHub",
           "Claude",
           "Gmail"
-        ],
-        "est": "Panel y morning sí, finanzas roto",
-        "cli": false
+        ]
       }
     ],
-    "criterio": "Un sistema está **activo** si corre con datos reales hoy. **A medias** si existe pero depende de que lo dispares o le falta una pieza. **Por construir** si está definido y no montado.",
-    "copy": {
-      "t": "Lo que el cliente necesita copiar",
-      "d": "Seis de las ocho áreas son las mismas que tu cliente tiene que montar. Ahí está el producto: el sistema copypaste con sus skills.",
-      "filas": [
-        {
-          "a": "Marketing",
-          "q": "Motor de contenido",
-          "e": "brk"
-        },
-        {
-          "a": "Setting",
-          "q": "Bandeja que setea",
-          "e": "mid"
-        },
-        {
-          "a": "Comercial",
-          "q": "CRM + registro de llamadas",
-          "e": "live"
-        },
-        {
-          "a": "Onboarding",
-          "q": "Estándar de cliente",
-          "e": "mid"
-        },
-        {
-          "a": "Consultoría",
-          "q": "Panel de progreso",
-          "e": "live"
-        },
-        {
-          "a": "Comunidad",
-          "q": "Cadencia de avisos",
-          "e": "brk"
-        }
-      ],
-      "concl": "Dos de los seis están listos para entregar. El resto se vende antes de existir, y eso es lo que hay que cerrar."
-    }
+    "criterio": "**Agente** dice quién lo ejecuta: manual, semi o auto. **SOP** si el proceso está escrito. **Transferible** si un cliente podría montarlo con lo que ya existe."
   }
 }
 </script>
@@ -3603,10 +3623,10 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   font-size:var(--t-s);color:var(--mid);line-height:1.55}
 
 /* ── RADAR MINI DE CLIENTE ── */
-.mini{width:118px;height:118px;flex:0 0 auto}
+.mini{width:100%;max-width:180px;height:auto;display:block;margin:0 auto}
 .mini polygon.g{fill:none;stroke:var(--border);stroke-width:1}
 .mini polygon.v{fill:rgba(216,168,71,.2);stroke:var(--gold);stroke-width:1.5}
-.mini text{font-family:var(--sans);font-size:7px;font-weight:700;fill:var(--low)}
+.mini text{font-family:var(--sans);font-size:7.5px;font-weight:700;fill:var(--low)}
 
 /* ── ÁREA DEL BACKEND ── */
 .ba{display:grid;grid-template-columns:26px 120px 1.2fr 1fr 90px;gap:var(--s3);
@@ -3617,6 +3637,98 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 .ba-cl{font-size:var(--t-micro);font-weight:700;letter-spacing:.06em;text-transform:uppercase;
   text-align:center;border-radius:var(--r-pill);padding:3px 8px;border:1px solid var(--border);color:var(--low)}
 .ba-cl.si{color:var(--blue);border-color:rgba(91,155,213,.35)}
+
+/* ── LTV ── */
+.ltv{display:grid;grid-template-columns:1.2fr 70px 90px 100px 96px 1.6fr;gap:var(--s3);
+  align-items:center;padding:var(--s3) 0;border-bottom:1px solid var(--border)}
+.ltv:last-child{border-bottom:0}
+.ltv-h{display:grid;grid-template-columns:1.2fr 70px 90px 100px 96px 1.6fr;gap:var(--s3);
+  padding-bottom:var(--s2);border-bottom:1px solid var(--border-hi);
+  font-size:var(--t-micro);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--low)}
+.ltv-v{font-size:var(--t-l);font-weight:700;text-align:right}
+.ltv-v.big{color:var(--good)}
+.ltv-r{font-size:var(--t-micro);font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  text-align:center;border-radius:var(--r-pill);padding:4px 8px;border:1px solid var(--border);color:var(--mid)}
+.ltv.live .ltv-r{color:var(--good);border-color:rgba(74,222,128,.35)}
+.ltv.brk .ltv-r{color:var(--danger);border-color:rgba(229,72,77,.35)}
+.ltv-tot{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-top:var(--s4)}
+.ltv-tot div{padding:var(--s4);border-radius:var(--r-s);background:var(--surface2);
+  border:1px solid var(--border);text-align:center}
+.ltv-tot div.pot{border-color:rgba(74,222,128,.35);background:rgba(74,222,128,.07)}
+.ltv-tot b{display:block;font-size:var(--n-m);font-weight:700;letter-spacing:-.03em}
+.ltv-tot div.pot b{color:var(--good)}
+.ltv-tot span{font-size:var(--t-micro);font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--low)}
+
+/* ── WINS ── */
+.win{display:grid;grid-template-columns:1.2fr 96px 84px 2fr;gap:var(--s3);align-items:center;
+  padding:var(--s3) 0;border-bottom:1px solid var(--border)}
+.win:last-child{border-bottom:0}
+.win-t{font-size:var(--t-micro);font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  text-align:center;border-radius:var(--r-pill);padding:4px 8px;
+  color:var(--good);border:1px solid rgba(74,222,128,.3)}
+.win-q{font-size:var(--t-s);color:var(--low);text-align:center}
+
+/* ── EMBUDO COMPACTO ── */
+.fn.mini .fnr{grid-template-columns:104px 1fr 76px}
+.fn.mini .fn-bar{height:20px}
+.fn.mini .fn-bar b{font-size:var(--t-m)}
+.fn.mini .fn-gap{height:6px;margin-left:104px}
+.fn.mini .fn-n{font-size:var(--t-s)}
+.fn.mini .fn-n span{font-size:9.5px}
+
+/* ── FICHA DE CLIENTE EN CONSULTORÍA ── */
+.cf{padding:var(--s5);border-radius:var(--r-m);background:var(--surface2);
+  border:1px solid var(--border);display:grid;
+  grid-template-columns:190px 1fr;gap:var(--s5);align-items:start}
+.cf + .cf{margin-top:var(--s3)}
+.cf.live{border-color:rgba(74,222,128,.3)}
+.cf.brk{border-color:rgba(229,72,77,.3)}
+.cf-l{text-align:center}
+.cf-n{font-size:var(--t-l);font-weight:700;margin-bottom:var(--s1)}
+.cf-meta{font-size:var(--t-micro);color:var(--low);margin-bottom:var(--s3)}
+.cf-ses{font-size:var(--n-s);font-weight:700;letter-spacing:-.03em}
+.cf-ses span{font-size:var(--t-s);color:var(--low);font-weight:500}
+.cf-rl{font-size:9.5px;color:var(--low);line-height:1.4;margin-top:var(--s1)}
+.cf-r{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+.cf-r div b{display:block;font-size:var(--t-micro);font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--low);margin-bottom:var(--s1)}
+.cf-r div p{font-size:var(--t-s);color:var(--mid);line-height:1.5}
+.cf-r div.key p{color:var(--hi)}
+.cf-bl{grid-column:1/-1;margin-top:var(--s3);padding:var(--s3);border-radius:var(--r-s);
+  background:rgba(229,72,77,.08);border:1px solid rgba(229,72,77,.28);
+  font-size:var(--t-s);color:var(--hi)}
+.cf-bl b{font-size:var(--t-micro);font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--danger);margin-right:var(--s2)}
+
+/* ── BOXES DEL BACKEND ── */
+.bx{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3)}
+@media(max-width:1400px){.bx{grid-template-columns:repeat(3,1fr)}}
+.bx-c{padding:var(--s4);border-radius:var(--r-m);background:var(--surface2);
+  border:1px solid var(--border)}
+.bx-c.live{border-color:rgba(74,222,128,.32)}
+.bx-c.mid{border-color:rgba(232,179,57,.3)}
+.bx-c.brk{border-color:rgba(229,72,77,.3)}
+.bx-h{display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s1)}
+.bx-h .d{width:9px;height:9px;border-radius:3px;background:var(--low);flex:0 0 auto}
+.bx-c.live .bx-h .d{background:var(--good)}
+.bx-c.mid .bx-h .d{background:var(--warn)}
+.bx-c.brk .bx-h .d{background:var(--danger)}
+.bx-h b{font-size:var(--t-l);font-weight:700;flex:1}
+.bx-u{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:2px 7px;border-radius:var(--r-pill);border:1px solid var(--border);color:var(--low)}
+.bx-u.Alta{color:var(--danger);border-color:rgba(229,72,77,.35)}
+.bx-sis{font-size:var(--t-s);color:var(--mid);margin-bottom:var(--s3);
+  padding-bottom:var(--s3);border-bottom:1px solid var(--border)}
+.bx-f{display:grid;grid-template-columns:74px 1fr;gap:var(--s2);padding:3px 0;
+  font-size:var(--t-xs)}
+.bx-f span{color:var(--low);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:9.5px}
+.bx-f b{font-weight:600;color:var(--hi)}
+.bx-f b.ok{color:var(--good)}.bx-f b.no{color:var(--danger)}.bx-f b.mid{color:var(--warn)}
+.bx-sk{display:flex;gap:3px;flex-wrap:wrap;margin-top:var(--s3);
+  padding-top:var(--s3);border-top:1px solid var(--border)}
+.bx-sk span{font-size:9.5px;padding:2px 7px;border-radius:var(--r-pill);
+  background:var(--surface3);color:var(--mid)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
@@ -3712,6 +3824,14 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .ba{grid-template-columns:26px 1fr;row-gap:var(--s1)}
   .ba .k2,.ba-cl,.gr-sk{grid-column:2}
   .cn-nums{gap:var(--s3)}
+  .ltv,.ltv-h{grid-template-columns:1fr 76px 96px;row-gap:var(--s1)}
+  .ltv .k2,.ltv-r{grid-column:1/-1}
+  .ltv-h span:nth-child(n+4){display:none}
+  .win{grid-template-columns:1fr 92px;row-gap:var(--s1)}
+  .win .k2,.win-q{grid-column:1/-1}
+  .cf{grid-template-columns:1fr;gap:var(--s4)}
+  .cf-r{grid-template-columns:1fr}
+  .bx{grid-template-columns:1fr 1fr}
   .gr .k2,.gr-r,.gr-sk{grid-column:1/-1}
   details.ar > summary{grid-template-columns:26px 1fr 20px;row-gap:var(--s1)}
   details.ar > summary .k3,details.ar > summary .meter,details.ar > summary .k2{grid-column:2}
@@ -3834,20 +3954,21 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     return '<span class="dt '+c+'" title="'+esc(l||'')+'">'+t+'</span>';
   }
   /* radar chico para cada cliente, mismos ejes para todos */
-  function radarMini(ejes){
-    var C=59,R=40,N=ejes.length;
+  function radarMini(vals, labels){
+    var ejes=vals.map(function(v,i){return {l:labels[i], v:v};});
+    var C=85,R=44,N=ejes.length;
     var pt=function(i,v){var a=-Math.PI/2+i*2*Math.PI/N;
       return [C+Math.cos(a)*R*v,C+Math.sin(a)*R*v];};
     var poly=function(f){return ejes.map(function(e,i){
       var p=pt(i,typeof f==='number'?f:e.v); return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' ');};
-    var s='<svg class="mini" viewBox="0 0 118 118">';
+    var s='<svg class="mini" viewBox="0 0 170 170">';
     [0.5,1].forEach(function(g){ s+='<polygon class="g" points="'+poly(g)+'"/>'; });
     s+='<polygon class="v" points="'+poly()+'"/>';
     ejes.forEach(function(e,i){
-      var lp=pt(i,1.30), a=-Math.PI/2+i*2*Math.PI/N, cx=Math.cos(a);
+      var lp=pt(i,1.34), a=-Math.PI/2+i*2*Math.PI/N, cx=Math.cos(a);
       var an=Math.abs(cx)<.3?'middle':(cx>0?'start':'end');
-      s+='<text x="'+lp[0].toFixed(1)+'" y="'+(lp[1]+2).toFixed(1)+'" text-anchor="'+an+'">'
-        +esc(e.l.slice(0,7).toUpperCase())+'</text>';
+      s+='<text x="'+lp[0].toFixed(1)+'" y="'+(lp[1]+2.5).toFixed(1)+'" text-anchor="'+an+'">'
+        +esc(e.l.toUpperCase())+'</text>';
     });
     return s+'</svg>';
   }
@@ -4050,20 +4171,44 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
         +'<div class="tres-n">'+esc(f.n)+'</div><div class="tres-d">'+esc(f.d)+'</div></div>';
     }).join('')+'</div><div class="resp">'+esc(cb.resp)+'</div>';
 
-    return vhead('Comercial','venta, pipeline y caja',b.lectura)
+    var lt=b.ltv, lh='<div class="ltv-h"><span>Cliente</span><span>Meses</span>'
+      +'<span>Contrato</span><span>Renovación</span><span>LTV</span><span>Por qué</span></div>';
+    lt.filas.forEach(function(f){
+      lh+='<div class="ltv '+esc(f.e)+'"><div class="k1">'+esc(f.n)+'</div>'
+        +'<div class="ltv-v">'+f.m+'</div>'
+        +'<div class="ltv-v">$'+money(f.tcv)+'</div>'
+        +'<div class="ltv-r">'+esc(f.ren)+'</div>'
+        +'<div class="ltv-v big">$'+money(f.ltv)+'</div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>';
+    });
+    lh+='<div class="ltv-tot"><div><b>$'+money(lt.act)+'</b><span>LTV hoy</span></div>'
+      +'<div class="pot"><b>$'+money(lt.pot)+'</b><span>LTV con renovaciones</span></div></div>'
+      +'<div class="concl"><b>Conclusión</b>'+esc(lt.concl)+'</div>';
+
+    var wn=b.wins, wh='';
+    wn.filas.forEach(function(f){
+      wh+='<div class="win"><div class="k1">'+esc(f.n)+'</div>'
+        +'<div class="win-t">'+esc(f.tipo)+'</div>'
+        +'<div class="win-q">'+esc(f.q)+'</div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>';
+    });
+    wh+='<div class="concl"><b>Conclusión</b>'+esc(wn.concl)+'</div>';
+
+    return vhead('Comercial','cartera, valor y pipeline',b.lectura)
       + tiles(b.stats)
       + '<div class="stack">'
-      + card(esc(pl.t), pp)
       + card(esc(ct.t), lin)
       + card(esc(cb.t), tr3)
+      + card(esc(lt.t), lh)
       + card(esc(cj.t), ch)
+      + card(esc(wn.t), wh)
       + card('Los ocho números del ciclo',
              '<div class="tiles eight">'+b.kpis.map(tile).join('')+'</div>')
       + card('Objeciones registradas en las 9 llamadas', ob)
-      + card('El embudo de venta, proceso por proceso',
-             '<div class="vread" style="margin:0 0 var(--s4)">'+esc(b.funnel_lectura||'')+'</div>'
-             + funnelHTML(b.funnel)
-             + (b.nota_calls?'<div class="note">'+esc(b.nota_calls)+'</div>':''))
+      + card('El embudo de venta',
+             funnelHTML(b.funnel).replace('class="fn"','class="fn mini"')
+             + '<div class="note">'+esc(b.funnel_lectura||'')+'</div>')
+      + card(esc(pl.t), pp)
       + '</div>' + skArea('comercial');
   }
 
@@ -4346,40 +4491,31 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 
   /* ── BACKEND ── */
   function vBackend(){
-    var B=D.backend;
-    var bk='<div class="lv-h"><span></span><span>Área</span><span>Sistema</span>'
-      +'<span>Skills que lo operan</span><span>Cliente</span></div>';
+    var B=D.backend, bx='<div class="bx">';
     B.areas.forEach(function(a){
-      bk+='<div class="ba"><span class="ba-e '+esc(a.e)+'"></span>'
-        +'<div class="k1">'+esc(a.a)+(a.lock?' 🔒':'')+'</div>'
-        +'<div><div class="bk-n">'+esc(a.sis)+'</div>'
-        +'<div class="bk-st">'+esc(a.est)+'</div>'
-        +'<div class="apps">'+a.apps.map(function(x){
-            return '<span class="app">'+esc(x)+'</span>'; }).join('')+'</div></div>'
-        +'<div class="gr-sk">'+a.sk.map(function(x){
-            return '<span>'+esc(x)+'</span>'; }).join('')+'</div>'
-        +'<div class="ba-cl'+(a.cli?' si':'')+'">'+(a.cli?'replicable':'interno')+'</div></div>';
+      var cl=function(v){ return v==='Listo'||v==='Auto'||v==='Escrito'?'ok'
+        : v==='Parcial'||v==='Semi'?'mid':'no'; };
+      bx+='<div class="bx-c '+esc(a.e)+'">'
+        +'<div class="bx-h"><span class="d"></span><b>'+esc(a.a)+(a.lock?' 🔒':'')+'</b>'
+        +'<span class="bx-u '+esc(a.urg)+'">'+esc(a.urg)+'</span></div>'
+        +'<div class="bx-sis">'+esc(a.sis)+'</div>'
+        +'<div class="bx-f"><span>Agente</span><b class="'+cl(a.agente)+'">'+esc(a.agente)+'</b></div>'
+        +'<div class="bx-f"><span>Resultado</span><b>'+esc(a.res)+'</b></div>'
+        +'<div class="bx-f"><span>SOP</span><b class="'+cl(a.sop)+'">'+esc(a.sop)+'</b></div>'
+        +'<div class="bx-f"><span>Transfer</span><b class="'+cl(a.transf)+'">'+esc(a.transf)+'</b></div>'
+        +'<div class="bx-f"><span>Corre con</span><b style="font-weight:500;color:var(--mid)">'
+        + a.con.join(' · ')+'</b></div>'
+        +'<div class="bx-sk">'+a.sk.map(function(k){
+            return '<span>'+esc(k)+'</span>'; }).join('')+'</div></div>';
     });
-    bk+='<div class="note">'+esc(B.criterio)+'</div>';
-
-    var cp=B.copy, gh='';
-    cp.filas.forEach(function(f){
-      gh+='<div class="ins"><div class="ins-a">'+esc(f.a)+'</div>'
-        +'<div class="k2" style="color:var(--hi)">'+esc(f.q)+'</div>'
-        +'<div class="lv-b '+esc(f.e)+'">'+(f.e==='live'?'listo':f.e==='mid'?'a medias':'por construir')+'</div></div>';
-    });
-    gh='<div class="k2" style="margin-bottom:var(--s4)">'+esc(cp.d)+'</div>'+gh
-      +'<div class="concl"><b>Conclusión</b>'+esc(cp.concl)+'</div>'
-      +'<div class="lk" style="margin-top:var(--s4)">'
-      +'<a class="lk-c" href="https://pvt-build.github.io/arsenal/" target="_blank" rel="noopener">'
-      +'<div class="lk-n">El arsenal ↗</div>'
-      +'<div class="lk-d">Para explicar el sistema, no para copiarlo</div></a></div>';
-
+    bx+='</div><div class="note">'+esc(B.criterio)+'</div>';
     return vhead('Backend','área, sistema y skills',B.lectura)
       + tiles(B.stats)
       + '<div class="stack">'
-      + card('Las 8 áreas y su sistema', bk)
-      + card(esc(cp.t), gh)
+      + card('Los 8 sistemas del negocio', bx)
+      + card(null,'<div class="lk"><a class="lk-c" href="https://pvt-build.github.io/arsenal/" '
+          +'target="_blank" rel="noopener"><div class="lk-n">El arsenal ↗</div>'
+          +'<div class="lk-d">Para explicar el sistema, no para copiarlo</div></a></div>')
       + '</div>' + skArea('backend');
   }
 
@@ -4387,27 +4523,28 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   function vConsultoria(){
     var C=D.consultoria, fi='';
     (C.fichas||[]).forEach(function(x){
-      fi+='<div class="fc '+(x.e==='live'?'Avanza':'Frenado')+'">'
-        +'<div class="fc-top"><div class="fc-n">'+esc(x.n)
-        +'<span>'+esc(x.etapa)+' · '+esc(x.ritmo)+'</span></div>'
-        +'<div class="fc-m"><b>'+esc(x.dia)+'</b><span>día de call</span></div>'
-        +'<div class="fc-m"><b>'+x.prog+'%</b><span>progreso</span></div>'
-        +'<div class="fc-m"><a class="ar-go" href="'+esc(x.url)+'" target="_blank" '
-        +'rel="noopener" style="text-decoration:none;display:inline-block">panel ↗</a></div></div>'
-        +'<div style="display:flex;gap:var(--s5);align-items:center">'
-        + radarMini(x.radar)
-        +'<div style="flex:1"><div class="fc-g">'
+      fi+='<div class="cf '+esc(x.e)+'">'
+        +'<div class="cf-l">'
+        +'<div class="cf-n">'+esc(x.n)+'</div>'
+        +'<div class="cf-meta">'+esc(x.nicho)+'</div>'
+        +'<div class="cf-ses">'+x.ses+'<span> / '+x.tot+' sesiones</span></div>'
+        + radarMini(x.radar, C.ejes)
+        +'<div class="cf-rl">sus 8 sistemas · qué tan armado está cada uno</div>'
+        +'<a class="ar-go" href="'+esc(x.url)+'" target="_blank" rel="noopener" '
+        +'style="text-decoration:none;display:inline-block;margin-top:var(--s2)">panel ↗</a></div>'
+        +'<div><div class="cf-r">'
+        +'<div><b>Crecimiento acumulado</b><p>'+esc(x.crec)+'</p></div>'
         +'<div><b>Qué logró</b><p>'+esc(x.logro)+'</p></div>'
-        +'<div class="key"><b>Qué necesita</b><p>'+esc(x.nec)+'</p></div></div>'
-        +'<div class="foco" style="margin-top:var(--s3)">'+x.foco.map(function(f){
-            return '<span>'+esc(f)+'</span>'; }).join('')+'</div></div></div></div>';
+        +'<div class="key"><b>Dónde apretar</b><p>'+esc(x.apretar)+'</p></div>'
+        +'<div><b>Qué mejorar</b><p>'+esc(x.mejorar)+'</p></div>'
+        + (x.bloqueo?'<div class="cf-bl"><b>Bloqueo</b>'+esc(x.bloqueo)+'</div>':'')
+        +'</div></div></div>';
     });
 
     var cu=C.cuello, ch='';
     cu.filas.forEach(function(f){
       ch+='<div class="rw rw-sy"><span class="dot '+esc(f.e)+'"></span>'
-        +'<div class="k1">'+esc(f.n)+'</div>'
-        +'<div class="k3">'+esc(f.c)+'</div>'
+        +'<div class="k1">'+esc(f.n)+'</div><div class="k3">'+esc(f.c)+'</div>'
         +'<div class="k2">'+esc(f.d)+'</div></div>';
     });
     var rp='<div class="card-t" style="margin-top:var(--s5)">Lo que se repite en los tres</div>';
@@ -4425,22 +4562,12 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     });
     ch+=rp+pr+'<div class="concl"><b>Conclusión</b>'+esc(cu.concl)+'</div>';
 
-    var ps=C.pasos, ph='';
-    ps.filas.forEach(function(f){
-      ph+='<div class="gd"><div class="gd-p">'+esc(f.p)+'</div>'
-        +'<div class="k1">'+esc(f.n)+'</div>'
-        +'<div class="gd-v '+esc(f.e)+'">'+esc(f.q)+'</div>'
-        +'<div class="k2">'+esc(f.d)+'</div></div>';
-    });
-    ph+='<div class="concl"><b>Conclusión</b>'+esc(ps.concl)+'</div>';
-
     var t=C.tesis;
     return vhead('Consultoría','entrega y producto',C.lectura)
       + tiles(C.stats)
       + '<div class="stack">'
-      + card('Los tres — progreso y radar de cada uno', fi)
+      + card('Los tres — sus 8 sistemas, dónde apretar y qué mejorar', fi)
       + card(esc(cu.t), ch)
-      + card(esc(ps.t), ph)
       + card(null,'<div class="tesis"><b>'+esc(t.t)+'</b><p>'+esc(t.d)+'</p>'
           +'<div class="cs2">'+esc(t.d2)+'</div>'
           +'<div class="cns">'+esc(t.conse)+'</div></div>')
