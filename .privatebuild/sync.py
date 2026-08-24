@@ -98,6 +98,61 @@ def miles(n):
 SKILLS = Path.home() / ".claude" / "skills"
 
 
+# El mapa de tiempo lo mantiene pvt-arsenal-agent en su reference. El panel no
+# es dueño de esos números: los lee. Así un cambio de cadencia se hace en un
+# solo lugar y llega acá con un refresco, sin editar HTML a mano.
+TIEMPO_MD = SKILLS / "pvt-arsenal-agent" / "references" / "tiempo.md"
+
+# El área del encabezado se traduce al color que el panel ya usa por sistema.
+CLAVE_AREA = {
+    "Marketing": "mkt", "Setting": "cml", "Comercial": "cml",
+    "Onboarding": "ent", "Producto": "prd", "Entrega": "ent",
+    "Comunidad": "cmn", "Backend": "bkd",
+}
+
+
+def bloque_tiempo(previo):
+    """
+    Lee las tablas por sistema de tiempo.md y devuelve el bloque del panel.
+    Solo toma min / frec / manual: el veredicto lo deriva el panel, para que
+    no haya dos lugares donde se pueda escribir un juicio distinto.
+    """
+    if not TIEMPO_MD.exists():
+        return previo, None
+
+    sistemas = []
+    area = None
+    for linea in TIEMPO_MD.read_text(encoding="utf-8").splitlines():
+        if linea.startswith("### "):
+            # "### Marketing — contenido"
+            area = linea[4:].split("—")[0].strip()
+            if area in CLAVE_AREA:
+                sistemas.append({"a": area, "k": CLAVE_AREA[area], "filas": []})
+            else:
+                area = None
+            continue
+        if not area or not linea.startswith("|"):
+            continue
+        celdas = [c.strip() for c in linea.strip("|").split("|")]
+        if len(celdas) < 6 or celdas[0] in ("Corrida",) or set(celdas[0]) <= set("- :"):
+            continue
+        try:
+            mi, fr, ma = int(celdas[1]), int(celdas[2]), int(celdas[3])
+        except ValueError:
+            continue
+        sistemas[-1]["filas"].append(
+            {"n": celdas[0], "min": mi, "frec": fr, "manual": ma})
+
+    sistemas = [x for x in sistemas if x["filas"]]
+    if not sistemas:
+        return previo, None
+
+    b = json.loads(json.dumps(previo))
+    b["sistemas"] = sistemas
+    n = sum(len(x["filas"]) for x in sistemas)
+    return b, n
+
+
 def bloque_build(previo):
     """
     Cuenta skills, líneas y referencias desde el filesystem. El estado de cada
@@ -263,6 +318,13 @@ def main():
         print("infra      ✓  %d skills contadas desde el filesystem" % n_skills)
     else:
         print("infra      —  no encontré ~/.claude/skills")
+
+    if "tiempo" in data["backend"]:
+        data["backend"]["tiempo"], n_corridas = bloque_tiempo(data["backend"]["tiempo"])
+        if n_corridas:
+            print("tiempo     ✓  %d corridas leídas de pvt-arsenal-agent" % n_corridas)
+        else:
+            print("tiempo     —  no encontré tiempo.md, se conserva el bloque anterior")
 
 
     if token:
