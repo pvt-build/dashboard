@@ -4990,7 +4990,10 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .via b{margin-left:0;width:100%}
   .sy > summary{grid-template-columns:26px 1fr 76px 18px;row-gap:var(--s2)}
   .sy-c,.sy-b{display:none}
+  .sy-cv{grid-row:1;grid-column:4}
   .sy-ah{grid-column:2/4;text-align:left}
+  .sy-fa{gap:var(--s2) var(--s4)}
+  .sy-fa .con{margin-left:0;width:100%}
   .sy-b2{padding-left:var(--s3)}
   .sk2 > summary{grid-template-columns:1fr 56px 18px;row-gap:2px}
   .sk2-r{grid-column:1/-1}
@@ -5016,7 +5019,10 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .ns-q{text-align:left}
 }
 @media(max-width:520px){
-  .tiles{grid-template-columns:1fr}
+  .tiles{grid-template-columns:1fr 1fr}
+  .tile{padding:var(--s3)}
+  .tile .n{font-size:26px}
+  .tile .k{font-size:9px;letter-spacing:.08em}
   .cad{grid-template-columns:repeat(2,1fr)}
   .arh{grid-template-columns:1fr}
   .card-h{grid-template-columns:26px 1fr 18px;gap:var(--s2);
