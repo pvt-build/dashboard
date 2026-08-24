@@ -4688,6 +4688,15 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   padding-left:var(--s3);border-left:2px solid var(--border-hi)}
 .ac-f b{display:block;font-size:8.5px;font-weight:700;letter-spacing:.09em;
   text-transform:uppercase;color:var(--border-hi);margin-bottom:2px}
+.sy-fa{display:flex;flex-wrap:wrap;gap:var(--s4);align-items:center;
+  padding:var(--s3) 0;border-bottom:1px solid var(--border)}
+.sy-fa span{display:flex;align-items:center;gap:var(--s2)}
+.sy-fa i{font-style:normal;font-size:9px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--low)}
+.sy-fa b{font-size:var(--t-xs);font-weight:700}
+.sy-fa b.ok{color:var(--good)}.sy-fa b.mid{color:var(--warn)}.sy-fa b.no{color:var(--danger)}
+.sy-fa .con{margin-left:auto}
+.sy-fa .con div{display:flex;gap:4px;flex-wrap:wrap}
 .tm-src{margin-top:var(--s3);font-size:9.5px;color:var(--low);
   letter-spacing:.04em;text-align:right}
 
@@ -4867,54 +4876,6 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   text-transform:uppercase;color:var(--gold);text-decoration:none}
 .cf-go:hover{color:var(--hi)}
 
-/* ── BOXES DEL BACKEND ── */
-.bx{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3)}
-@media(max-width:1400px){
-  .bx{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:1240px){
-  .tsum{grid-template-columns:repeat(3,1fr)}
-  .sy > summary{grid-template-columns:28px 1fr 84px 62px 1fr 64px 18px}
-  .sy > summary .sy-c:nth-of-type(2){display:none}
-  .sy-u{display:none}
-  .ac{grid-template-columns:1.4fr 86px 88px 74px 1fr}
-  .ac .ac-t.dim,.ac .ac-im{display:none}
-  .cfg{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cad{grid-template-columns:repeat(5,1fr);gap:var(--s2) 14px;row-gap:var(--s2)}
-  .cad-n{margin-right:0}
-  .cad-n::after{display:none}
-  .bx{grid-template-columns:repeat(2,1fr)}
-  .arx summary{grid-template-columns:28px 148px 1fr 100px 18px;gap:var(--s3)}
-}
-.bx-c{padding:var(--s4);border-radius:var(--r-m);background:var(--surface2);
-  border:1px solid var(--border)}
-.bx-c.live{border-color:rgba(74,222,128,.32)}
-.bx-c.mid{border-color:rgba(232,179,57,.3)}
-.bx-c.brk{border-color:rgba(229,72,77,.3)}
-.bx-h{display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s1)}
-.bx-h .d{width:9px;height:9px;border-radius:3px;background:var(--low);flex:0 0 auto}
-.bx-c.live .bx-h .d{background:var(--good)}
-.bx-c.mid .bx-h .d{background:var(--warn)}
-.bx-c.brk .bx-h .d{background:var(--danger)}
-.bx-h b{font-size:var(--t-l);font-weight:700;flex:1}
-.bx-u{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  padding:2px 7px;border-radius:var(--r-pill);border:1px solid var(--border);color:var(--low)}
-.bx-u.Alta{color:var(--danger);border-color:rgba(229,72,77,.35)}
-.bx-sis{font-size:var(--t-s);color:var(--mid);margin-bottom:var(--s3);
-  padding-bottom:var(--s3);border-bottom:1px solid var(--border)}
-.bx-f{display:grid;grid-template-columns:74px 1fr;gap:var(--s2);padding:3px 0;
-  font-size:var(--t-xs)}
-.bx-f span{color:var(--low);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:9.5px}
-.bx-f b{font-weight:600;color:var(--hi)}
-.bx-f b.ok{color:var(--good)}.bx-f b.no{color:var(--danger)}.bx-f b.mid{color:var(--warn)}
-.bx-con{margin-top:var(--s3);padding-top:var(--s3);border-top:1px solid var(--border)}
-.bx-con > span{display:block;color:var(--low);font-weight:600;letter-spacing:.04em;
-  text-transform:uppercase;font-size:9.5px;margin-bottom:5px}
-.bx-con > div{display:flex;gap:4px;flex-wrap:wrap}
-.bx-sk{display:flex;gap:3px;flex-wrap:wrap;margin-top:var(--s3);
-  padding-top:var(--s3);border-top:1px solid var(--border)}
-.bx-sk span{font-size:9.5px;padding:2px 7px;border-radius:var(--r-pill);
-  background:var(--surface3);color:var(--mid)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
@@ -5058,7 +5019,6 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .tiles{grid-template-columns:1fr}
   .cad{grid-template-columns:repeat(2,1fr)}
   .arh{grid-template-columns:1fr}
-  .bx{grid-template-columns:1fr}
   .card-h{grid-template-columns:26px 1fr 18px;gap:var(--s2);
     padding:var(--s3) var(--s4)}
   .card-in{padding:0 var(--s4) var(--s4)}
@@ -5777,27 +5737,11 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 
   /* ── BACKEND ── */
   function vBackend(){
-    var B=D.backend, bx='<div class="bx">';
-    B.areas.forEach(function(a){
-      var cl=function(v){ return v==='Listo'||v==='Auto'||v==='Escrito'?'ok'
-        : v==='Parcial'||v==='Semi'?'mid':'no'; };
-      bx+='<div class="bx-c '+esc(a.e)+'">'
-        +'<div class="bx-h"><span class="d"></span><b>'+esc(a.a)+(a.lock?' 🔒':'')+'</b>'
-        +'<span class="bx-u '+esc(a.urg)+'">'+esc(a.urg)+'</span></div>'
-        +'<div class="bx-sis">'+esc(a.sis)+'</div>'
-        +'<div class="bx-f"><span>Agente</span><b class="'+cl(a.agente)+'">'+esc(a.agente)+'</b></div>'
-        +'<div class="bx-f"><span>Resultado</span><b>'+esc(a.res)+'</b></div>'
-        +'<div class="bx-f"><span>SOP</span><b class="'+cl(a.sop)+'">'+esc(a.sop)+'</b></div>'
-        +'<div class="bx-f"><span>Transfer</span><b class="'+cl(a.transf)+'">'+esc(a.transf)+'</b></div>'
-        +'<div class="bx-con"><span>Corre con</span><div>'
-        + a.con.map(chip).join('')+'</div></div>'
-        +'<div class="bx-sk">'+a.sk.map(function(k){
-            return '<span>'+esc(k)+'</span>'; }).join('')+'</div></div>';
-    });
-    bx+='</div><div class="note">'+esc(B.criterio)+'</div>';
+    var B=D.backend;
 
     /* el árbol: sistema → agente → skill → acción.
        Del dato solo salen hechos; leverage y veredicto se derivan acá. */
+    var BK={}; (B.areas||[]).forEach(function(x){ BK[x.a]=x; });
     var T=B.tiempo, AH=0, CO=0, HU=0, NA=0, SM=0, ACC=0, AUTO=0, SINM=0;
     var hrs=function(m){ return m>=60 ? (m/60).toFixed(1).replace('.0','')+' h' : m+' min'; };
     var ver=function(a){
@@ -5856,6 +5800,15 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
         +'<span class="sy-u '+esc(x.urg)+'">'+esc(x.urg)+'</span>'
         +'<span class="sy-cv">›</span></summary><div class="sy-b2">';
 
+      var fa=BK[x.a]||{};
+      var mk=function(l,v){ var c=(v==='Listo'||v==='Auto'||v==='Escrito')?'ok'
+        :(v==='Parcial'||v==='Semi')?'mid':'no';
+        return '<span><i>'+l+'</i><b class="'+c+'">'+esc(v||'—')+'</b></span>'; };
+      th+='<div class="sy-fa">'
+        + mk('SOP escrito', fa.sop) + mk('Transferible a cliente', fa.transf)
+        + '<span class="con"><i>Corre con</i><div>'
+        + (fa.con||[]).map(chip).join('')+'</div></span></div>';
+
       x.skills.forEach(function(k){
         th+='<details class="sk2"><summary>'
           +'<span class="sk2-n">'+esc(k.id)+'</span>'
@@ -5892,7 +5845,6 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
       + tiles(B.stats)
       + '<div class="stack">'
       + card(esc(B.tiempo.t), th)
-      + card('Los 8 sistemas — ficha corta', bx)
       + card('El arsenal completo','<div class="lk"><a class="lk-c" href="https://pvt-build.github.io/arsenal/" '
           +'target="_blank" rel="noopener"><div class="lk-n">El arsenal ↗</div>'
           +'<div class="lk-d">Para explicar el sistema, no para copiarlo</div></a></div>')
