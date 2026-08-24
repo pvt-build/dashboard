@@ -72,6 +72,22 @@ atribución` del CRM marca 8 leads como «Referido» y solo uno lo es (Emma
 Clara, vía Seba Garrido por LinkedIn). Recalcular desde ahí volvería a
 inventar un motor de referidos que no existe.
 
+## Capturas desde el celular
+
+Un pantallazo del teléfono entra al OS por una de dos rutas y se rutea al
+destino que le corresponde en Notion — contenido, swipe file, ficha de cliente
+o backlog. No hay bandeja única.
+
+El detalle, los IDs de cada destino y las restricciones del entorno están en
+[`.privatebuild/CAPTURAS.md`](.privatebuild/CAPTURAS.md).
+
+```bash
+.privatebuild/captura.sh <slug>     # adjunto en la sesión → repo → URL pública
+```
+
+Ese script publica en un repo **público**. Las capturas con clientes o montos
+van directo del celular a Notion, sin pasar por acá.
+
 ## Replicable
 
 El panel lee un contrato de datos, no una persona. Para correrlo con otro
