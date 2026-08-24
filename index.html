@@ -2701,34 +2701,34 @@
     ]
   },
   "backend": {
-    "lectura": "Ocho sistemas. Cada uno con sus skills, su agente, su resultado y si ya es transferible.",
+    "lectura": "Ocho sistemas, 32 skills y 37 acciones mapeadas. El árbol dice quién corre qué, cuánto ahorra y qué le falta a cada acción para automatizarse.",
     "stats": [
       {
-        "k": "Sistemas activos",
-        "v": "2",
-        "u": "/ 8",
-        "f": "Comercial y Entrega",
-        "s": "brk"
+        "k": "Ahorro al mes",
+        "v": "84",
+        "u": "h",
+        "f": "Contra hacerlo todo a mano",
+        "s": "live"
       },
       {
-        "k": "Con SOP escrito",
-        "v": "4",
-        "u": "/ 8",
-        "f": "El resto sin documentar",
-        "s": "mid"
-      },
-      {
-        "k": "Transferibles",
-        "v": "2",
-        "u": "/ 8",
-        "f": "Listos para dárselos a un cliente",
-        "s": "brk"
-      },
-      {
-        "k": "Urgencia alta",
+        "k": "Acciones automáticas",
         "v": "3",
-        "u": "/ 8",
-        "f": "Marketing, Setting y Comunidad",
+        "u": "/ 37",
+        "f": "El resto espera que lo invoquen",
+        "s": "brk"
+      },
+      {
+        "k": "Acciones en humo",
+        "v": "9",
+        "u": "/ 37",
+        "f": "Existen y nunca se corren",
+        "s": "brk"
+      },
+      {
+        "k": "Sin métrica",
+        "v": "8",
+        "u": "/ 37",
+        "f": "Lo que no se mide no se audita",
         "s": "brk"
       }
     ],
@@ -2891,217 +2891,605 @@
     ],
     "criterio": "**Agente** dice quién lo ejecuta: manual, semi o auto. **SOP** si el proceso está escrito. **Transferible** si un cliente podría montarlo con lo que ya existe.",
     "tiempo": {
-      "t": "Dónde se va el tiempo — qué ahorra y qué es humo",
-      "lead": "Cada fila es una corrida real con la cadencia que hoy se cumple, no la ideal. El veredicto sale de los números: si no se corre, el ahorro es cero por bien construido que esté.",
+      "t": "El árbol del OS — del sistema a la acción",
+      "lead": "El viaje completo: qué sistema, quién lo corre, con qué skill y qué acciones libera. Abre un sistema para ver sus skills, y una skill para ver el tiempo, el leverage y qué falta para que corra solo.",
       "fuente": "pvt-arsenal-agent · references/tiempo.md",
       "aviso": "Todo estimado, nada cronometrado todavía. El primer trabajo del módulo es medir las tres corridas de Entrega, que sostienen el ahorro más grande declarado.",
-      "sistemas": [
+      "concl": "El ahorro se concentra en los dos sistemas con agente. Casi todo el 'qué falta' dice lo mismo: la skill existe y espera que la invoquen a mano — falta el gatillo, no la herramienta. Y la mitad de las acciones no tiene métrica, así que no se pueden auditar, solo recordar.",
+      "arbol": [
         {
           "a": "Marketing",
           "k": "mkt",
-          "filas": [
+          "sis": "Contenido",
+          "agente": "mano",
+          "urg": "alta",
+          "skills": [
             {
-              "n": "Carrusel con chasis medido",
-              "min": 10,
-              "frec": 8,
-              "manual": 45
+              "id": "pvt-content-agent",
+              "rol": "decide qué se publica, en qué formato y a qué capa",
+              "acciones": [
+                {
+                  "n": "Mix de contenido de la semana",
+                  "min": 12,
+                  "frec": 4,
+                  "manual": 40,
+                  "auto": "semi",
+                  "met": "Piezas planificadas",
+                  "imp": "habilita",
+                  "falta": "Que lea el repositorio de Notion y proponga sin que le peguen el estado"
+                },
+                {
+                  "n": "Cerrar el loop de una pieza publicada",
+                  "min": 8,
+                  "frec": 0,
+                  "manual": 20,
+                  "auto": "mano",
+                  "met": "—",
+                  "imp": "directo",
+                  "falta": "Registrar URL y vistas al publicar: hoy los campos van vacíos"
+                }
+              ]
             },
             {
-              "n": "Hook auditado contra el ADN",
-              "min": 5,
-              "frec": 8,
-              "manual": 20
+              "id": "pvt-gems-agent",
+              "rol": "talla el insight desde el transcript",
+              "acciones": [
+                {
+                  "n": "Gema tallada de un transcript",
+                  "min": 12,
+                  "frec": 4,
+                  "manual": 40,
+                  "auto": "semi",
+                  "met": "Gemas por call",
+                  "imp": "directo",
+                  "falta": "Que se dispare solo cuando Fathom deja un transcript nuevo"
+                }
+              ]
             },
             {
-              "n": "Gema tallada de un transcript",
-              "min": 12,
-              "frec": 4,
-              "manual": 40
+              "id": "pvt-hooks-agent",
+              "rol": "audita el gancho contra los 4 genes",
+              "acciones": [
+                {
+                  "n": "Hook auditado contra el ADN",
+                  "min": 5,
+                  "frec": 8,
+                  "manual": 20,
+                  "auto": "semi",
+                  "met": "Hooks aprobados",
+                  "imp": "directo",
+                  "falta": "Que corra antes del diseño, no después de armar las láminas"
+                }
+              ]
             },
             {
-              "n": "Reel producido",
-              "min": 30,
-              "frec": 0,
-              "manual": 60
+              "id": "pvt-carousels-agent",
+              "rol": "arma el carrusel sobre el chasis medido",
+              "acciones": [
+                {
+                  "n": "Carrusel con chasis medido",
+                  "min": 10,
+                  "frec": 8,
+                  "manual": 45,
+                  "auto": "semi",
+                  "met": "Carruseles / mes",
+                  "imp": "directo",
+                  "falta": "Exportar las láminas sin pasar por Canva a mano"
+                }
+              ]
             },
             {
-              "n": "Video largo",
-              "min": 90,
-              "frec": 0,
-              "manual": 180
+              "id": "pvt-design-agent",
+              "rol": "la piel de toda pieza",
+              "acciones": [
+                {
+                  "n": "Pieza de diseño fuera de carrusel",
+                  "min": 15,
+                  "frec": 2,
+                  "manual": 40,
+                  "auto": "semi",
+                  "met": "—",
+                  "imp": "habilita",
+                  "falta": "Plantillas parametrizadas, no spec escrita cada vez"
+                },
+                {
+                  "n": "Auditar una pieza contra el sistema",
+                  "min": 6,
+                  "frec": 2,
+                  "manual": 25,
+                  "auto": "semi",
+                  "met": "Piezas fuera de sistema",
+                  "imp": "habilita",
+                  "falta": "Checklist ejecutable, hoy es lectura"
+                }
+              ]
             },
             {
-              "n": "Pieza de diseño fuera de carrusel",
-              "min": 15,
-              "frec": 2,
-              "manual": 40
+              "id": "pvt-video-agent · pvt-motion-agent",
+              "rol": "corto y movimiento",
+              "acciones": [
+                {
+                  "n": "Reel producido",
+                  "min": 30,
+                  "frec": 0,
+                  "manual": 60,
+                  "auto": "mano",
+                  "met": "—",
+                  "imp": "directo",
+                  "falta": "El pipeline de OBS a export no existe: es el cuello del formato"
+                },
+                {
+                  "n": "Video largo",
+                  "min": 90,
+                  "frec": 0,
+                  "manual": 180,
+                  "auto": "mano",
+                  "met": "—",
+                  "imp": "directo",
+                  "falta": "Sin guion base ni plantilla de montaje"
+                }
+              ]
             }
           ]
         },
         {
           "a": "Setting",
           "k": "cml",
-          "filas": [
+          "sis": "Bandeja que setea",
+          "agente": "mano",
+          "urg": "alta",
+          "skills": [
             {
-              "n": "Barrido de DMs con clasificación",
-              "min": 15,
-              "frec": 0,
-              "manual": 45
+              "id": "pvt-setter-agent",
+              "rol": "clasifica IG y WhatsApp, no responde",
+              "acciones": [
+                {
+                  "n": "Barrido de DMs con clasificación",
+                  "min": 15,
+                  "frec": 0,
+                  "manual": 45,
+                  "auto": "semi",
+                  "met": "Leads calificados",
+                  "imp": "directo",
+                  "falta": "Solo lee: falta el borrador de respuesta y el registro del envío"
+                },
+                {
+                  "n": "Barrido de WhatsApp",
+                  "min": 20,
+                  "frec": 0,
+                  "manual": 50,
+                  "auto": "semi",
+                  "met": "Hilos sin respuesta",
+                  "imp": "directo",
+                  "falta": "La app de escritorio no expone histórico sin export manual"
+                }
+              ]
             },
             {
-              "n": "Barrido de WhatsApp",
-              "min": 20,
-              "frec": 0,
-              "manual": 50
+              "id": "pvt-intake-agent",
+              "rol": "rutea material externo a sus tres salidas",
+              "acciones": [
+                {
+                  "n": "Ruteo de un input externo",
+                  "min": 6,
+                  "frec": 2,
+                  "manual": 20,
+                  "auto": "semi",
+                  "met": "Inputs ruteados",
+                  "imp": "habilita",
+                  "falta": "Que escriba en CRM y contenido sin confirmación por paso"
+                }
+              ]
             },
             {
-              "n": "Ruteo de un input externo (intake)",
-              "min": 6,
-              "frec": 2,
-              "manual": 20
+              "id": "pvt-scout-agent",
+              "rol": "busca afuera",
+              "acciones": [
+                {
+                  "n": "Barrido de cuentas objetivo",
+                  "min": 20,
+                  "frec": 0,
+                  "manual": 60,
+                  "auto": "mano",
+                  "met": "Cuentas nuevas",
+                  "imp": "directo",
+                  "falta": "El scrapper de IG existe y nunca se estrenó"
+                }
+              ]
             }
           ]
         },
         {
           "a": "Comercial",
           "k": "cml",
-          "filas": [
+          "sis": "CRM y llamadas",
+          "agente": "semi",
+          "urg": "media",
+          "skills": [
             {
-              "n": "Análisis de pipeline del CRM",
-              "min": 10,
-              "frec": 4,
-              "manual": 60
+              "id": "pvt-crm-agent",
+              "rol": "lee el pipeline y proyecta",
+              "acciones": [
+                {
+                  "n": "Análisis de pipeline",
+                  "min": 10,
+                  "frec": 4,
+                  "manual": 60,
+                  "auto": "semi",
+                  "met": "Leads por etapa",
+                  "imp": "directo",
+                  "falta": "Que corra con el morning, no cuando se acuerda"
+                },
+                {
+                  "n": "Higiene y limpieza del CRM",
+                  "min": 12,
+                  "frec": 2,
+                  "manual": 50,
+                  "auto": "semi",
+                  "met": "Campos vacíos",
+                  "imp": "habilita",
+                  "falta": "Alerta automática de lead huérfano o fecha vencida"
+                }
+              ]
             },
             {
-              "n": "Preparación de una call de cierre",
-              "min": 12,
-              "frec": 5,
-              "manual": 35
+              "id": "pvt-closing-agent",
+              "rol": "prepara y analiza la llamada",
+              "acciones": [
+                {
+                  "n": "Preparación de una call de cierre",
+                  "min": 12,
+                  "frec": 5,
+                  "manual": 35,
+                  "auto": "semi",
+                  "met": "Calls preparadas",
+                  "imp": "directo",
+                  "falta": "Que se dispare al agendarse, con la ficha ya armada"
+                },
+                {
+                  "n": "Análisis post-call",
+                  "min": 10,
+                  "frec": 5,
+                  "manual": 30,
+                  "auto": "semi",
+                  "met": "Objeciones registradas",
+                  "imp": "directo",
+                  "falta": "Que lea el transcript de Fathom sin que se lo peguen"
+                }
+              ]
             },
             {
-              "n": "Pitch armado desde la oferta troncal",
-              "min": 15,
-              "frec": 3,
-              "manual": 50
+              "id": "pvt-offer-agent",
+              "rol": "la troncal y su pitch",
+              "acciones": [
+                {
+                  "n": "Pitch armado para un lead",
+                  "min": 15,
+                  "frec": 3,
+                  "manual": 50,
+                  "auto": "semi",
+                  "met": "Pitches enviados",
+                  "imp": "directo",
+                  "falta": "Que tome la ficha del CRM sola"
+                }
+              ]
             },
             {
-              "n": "Análisis post-call",
-              "min": 10,
-              "frec": 5,
-              "manual": 30
+              "id": "pvt-avatar-agent",
+              "rol": "a quién le hablas y a quién dejas ir",
+              "acciones": [
+                {
+                  "n": "Calificar un lead contra el avatar",
+                  "min": 5,
+                  "frec": 6,
+                  "manual": 20,
+                  "auto": "semi",
+                  "met": "Tasa de ICP-fit",
+                  "imp": "directo",
+                  "falta": "Que califique al entrar al CRM, no antes de la call"
+                }
+              ]
+            },
+            {
+              "id": "pvt-funnel-agent",
+              "rol": "el nivelador",
+              "acciones": [
+                {
+                  "n": "Revisar el funnel y su tráfico",
+                  "min": 15,
+                  "frec": 0,
+                  "manual": 40,
+                  "auto": "mano",
+                  "met": "Visitas / conversión",
+                  "imp": "habilita",
+                  "falta": "Está publicado y sin analítica conectada"
+                }
+              ]
             }
           ]
         },
         {
           "a": "Onboarding",
           "k": "ent",
-          "filas": [
+          "sis": "Estándar de cliente",
+          "agente": "mano",
+          "urg": "media",
+          "skills": [
             {
-              "n": "Página de panel para cliente nuevo",
-              "min": 45,
-              "frec": 1,
-              "manual": 180
-            },
-            {
-              "n": "Ficha inicial en el CRM",
-              "min": 8,
-              "frec": 1,
-              "manual": 20
+              "id": "pvt-consulting-agent",
+              "rol": "el ciclo de vida del cliente",
+              "acciones": [
+                {
+                  "n": "Panel para un cliente nuevo",
+                  "min": 45,
+                  "frec": 1,
+                  "manual": 180,
+                  "auto": "semi",
+                  "met": "Clientes con panel",
+                  "imp": "directo",
+                  "falta": "Plantilla que se clona con los datos del CRM"
+                },
+                {
+                  "n": "Ficha inicial en el CRM",
+                  "min": 8,
+                  "frec": 1,
+                  "manual": 20,
+                  "auto": "mano",
+                  "met": "—",
+                  "imp": "habilita",
+                  "falta": "Que la cree el cierre, no una carga aparte"
+                }
+              ]
             }
           ]
         },
         {
           "a": "Producto",
           "k": "prd",
-          "filas": [
+          "sis": "Currícula e infoproducto",
+          "agente": "mano",
+          "urg": "media",
+          "skills": [
             {
-              "n": "Ubicar un hallazgo en la currícula",
-              "min": 10,
-              "frec": 2,
-              "manual": 30
-            },
-            {
-              "n": "Empaquetar un hallazgo en 5 capas",
-              "min": 40,
-              "frec": 0,
-              "manual": 120
+              "id": "pvt-infoproduct-agent",
+              "rol": "currícula y empaquetado",
+              "acciones": [
+                {
+                  "n": "Ubicar un hallazgo en la currícula",
+                  "min": 10,
+                  "frec": 2,
+                  "manual": 30,
+                  "auto": "semi",
+                  "met": "Módulos cubiertos",
+                  "imp": "habilita",
+                  "falta": "Que lo proponga al cerrar una sesión"
+                },
+                {
+                  "n": "Empaquetar un hallazgo en 5 capas",
+                  "min": 40,
+                  "frec": 0,
+                  "manual": 120,
+                  "auto": "mano",
+                  "met": "—",
+                  "imp": "directo",
+                  "falta": "Nunca se corrió: falta el primer caso completo"
+                }
+              ]
             }
           ]
         },
         {
           "a": "Entrega",
           "k": "ent",
-          "filas": [
+          "sis": "Sesiones y paneles",
+          "agente": "semi",
+          "urg": "baja",
+          "skills": [
             {
-              "n": "Bajar transcript verbatim (Fathom)",
-              "min": 3,
-              "frec": 12,
-              "manual": 25
+              "id": "pvt-consulting-agent",
+              "rol": "sesiones, gaps y bottlenecks",
+              "acciones": [
+                {
+                  "n": "Actualizar el panel de un cliente",
+                  "min": 25,
+                  "frec": 12,
+                  "manual": 90,
+                  "auto": "semi",
+                  "met": "Paneles al día",
+                  "imp": "directo",
+                  "falta": "Que el transcript escriba la sesión sin pasar por el chat"
+                },
+                {
+                  "n": "Preparar la sesión siguiente",
+                  "min": 15,
+                  "frec": 12,
+                  "manual": 40,
+                  "auto": "semi",
+                  "met": "Sesiones preparadas",
+                  "imp": "directo",
+                  "falta": "Que arme la agenda desde los pendientes de la anterior"
+                },
+                {
+                  "n": "Rollup de gaps y bottlenecks",
+                  "min": 12,
+                  "frec": 4,
+                  "manual": 45,
+                  "auto": "semi",
+                  "met": "Patrones repetidos",
+                  "imp": "habilita",
+                  "falta": "Que se acumule solo al cerrar cada sesión"
+                }
+              ]
             },
             {
-              "n": "Actualizar el panel de un cliente",
-              "min": 25,
-              "frec": 12,
-              "manual": 90
-            },
-            {
-              "n": "Preparar la sesión siguiente",
-              "min": 15,
-              "frec": 12,
-              "manual": 40
+              "id": "pvt-fathom-agent",
+              "rol": "el transcript verbatim",
+              "acciones": [
+                {
+                  "n": "Bajar transcript verbatim",
+                  "min": 3,
+                  "frec": 12,
+                  "manual": 25,
+                  "auto": "auto",
+                  "met": "Calls con transcript",
+                  "imp": "habilita",
+                  "falta": "Ya corre solo. Falta que dispare a gems y consulting"
+                }
+              ]
             }
           ]
         },
         {
           "a": "Comunidad",
           "k": "cmn",
-          "filas": [
+          "sis": "WhatsApp",
+          "agente": "mano",
+          "urg": "alta",
+          "skills": [
             {
-              "n": "Mensaje con la cadencia declarada",
-              "min": 8,
-              "frec": 0,
-              "manual": 20
+              "id": "pvt-comunidad-agent",
+              "rol": "qué decir, para qué y cuándo",
+              "acciones": [
+                {
+                  "n": "Mensaje con la cadencia declarada",
+                  "min": 8,
+                  "frec": 0,
+                  "manual": 20,
+                  "auto": "mano",
+                  "met": "—",
+                  "imp": "directo",
+                  "falta": "Sin long content no hay de qué hablar: el bloqueo está arriba"
+                }
+              ]
             }
           ]
         },
         {
           "a": "Backend",
           "k": "bkd",
-          "filas": [
+          "sis": "Panel, morning y finanzas",
+          "agente": "auto",
+          "urg": "baja",
+          "skills": [
             {
-              "n": "Morning brief",
-              "min": 0,
-              "frec": 22,
-              "manual": 20
+              "id": "pvt-arsenal-agent",
+              "rol": "el registro y este árbol",
+              "acciones": [
+                {
+                  "n": "Sincronizar el registro de skills",
+                  "min": 15,
+                  "frec": 2,
+                  "manual": 60,
+                  "auto": "semi",
+                  "met": "Skills registradas",
+                  "imp": "habilita",
+                  "falta": "Que el `ls` dispare el diff sin que se lo pidan"
+                },
+                {
+                  "n": "Mantener el árbol del OS",
+                  "min": 12,
+                  "frec": 2,
+                  "manual": 60,
+                  "auto": "semi",
+                  "met": "Acciones mapeadas",
+                  "imp": "habilita",
+                  "falta": "Que el tiempo se mida solo, no que se estime"
+                }
+              ]
             },
             {
-              "n": "Refresco del panel troncal",
-              "min": 2,
-              "frec": 8,
-              "manual": 90
+              "id": "pvt-asistente-agent",
+              "rol": "correo, agenda y morning",
+              "acciones": [
+                {
+                  "n": "Morning brief",
+                  "min": 0,
+                  "frec": 22,
+                  "manual": 20,
+                  "auto": "auto",
+                  "met": "Briefs entregados",
+                  "imp": "habilita",
+                  "falta": "Ya corre solo. Falta que pida el check de cadencias"
+                },
+                {
+                  "n": "Barrido de correo",
+                  "min": 5,
+                  "frec": 22,
+                  "manual": 25,
+                  "auto": "semi",
+                  "met": "Correos accionables",
+                  "imp": "habilita",
+                  "falta": "Solo lectura: no archiva ni responde"
+                }
+              ]
             },
             {
-              "n": "Cierre de finanzas del mes",
-              "min": 20,
-              "frec": 1,
-              "manual": 90
+              "id": "pvt-finance-agent",
+              "rol": "la billetera",
+              "acciones": [
+                {
+                  "n": "Cierre de finanzas del mes",
+                  "min": 20,
+                  "frec": 1,
+                  "manual": 90,
+                  "auto": "semi",
+                  "met": "Margen del mes",
+                  "imp": "habilita",
+                  "falta": "Captura de movimientos a mano en el JSON"
+                }
+              ]
             },
             {
-              "n": "Despacho del backlog",
-              "min": 10,
-              "frec": 4,
-              "manual": 25
+              "id": "pvt-backlog-agent",
+              "rol": "la cola de despacho",
+              "acciones": [
+                {
+                  "n": "Despacho del backlog",
+                  "min": 10,
+                  "frec": 4,
+                  "manual": 25,
+                  "auto": "semi",
+                  "met": "Filas despachadas",
+                  "imp": "habilita",
+                  "falta": "Que agrupe por agente sin pedir la base cada vez"
+                }
+              ]
             },
             {
-              "n": "Sincronización del registro de skills",
-              "min": 15,
-              "frec": 2,
-              "manual": 60
+              "id": "pvt-architect-agent",
+              "rol": "la estructura del OS",
+              "acciones": [
+                {
+                  "n": "Ubicar una pieza nueva en la anatomía",
+                  "min": 8,
+                  "frec": 2,
+                  "manual": 25,
+                  "auto": "semi",
+                  "met": "—",
+                  "imp": "cero",
+                  "falta": "Se corre poco: candidata a fusión con arsenal"
+                }
+              ]
+            },
+            {
+              "id": "Panel troncal",
+              "rol": "la superficie de todo esto",
+              "acciones": [
+                {
+                  "n": "Refresco del panel troncal",
+                  "min": 2,
+                  "frec": 8,
+                  "manual": 90,
+                  "auto": "auto",
+                  "met": "Días de lag",
+                  "imp": "habilita",
+                  "falta": "Ya corre solo. Falta el token de Notion en el entorno"
+                }
+              ]
             }
           ]
         }
-      ],
-      "concl": "El ahorro se concentra en los dos sistemas que tienen agente: Backend y Entrega. Los seis manuales aportan poco o nada, y las siete corridas en humo no están mal construidas — están sin cadencia. El problema no es la herramienta, es el hábito."
+      ]
     }
   }
 }
@@ -4190,48 +4578,116 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 .fn.mini .fn-n{font-size:var(--t-s)}
 .fn.mini .fn-n span{font-size:9.5px}
 
-/* ── MAPA DE TIEMPO ── */
-.tsum{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3);
+/* ── EL ÁRBOL DEL OS · sistema → agente → skill → acción ── */
+.via{display:flex;align-items:center;gap:var(--s2);flex-wrap:wrap;
+  padding:var(--s3) var(--s4);border-radius:var(--r-s);background:var(--surface2);
+  border:1px solid var(--border);margin-bottom:var(--s4)}
+.via span{font-size:var(--t-micro);font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--hi)}
+.via i{width:14px;height:6px;flex:0 0 auto;
+  border-top:1.5px solid var(--border-hi);border-right:1.5px solid var(--border-hi);
+  transform:rotate(45deg);margin:0 2px}
+.via b{margin-left:auto;font-size:9.5px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--low)}
+
+.tsum{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--s2);
   margin-bottom:var(--s4)}
-.tsum div{padding:var(--s3) var(--s4);border-radius:var(--r-s);
+.tsum div{padding:var(--s3);border-radius:var(--r-s);
   background:var(--surface2);border:1px solid var(--border)}
-.tsum b{display:block;font-size:28px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
-.tsum b span{font-size:var(--t-m);color:var(--low);font-weight:600}
-.tsum > div > span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--low);margin-top:3px}
+.tsum b{display:block;font-size:23px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.tsum b span{font-size:var(--t-s);color:var(--low);font-weight:600}
+.tsum > div > span{display:block;font-size:9px;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--low);margin-top:3px;line-height:1.3}
 .tsum .ok b{color:var(--good)} .tsum .no b{color:var(--danger)}
 .tsum .ok{border-color:rgba(74,222,128,.3)} .tsum .no{border-color:rgba(229,72,77,.3)}
 
-.tm-h,.tm{display:grid;grid-template-columns:1.7fr 104px 78px 66px 66px 156px;
-  gap:var(--s3);align-items:center}
-.tm-h{padding:0 0 var(--s2);border-bottom:1px solid var(--border)}
-.tm-h span{font-size:9px;font-weight:700;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--low)}
-.tm-h span:nth-child(n+3){text-align:right}
-.tm{padding:var(--s3) 0;border-bottom:1px solid var(--border)}
-.tm:last-of-type{border-bottom:0}
-.tm.humo .k1{color:var(--low)}
-.tm-a{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-  padding:2px 7px;border-radius:var(--r-pill);border:1px solid currentColor;
-  text-align:center;white-space:nowrap;opacity:.9}
-.tm-a.mkt{color:var(--a-mkt)}.tm-a.cml{color:var(--a-cml)}.tm-a.cmn{color:var(--a-cmn)}
-.tm-a.ent{color:var(--a-ent)}.tm-a.prd{color:var(--a-prd)}.tm-a.bkd{color:var(--a-bkd)}
-.tm-a.fnd{color:var(--a-fnd)}.tm-a.idd{color:var(--a-idd)}
-.tm-f{font-size:var(--t-s);font-weight:700;text-align:right;white-space:nowrap}
-.tm-f span{font-size:9px;color:var(--low);font-weight:600;margin-left:3px}
-.tm-f i{font-style:normal;color:var(--danger);font-size:var(--t-xs)}
-.tm-v{font-size:var(--t-m);font-weight:700;text-align:right;white-space:nowrap}
-.tm-v span{font-size:9px;color:var(--low);font-weight:600;margin-left:2px}
-.tm-v.dim{color:var(--low);font-weight:600}
-.tm-r{display:grid;grid-template-columns:1fr 64px;gap:var(--s2);align-items:center}
-.tm-b{height:8px;border-radius:3px;background:var(--surface3);overflow:hidden}
-.tm-b i{display:block;height:100%;border-radius:3px;background:var(--good)}
-.tm.marginal .tm-b i{background:var(--warn)}
-.tm.cuesta .tm-b i,.tm.humo .tm-b i{background:var(--danger)}
-.tm-r b{font-size:var(--t-s);font-weight:700;text-align:right;color:var(--good)}
-.tm.marginal .tm-r b{color:var(--warn)}
-.tm.cuesta .tm-r b,.tm.humo .tm-r b{color:var(--danger)}
-.tm.humo .tm-r b{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase}
+/* nivel 1 — el sistema */
+.sy{border:1px solid var(--border);border-radius:var(--r-m);
+  background:var(--surface2);margin-bottom:var(--s2);overflow:hidden}
+.sy.auto{border-color:rgba(74,222,128,.3)}
+.sy.semi{border-color:rgba(232,179,57,.28)}
+.sy > summary{list-style:none;cursor:pointer;display:grid;
+  grid-template-columns:30px 1fr 92px 62px 74px 1fr 68px 60px 18px;
+  gap:var(--s3);align-items:center;padding:var(--s3) var(--s4)}
+.sy > summary::-webkit-details-marker{display:none}
+.sy > summary:hover{background:rgba(255,255,255,.02)}
+.sy-i{font-size:var(--t-xs);font-weight:700;color:var(--low);
+  background:var(--surface3);border-radius:var(--r-s);text-align:center;padding:2px 0}
+.sy-n{font-size:var(--t-l);font-weight:700;line-height:1.2;min-width:0}
+.sy-n em{display:block;font-style:normal;font-size:var(--t-micro);
+  font-weight:500;color:var(--low);margin-top:2px}
+.sy-ag{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  text-align:center;padding:3px 0;border-radius:var(--r-pill);
+  border:1px solid var(--border);color:var(--low)}
+.sy-ag.auto{color:var(--good);border-color:rgba(74,222,128,.4)}
+.sy-ag.semi{color:var(--warn);border-color:rgba(232,179,57,.4)}
+.sy-ag.mano{color:var(--danger);border-color:rgba(229,72,77,.35)}
+.sy-c{font-size:var(--t-m);font-weight:700;text-align:right;white-space:nowrap}
+.sy-c i{font-style:normal;font-size:9px;color:var(--low);font-weight:600;margin-left:3px}
+.sy-b{display:block;height:8px;border-radius:3px;background:var(--surface3);overflow:hidden}
+.sy-b i{display:block;height:100%;border-radius:3px;background:var(--good)}
+.sy-ah{font-size:var(--t-m);font-weight:700;text-align:right;color:var(--good);
+  white-space:nowrap}
+.sy-ah.nil{color:var(--danger);font-size:var(--t-xs)}
+.sy-u{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  text-align:center;color:var(--low)}
+.sy-u.alta{color:var(--danger)}
+.sy-cv{font-size:16px;color:var(--low);justify-self:end;transition:transform .2s}
+.sy[open] > summary .sy-cv{transform:rotate(90deg)}
+.sy-b2{padding:0 var(--s4) var(--s3) calc(30px + var(--s4) + var(--s3));
+  border-top:1px solid var(--border)}
+
+/* nivel 2 — la skill */
+.sk2{border-bottom:1px solid var(--border)}
+.sk2:last-child{border-bottom:0}
+.sk2 > summary{list-style:none;cursor:pointer;display:grid;
+  grid-template-columns:190px 1fr 56px 64px 18px;gap:var(--s3);
+  align-items:center;padding:var(--s3) 0}
+.sk2 > summary::-webkit-details-marker{display:none}
+.sk2 > summary:hover .sk2-n{color:var(--gold)}
+.sk2-n{font-size:var(--t-s);font-weight:700;font-family:var(--sans);color:var(--hi)}
+.sk2-r{font-size:var(--t-xs);color:var(--low);line-height:1.4;min-width:0}
+.sk2-c{font-size:var(--t-s);font-weight:700;text-align:right;white-space:nowrap}
+.sk2-c i{font-style:normal;font-size:9px;color:var(--low);margin-left:2px}
+.sk2-ah{font-size:var(--t-s);font-weight:700;text-align:right;color:var(--good)}
+.sk2-ah.nil{color:var(--low)}
+.sk2-cv{font-size:14px;color:var(--low);justify-self:end;transition:transform .2s}
+.sk2[open] > summary .sk2-cv{transform:rotate(90deg)}
+
+/* nivel 3 — la acción */
+.ac-w{padding:0 0 var(--s3)}
+.ac{display:grid;grid-template-columns:1.5fr 96px 88px 96px 74px 84px 1fr;
+  gap:var(--s3);align-items:center;padding:var(--s3);border-radius:var(--r-s);
+  background:var(--surface);border:1px solid var(--border);margin-bottom:5px}
+.ac.humo{border-color:rgba(229,72,77,.25);background:rgba(229,72,77,.04)}
+.ac.humo .ac-n{color:var(--low)}
+.ac-n{font-size:var(--t-s);font-weight:600;line-height:1.35;min-width:0}
+.ac-t{text-align:right;white-space:nowrap}
+.ac-t b{font-size:var(--t-m);font-weight:700}
+.ac-t span{font-size:9px;color:var(--low);margin-left:2px}
+.ac-t u{display:block;text-decoration:none;font-size:9px;color:var(--low);margin-top:1px}
+.ac-t.dim b{color:var(--low);font-weight:600}
+.ac-l{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  text-align:right}
+.ac-l u{display:block;text-decoration:none;font-size:var(--t-s);
+  letter-spacing:0;text-transform:none;font-weight:700;margin-top:1px}
+.lv-alto{color:var(--good)} .lv-medio{color:var(--warn)}
+.lv-bajo{color:var(--mid)}  .lv-nulo{color:var(--danger)}
+.ac-im{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  text-align:center;padding:2px 6px;border-radius:var(--r-pill);
+  border:1px solid var(--border);color:var(--low)}
+.ac-im.directo{color:var(--gold);border-color:rgba(216,168,71,.35)}
+.ac-au{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  text-align:center;padding:2px 6px;border-radius:var(--r-pill)}
+.ac-au.auto{color:var(--good);background:rgba(74,222,128,.12)}
+.ac-au.semi{color:var(--warn);background:rgba(232,179,57,.12)}
+.ac-au.mano{color:var(--danger);background:rgba(229,72,77,.1)}
+.ac-m{font-size:9.5px;color:var(--mid);line-height:1.35}
+.ac-m.nil{color:var(--danger);opacity:.75}
+.ac-f{font-size:9.5px;color:var(--low);line-height:1.4;
+  padding-left:var(--s3);border-left:2px solid var(--border-hi)}
+.ac-f b{display:block;font-size:8.5px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--border-hi);margin-bottom:2px}
 .tm-src{margin-top:var(--s3);font-size:9.5px;color:var(--low);
   letter-spacing:.04em;text-align:right}
 
@@ -4417,9 +4873,12 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .bx{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:1240px){
-  .tm-h,.tm{grid-template-columns:1.5fr 92px 62px 58px 130px}
-  .tm-h span:nth-child(5){display:none}
-  .tm .tm-v.dim{display:none}
+  .tsum{grid-template-columns:repeat(3,1fr)}
+  .sy > summary{grid-template-columns:28px 1fr 84px 62px 1fr 64px 18px}
+  .sy > summary .sy-c:nth-of-type(2){display:none}
+  .sy-u{display:none}
+  .ac{grid-template-columns:1.4fr 86px 88px 74px 1fr}
+  .ac .ac-t.dim,.ac .ac-im{display:none}
   .cfg{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cad{grid-template-columns:repeat(5,1fr);gap:var(--s2) 14px;row-gap:var(--s2)}
   .cad-n{margin-right:0}
@@ -4567,10 +5026,17 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .cfg{grid-template-columns:1fr}
   .cf{max-width:none}
   .tsum{grid-template-columns:1fr 1fr}
-  .tm-h{display:none}
-  .tm{grid-template-columns:1fr 92px;row-gap:var(--s2)}
-  .tm-f,.tm-v{grid-row:2;text-align:left}
-  .tm-r{grid-column:1/-1}
+  .via b{margin-left:0;width:100%}
+  .sy > summary{grid-template-columns:26px 1fr 76px 18px;row-gap:var(--s2)}
+  .sy-c,.sy-b{display:none}
+  .sy-ah{grid-column:2/4;text-align:left}
+  .sy-b2{padding-left:var(--s3)}
+  .sk2 > summary{grid-template-columns:1fr 56px 18px;row-gap:2px}
+  .sk2-r{grid-column:1/-1}
+  .ac{grid-template-columns:1fr 88px;row-gap:var(--s2)}
+  .ac-n{grid-column:1/-1}
+  .ac-l,.ac-au,.ac-m,.ac-f{grid-column:1/-1;text-align:left}
+  .ac-l u{display:inline;margin-left:var(--s2)}
   .arh{grid-template-columns:1fr 1fr}
   .arx summary{grid-template-columns:26px 1fr 76px;row-gap:var(--s2)}
   .arx-mid{grid-column:1/-1}
@@ -5330,45 +5796,94 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     });
     bx+='</div><div class="note">'+esc(B.criterio)+'</div>';
 
-    /* el mapa de tiempo: todo derivado, ningún veredicto escrito a mano */
-    var T=B.tiempo, filas=[], AH=0, CO=0, HU=0, CH=0;
-    T.sistemas.forEach(function(x){
-      x.filas.forEach(function(r){
-        var ua=r.manual-r.min, am=ua*r.frec, cm=r.min*r.frec, v;
-        if(r.frec===0){ v='humo'; HU++; am=0; cm=0; }
-        else if(ua<=0){ v='cuesta'; }
-        else if(am<30){ v='marginal'; }
-        else { v='ahorra'; }
-        if(v!=='humo'){ AH+=am; CO+=cm; }
-        filas.push({a:x.a,k:x.k,n:r.n,min:r.min,frec:r.frec,manual:r.manual,
-                    ua:ua,am:am,cm:cm,v:v});
+    /* el árbol: sistema → agente → skill → acción.
+       Del dato solo salen hechos; leverage y veredicto se derivan acá. */
+    var T=B.tiempo, AH=0, CO=0, HU=0, NA=0, SM=0, ACC=0, AUTO=0, SINM=0;
+    var hrs=function(m){ return m>=60 ? (m/60).toFixed(1).replace('.0','')+' h' : m+' min'; };
+    var ver=function(a){
+      var u=a.manual-a.min, am=u*a.frec;
+      if(a.frec===0) return {v:'humo', am:0, cm:0, u:u};
+      if(u<=0)       return {v:'cuesta', am:am, cm:a.min*a.frec, u:u};
+      if(am<30)      return {v:'marginal', am:am, cm:a.min*a.frec, u:u};
+      return {v:'ahorra', am:am, cm:a.min*a.frec, u:u};
+    };
+    var lev=function(am){ return am>=180?'alto':am>=60?'medio':am>0?'bajo':'nulo'; };
+
+    T.arbol.forEach(function(x){
+      x._ah=0; x._acc=0; x._humo=0;
+      x.skills.forEach(function(k){
+        k._ah=0;
+        k.acciones.forEach(function(a){
+          var r=ver(a); a._=r; a._lev=lev(r.am);
+          k._ah+=r.am; x._ah+=r.am; x._acc++; ACC++;
+          AH+=r.am; CO+=r.cm;
+          if(r.v==='humo'){ HU++; x._humo++; }
+          if(a.auto==='auto') AUTO++;
+          if(a.met==='—') SINM++;
+        });
       });
+      SM+=x.skills.length;
+      if(x.agente==='auto') NA++;
     });
-    filas.sort(function(a,b){ return b.am-a.am; });
-    var hrs=function(m){ return (m/60).toFixed(1).replace('.0',''); };
 
     var th='<div class="note" style="margin:0 0 var(--s4)">'+esc(T.lead)+'</div>';
+    th+='<div class="via"><span>Sistema</span><i></i><span>Agente</span><i></i>'
+      +'<span>Skill</span><i></i><span>Acción</span>'
+      +'<b>tiempo · leverage · métrica · qué falta</b></div>';
     th+='<div class="tsum">'
-      +'<div class="ok"><b>'+hrs(AH)+'<span> h</span></b><span>Ahorro al mes</span></div>'
-      +'<div><b>'+hrs(CO)+'<span> h</span></b><span>Lo que cuesta correrlo</span></div>'
-      +'<div class="ok"><b>'+Math.round(AH/(CO||1)*10)/10+'<span>×</span></b>'
-      +'<span>Retorno por hora invertida</span></div>'
-      +'<div class="no"><b>'+HU+'<span> / '+filas.length+'</span></b>'
-      +'<span>Corridas en humo</span></div></div>';
+      +'<div class="ok"><b>'+hrs(AH).replace(' h','<span> h</span>')+'</b>'
+      +'<span>Ahorro al mes</span></div>'
+      +'<div><b>'+hrs(CO).replace(' h','<span> h</span>')+'</b>'
+      +'<span>Lo que cuesta correrlo</span></div>'
+      +'<div class="ok"><b>'+(Math.round(AH/(CO||1)*10)/10)+'<span>×</span></b>'
+      +'<span>Retorno por hora</span></div>'
+      +'<div><b>'+AUTO+'<span> / '+ACC+'</span></b><span>Acciones automáticas</span></div>'
+      +'<div class="no"><b>'+HU+'<span> / '+ACC+'</span></b><span>Acciones en humo</span></div>'
+      +'<div class="no"><b>'+SINM+'<span> / '+ACC+'</span></b><span>Sin métrica</span></div>'
+      +'</div>';
 
-    var max=Math.max.apply(null,filas.map(function(f){return f.am}))||1;
-    th+='<div class="tm-h"><span>Corrida</span><span>Área</span><span>Cada</span>'
-      +'<span>Toma</span><span>A mano</span><span>Ahorro al mes</span></div>';
-    filas.forEach(function(f){
-      th+='<div class="tm '+esc(f.v)+'"><div class="k1">'+esc(f.n)+'</div>'
-        +'<div class="tm-a '+esc(f.k)+'">'+esc(f.a)+'</div>'
-        +'<div class="tm-f">'+(f.frec?f.frec+'<span>× mes</span>':'<i>nunca</i>')+'</div>'
-        +'<div class="tm-v">'+f.min+'<span>min</span></div>'
-        +'<div class="tm-v dim">'+f.manual+'<span>min</span></div>'
-        +'<div class="tm-r"><div class="tm-b"><i style="width:'
-        +Math.round(Math.max(f.am,0)/max*100)+'%"></i></div>'
-        +'<b>'+(f.v==='humo'?'humo':(f.am>=60?hrs(f.am)+' h':f.am+' min'))+'</b></div></div>';
+    var maxS=Math.max.apply(null,T.arbol.map(function(x){return x._ah}))||1;
+    T.arbol.forEach(function(x,i){
+      var ag={auto:'Corre solo',semi:'Asistido',mano:'A pulso'}[x.agente]||x.agente;
+      th+='<details class="sy '+esc(x.agente)+'"><summary>'
+        +'<span class="sy-i">'+(i<9?'0':'')+(i+1)+'</span>'
+        +'<span class="sy-n">'+esc(x.a)+'<em>'+esc(x.sis)+'</em></span>'
+        +'<span class="sy-ag '+esc(x.agente)+'">'+esc(ag)+'</span>'
+        +'<span class="sy-c">'+x.skills.length+'<i>skills</i></span>'
+        +'<span class="sy-c">'+x._acc+'<i>acciones</i></span>'
+        +'<span class="sy-b"><i style="width:'+Math.round(x._ah/maxS*100)+'%"></i></span>'
+        +'<span class="sy-ah'+(x._ah?'':' nil')+'">'+(x._ah?hrs(x._ah):'nada')+'</span>'
+        +'<span class="sy-u '+esc(x.urg)+'">'+esc(x.urg)+'</span>'
+        +'<span class="sy-cv">›</span></summary><div class="sy-b2">';
+
+      x.skills.forEach(function(k){
+        th+='<details class="sk2"><summary>'
+          +'<span class="sk2-n">'+esc(k.id)+'</span>'
+          +'<span class="sk2-r">'+esc(k.rol)+'</span>'
+          +'<span class="sk2-c">'+k.acciones.length+'<i>acc</i></span>'
+          +'<span class="sk2-ah'+(k._ah?'':' nil')+'">'+(k._ah?hrs(k._ah):'—')+'</span>'
+          +'<span class="sk2-cv">›</span></summary><div class="ac-w">';
+        k.acciones.forEach(function(a){
+          th+='<div class="ac '+esc(a._.v)+'">'
+            +'<div class="ac-n">'+esc(a.n)+'</div>'
+            +'<div class="ac-t"><b>'+a.min+'</b><span>min</span>'
+              +'<u>'+(a.frec?'× '+a.frec+' al mes':'nunca')+'</u></div>'
+            +'<div class="ac-t dim"><b>'+a.manual+'</b><span>min a mano</span></div>'
+            +'<div class="ac-l lv-'+esc(a._lev)+'">'+esc(a._lev)
+              +'<u>'+(a._.v==='humo'?'humo':hrs(a._.am))+'</u></div>'
+            +'<div class="ac-im '+esc(a.imp)+'">'+esc(a.imp)+'</div>'
+            +'<div class="ac-au '+esc(a.auto)+'">'
+              +({auto:'automático',semi:'asistido',mano:'a mano'}[a.auto]||a.auto)+'</div>'
+            +'<div class="ac-m'+(a.met==='—'?' nil':'')+'">'
+              +(a.met==='—'?'sin métrica':esc(a.met))+'</div>'
+            +'<div class="ac-f"><b>Para automatizar</b>'+esc(a.falta)+'</div>'
+            +'</div>';
+        });
+        th+='</div></details>';
+      });
+      th+='</div></details>';
     });
+
     th+='<div class="note">'+esc(T.aviso)+'</div>'
       +'<div class="concl"><b>Conclusión</b>'+esc(T.concl)+'</div>'
       +'<div class="tm-src">Fuente: '+esc(T.fuente)+'</div>';
@@ -5376,8 +5891,8 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     return vhead('Backend','área, sistema y tiempo',B.lectura)
       + tiles(B.stats)
       + '<div class="stack">'
-      + card('Los 8 sistemas del negocio', bx)
       + card(esc(B.tiempo.t), th)
+      + card('Los 8 sistemas — ficha corta', bx)
       + card('El arsenal completo','<div class="lk"><a class="lk-c" href="https://pvt-build.github.io/arsenal/" '
           +'target="_blank" rel="noopener"><div class="lk-n">El arsenal ↗</div>'
           +'<div class="lk-d">Para explicar el sistema, no para copiarlo</div></a></div>')

@@ -113,43 +113,69 @@ CLAVE_AREA = {
 
 def bloque_tiempo(previo):
     """
-    Lee las tablas por sistema de tiempo.md y devuelve el bloque del panel.
-    Solo toma min / frec / manual: el veredicto lo deriva el panel, para que
-    no haya dos lugares donde se pueda escribir un juicio distinto.
+    Arma el árbol sistema → agente → skill → acción desde tiempo.md.
+    Del archivo solo salen hechos (min, frec, manual, auto, métrica, impacto,
+    qué falta). Leverage y veredicto los deriva el panel: si se escribieran
+    acá habría dos lugares donde poder decir cosas distintas.
     """
     if not TIEMPO_MD.exists():
         return previo, None
 
-    sistemas = []
-    area = None
+    sistemas, sis, skill = [], None, None
     for linea in TIEMPO_MD.read_text(encoding="utf-8").splitlines():
+
         if linea.startswith("### "):
-            # "### Marketing — contenido"
-            area = linea[4:].split("—")[0].strip()
-            if area in CLAVE_AREA:
-                sistemas.append({"a": area, "k": CLAVE_AREA[area], "filas": []})
-            else:
-                area = None
+            # "### Marketing — Contenido · agente mano · urgencia alta"
+            cab = linea[4:]
+            area = cab.split("—")[0].strip()
+            if area not in CLAVE_AREA:
+                sis = None
+                continue
+            resto = cab.split("—", 1)[1] if "—" in cab else ""
+            partes = [x.strip() for x in resto.split("·")]
+            sis = {"a": area, "k": CLAVE_AREA[area],
+                   "sis": partes[0] if partes else "",
+                   "agente": next((x.replace("agente", "").strip()
+                                   for x in partes if x.startswith("agente")), "mano"),
+                   "urg": next((x.replace("urgencia", "").strip()
+                                for x in partes if x.startswith("urgencia")), "media"),
+                   "skills": []}
+            sistemas.append(sis)
+            skill = None
             continue
-        if not area or not linea.startswith("|"):
+
+        if linea.startswith("#### ") and sis is not None:
+            # "#### pvt-content-agent — decide qué se publica"
+            cab = linea[5:]
+            nom, rol = (cab.split("—", 1) + [""])[:2]
+            skill = {"id": nom.strip(), "rol": rol.strip(), "acciones": []}
+            sis["skills"].append(skill)
             continue
-        celdas = [c.strip() for c in linea.strip("|").split("|")]
-        if len(celdas) < 6 or celdas[0] in ("Corrida",) or set(celdas[0]) <= set("- :"):
+
+        if skill is None or not linea.startswith("|"):
+            continue
+        c = [x.strip() for x in linea.strip("|").split("|")]
+        if len(c) < 8 or c[0] == "Acción" or set(c[0]) <= set("- :"):
             continue
         try:
-            mi, fr, ma = int(celdas[1]), int(celdas[2]), int(celdas[3])
+            mi, fr, ma = int(c[1]), int(c[2]), int(c[3])
         except ValueError:
             continue
-        sistemas[-1]["filas"].append(
-            {"n": celdas[0], "min": mi, "frec": fr, "manual": ma})
+        skill["acciones"].append({
+            "n": c[0], "min": mi, "frec": fr, "manual": ma,
+            "auto": c[4], "met": c[5], "imp": c[6], "falta": c[7]})
 
-    sistemas = [x for x in sistemas if x["filas"]]
+    # una skill sin acciones no entra; un sistema sin skills tampoco
+    for x in sistemas:
+        x["skills"] = [k for k in x["skills"] if k["acciones"]]
+    sistemas = [x for x in sistemas if x["skills"]]
     if not sistemas:
         return previo, None
 
     b = json.loads(json.dumps(previo))
-    b["sistemas"] = sistemas
-    n = sum(len(x["filas"]) for x in sistemas)
+    b["arbol"] = sistemas
+    b.pop("sistemas", None)
+    n = sum(len(k["acciones"]) for x in sistemas for k in x["skills"])
     return b, n
 
 
@@ -322,7 +348,7 @@ def main():
     if "tiempo" in data["backend"]:
         data["backend"]["tiempo"], n_corridas = bloque_tiempo(data["backend"]["tiempo"])
         if n_corridas:
-            print("tiempo     ✓  %d corridas leídas de pvt-arsenal-agent" % n_corridas)
+            print("tiempo     ✓  %d acciones del árbol leídas de pvt-arsenal-agent" % n_corridas)
         else:
             print("tiempo     —  no encontré tiempo.md, se conserva el bloque anterior")
 
