@@ -3,9 +3,9 @@
 #
 #   .privatebuild/captura.sh <slug> [archivo]
 #
-# Sin argumento de archivo toma el más reciente de /mnt/attach, que es donde
-# aterrizan las imágenes adjuntadas desde el celular. Imprime la URL pública:
-# ese es el insumo que Notion necesita para descargarla (ver CAPTURAS.md).
+# Sin argumento de archivo toma la imagen más reciente adjuntada en la sesión.
+# Aterrizan en ~/.claude/uploads/<sesión>/. Imprime la URL pública: ese es el
+# insumo que Notion necesita para descargarla (ver CAPTURAS.md).
 #
 # El repo es público. No pasar por acá capturas con clientes ni montos.
 set -euo pipefail
@@ -20,12 +20,13 @@ if [ -z "$SLUG" ]; then
 fi
 
 if [ -z "$ORIGEN" ]; then
-  ORIGEN="$(find /mnt/attach -maxdepth 1 -type f -printf '%T@ %p\n' 2>/dev/null \
-    | sort -rn | head -1 | cut -d' ' -f2-)"
+  ORIGEN="$(find "$HOME/.claude/uploads" /mnt/attach -type f \
+    \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) \
+    -printf '%T@ %p\n' 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)"
 fi
 
 if [ -z "$ORIGEN" ] || [ ! -f "$ORIGEN" ]; then
-  echo "No hay ninguna captura en /mnt/attach. Adjuntá la imagen primero." >&2
+  echo "No encuentro ninguna captura adjuntada. Adjuntá la imagen primero." >&2
   exit 1
 fi
 

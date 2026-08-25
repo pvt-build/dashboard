@@ -9,7 +9,7 @@ Cómo entra una captura del teléfono al OS y dónde termina. No hay bandeja
 |---|---|---|
 | Cómo | Share sheet del celular → Notion | Adjuntar la imagen en la sesión |
 | Necesita sesión abierta | No | Sí |
-| Dónde queda el archivo | Notion (privado) | `/mnt/attach` → `assets/capturas/` |
+| Dónde queda el archivo | Notion (privado) | `~/.claude/uploads/` → `assets/capturas/` |
 | Sirve para | Cliente, montos, WhatsApp, cualquier cosa sensible | Referencias, UI, capturas públicas |
 | Latencia | Queda guardado, se rutea después | Se rutea en el momento |
 
@@ -25,7 +25,7 @@ la imagen ahí mismo.
 |---|---|---|
 | Idea de contenido propia | `Repositorio-contenido` · page nueva | `collection://2501b21d-b3ba-806d-bae1-000bf51efaff` |
 | Referencia de creador ajeno | `Swipe File` · Tipo Competencia/Inspiración | `collection://3159ee8e-cef2-4519-bca0-eea05cb2a4c5` |
-| Suceso o win de un cliente | Ficha del cliente en `CRM` | `collection://909764aa-a4f3-4297-9007-4b5f00f0fc21` |
+| Win o suceso de un cliente | `🏆 Wins de Clientes` · carpeta única | `collection://aff87b31-66b2-425f-9168-c5ca99227af3` |
 | Algo importante que hay que hacer | `backlog-database-tareas` | `collection://1ac40bba-85fd-43cb-be52-d1bf83678a2c` |
 
 Una referencia de creador que además dispara una idea propia entra dos veces:
@@ -38,8 +38,20 @@ la captura al Swipe File, la idea al Repositorio, y se enlazan por
   `Categoría`, `Formato`. La captura va embebida en el cuerpo.
 - **Swipe File** — `Nombre` (título), `Tipo`, `Formato`, `Link` si se conoce.
   `Por qué me llamó la atención` se deja vacío: se llena en la sesión semanal.
-- **CRM** — no se crea ficha nueva, se cuelga en la del cliente que ya existe.
+- **Wins de Clientes** — `Win` (título), `Cliente` (relación al CRM), `Fecha`,
+  `Tipo`, `Fuente` y `Qué pasó`. Ver la regla de abajo.
 - **backlog** — `Name` (título), `Agente`, `Capa`, `Estado: Sin empezar`.
+
+### La regla de los Wins
+
+Todos los wins de clientes van a **una sola carpeta**: `🏆 Wins de Clientes`,
+colgando de `07 · Delivery` y relacionada al CRM.
+
+Cada win **se lee por sus campos, nunca por el nombre del archivo**. El título
+dice el logro completo y `Qué pasó` lo cuenta entero. Si hay que abrir la
+imagen para entender el win, el registro está mal cargado.
+
+La captura es opcional. Es respaldo, no la fuente.
 
 ## Restricciones reales del entorno
 
@@ -60,7 +72,8 @@ y justo por eso las capturas de clientes no van por acá. Para esas, Ruta A.
 
 ## Flujo de la Ruta B, paso a paso
 
-1. Adjuntar la imagen en la sesión. Aterriza en `/mnt/attach`.
+1. Adjuntar la imagen en la sesión. Aterriza en `~/.claude/uploads/<sesión>/`
+   — no en `/mnt/attach`, que existe pero queda vacío.
 2. `.privatebuild/captura.sh <slug>` — la mueve a `assets/capturas/`, commitea,
    pushea e imprime la URL pública.
 3. Con esa URL, `create-attachment` la sube a Notion y `create-pages` la deja
