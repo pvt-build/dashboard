@@ -3955,9 +3955,9 @@ body{background:var(--bg);color:var(--hi);font-family:var(--sans);
 .p3{width:60vw;height:40vh;left:-10vw;bottom:-18vh;background:rgba(216,168,71,.05);
   filter:blur(64px);animation:d3 55s ease-in-out infinite alternate}
 /* el rojo da la temperatura de fondo: sube el contraste del verde y del dorado */
-.p4{width:64vw;height:52vh;right:-16vw;bottom:-22vh;background:rgba(229,72,77,.13);
+.p4{width:64vw;height:52vh;right:-16vw;bottom:-22vh;background:rgba(229,72,77,.17);
   filter:blur(78px);animation:d4 44s ease-in-out infinite alternate}
-.p5{width:44vw;height:34vh;left:6vw;top:-16vh;background:rgba(229,72,77,.07);
+.p5{width:44vw;height:34vh;left:6vw;top:-16vh;background:rgba(229,72,77,.10);
   filter:blur(88px);animation:d5 61s ease-in-out infinite alternate}
 @keyframes d1{from{transform:translate3d(0,0,0)}to{transform:translate3d(-4vw,3vh,0) scale(1.1)}}
 @keyframes d2{from{transform:translate3d(0,0,0)}to{transform:translate3d(5vw,-2vh,0) scale(1.12)}}
@@ -5058,8 +5058,9 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 .pal{display:grid;grid-template-columns:1.6fr 1fr 108px 132px;gap:var(--s3);
   align-items:center;padding:var(--s3) 0;border-bottom:1px solid var(--border)}
 .pal:last-of-type{border-bottom:0}
-.pal-b{height:8px;border-radius:3px;background:var(--surface3);overflow:hidden}
-.pal-b i{display:block;height:100%;border-radius:3px;background:var(--mid)}
+.pal-b{height:9px;border-radius:3px;background:var(--surface3);overflow:hidden;
+  border:1px solid var(--border)}
+.pal-b i{display:block;height:100%;border-radius:3px;background:var(--gold)}
 .pal.live .pal-b i{background:var(--good)}
 .pal.mid .pal-b i{background:var(--warn)}
 .pal-v{font-size:var(--t-l);font-weight:700;text-align:right}
