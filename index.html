@@ -41,7 +41,7 @@
         "lag": null
       }
     ],
-    "build": "3108.1528"
+    "build": "3108.1529"
   },
   "radar": {
     "lectura": "Los mismos ocho sistemas en el gráfico, en la lista y en cada cliente. Setting es el piso, Entrega el techo.",
@@ -6217,7 +6217,7 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
         +esc(x.n.toUpperCase())+'</text>';
       /* el trapecio de caída hacia el siguiente */
       if(i<N-1){
-        var w2=an(e[i+1].v), x2=(W-w2)/2, y2=y+H_T, peor=(i===worst);
+        var w2=an(e[i+1].v), x2=(W-w2)/2, y2=y+H_T, peor=(i+1===worst);
         s2+='<path d="M'+x0.toFixed(1)+' '+y2+' L'+(x0+w).toFixed(1)+' '+y2
           +' L'+(x2+w2).toFixed(1)+' '+(y2+H_G)+' L'+x2.toFixed(1)+' '+(y2+H_G)+' Z" '
           +'fill="'+(peor?'var(--danger)':'var(--border-hi)')+'" fill-opacity="'
@@ -6233,8 +6233,8 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
       +'<div class="fnl-x"><div><b>'+Math.round(e[e.length-1].v/e[0].v*100)+'%</b>'
       +'<span>Conversión total</span></div>'
       +'<div><b>'+perd+'</b><span>Leads perdidos en el camino</span></div>'
-      +'<div class="no"><b>'+ratios[worst+1]+'%</b><span>El peor tramo: '
-      +esc(e[worst].n)+' → '+esc(e[worst+1].n)+'</span></div></div>';
+      +'<div class="no"><b>'+ratios[worst]+'%</b><span>El peor tramo: '
+      +esc(e[worst-1].n)+' → '+esc(e[worst].n)+'</span></div></div>';
   }
 
 
