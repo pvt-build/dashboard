@@ -1,5 +1,7 @@
 <title>PRIVATE-OS · Business</title>
 <meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0E1014">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +37,8 @@
         "al": null,
         "lag": null
       }
-    ]
+    ],
+    "build": "3108.1314"
   },
   "radar": {
     "lectura": "Los mismos ocho sistemas en el gráfico, en la lista y en cada cliente. Setting es el piso, Entrega el techo.",
@@ -1428,67 +1431,16 @@
       ],
       "concl": "Marketing, Ventas y Captura concentran el dolor: nadie te pide mejor entrega, te piden que les llegue gente y saber venderla. El contenido que convierte habla de eso, no de sistemas."
     },
-    "gap": {
-      "t": "El gap del mes — por qué septiembre necesita dos ventas",
-      "lead": "Los números vienen del Finance OS, en pesos. Un gap nunca se lee en plata por día: se traduce a la moneda con la que vendes.",
-      "meses": [
-        {
-          "m": "Agosto",
-          "res": -73227,
-          "e": "mid",
-          "q": "Ajuste de gasto",
-          "d": "No requiere cierre. Bajar $73.000 del variable lo cierra en verde."
-        },
-        {
-          "m": "Septiembre",
-          "res": -458194,
-          "e": "brk",
-          "q": "1 operator",
-          "d": "La cuota del crédito corrida desde agosto más la deuda personal de $500.000."
-        },
-        {
-          "m": "Septiembre con provisión",
-          "res": -708194,
-          "e": "brk",
-          "q": "1 operator, ticket alto",
-          "d": "Descontando el 25% de provisión tributaria sobre las consultorías."
-        }
-      ],
-      "piso": 502062,
-      "riesgo": "Las dos proyecciones asumen $2.200.000 de la agencia. Con la salida en curso, el mes en que ese ingreso pare es el dato más importante del plan: sin él quedan $750.000 netos contra $2.900.000 de obligaciones.",
-      "palancas": [
-        {
-          "n": "Correr la deuda personal a octubre",
-          "v": 500000,
-          "dif": "Una conversación",
-          "e": "live"
-        },
-        {
-          "n": "Bajar el variable a lo real",
-          "v": 266000,
-          "dif": "Disciplina",
-          "e": "mid"
-        },
-        {
-          "n": "Revisar el plan de Anthropic",
-          "v": 90000,
-          "dif": "Decisión",
-          "e": "mid"
-        },
-        {
-          "n": "ChatGPT + Pletor + Canva: ¿los tres se usan?",
-          "v": 55000,
-          "dif": "Decisión",
-          "e": "mid"
-        },
-        {
-          "n": "Renegociar Movistar",
-          "v": 10000,
-          "dif": "Una llamada",
-          "e": "live"
-        }
-      ],
-      "concl": "Septiembre se cierra con una venta, no con recortes. Y la palanca de mejor retorno no es comercial: correr la deuda personal un mes mueve medio millón con una conversación."
+    "meta": {
+      "t": "La meta del mes — cuánto hay que cerrar",
+      "lead": "Lo que falta vender este mes, en la moneda con la que vendes: operadores, no pesos.",
+      "mes": "Septiembre",
+      "necesita": 2,
+      "cerrado": 1,
+      "detalle": "Emma renovó por $1.500. Faltan dos cierres nuevos para no depender de una sola firma.",
+      "ticket": 1580,
+      "cobertura": "El pipeline vivo cubre la meta 2,3× si los tres de arriba cierran.",
+      "concl": "Dos operadores en septiembre. Los tres de cierre cercano —Egly, Nacho y Pablo— valen más que los nueve fríos juntos: ahí está la meta, no en la cola."
     }
   },
   "canales": {
@@ -3982,8 +3934,12 @@ body{background:var(--bg);color:var(--hi);font-family:var(--sans);
   padding-top:env(safe-area-inset-top);
   display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;
   gap:var(--s4);min-height:var(--navh)}
+.topnav-in > .navdate{grid-row:1;grid-column:2}
+.topnav-in > .navver{grid-row:1;grid-column:2;align-self:end;margin-top:26px}
 .navdate{font-size:var(--t-micro);font-weight:600;letter-spacing:.11em;
   text-transform:uppercase;color:var(--low);white-space:nowrap;text-align:right}
+.navver{font-size:9px;font-weight:700;letter-spacing:.08em;color:var(--gold);
+  white-space:nowrap;text-align:right;opacity:.75}
 .tabs{display:flex;gap:3px;overflow-x:auto;scrollbar-width:none;position:relative;
   padding:5px;border-radius:16px;
   background:var(--surface);border:1px solid var(--border);
@@ -5037,36 +4993,24 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
 .k2,.note,.ac-f,.cf-r div p,.ce-f p,.mt-d,.gp3-d{color:var(--mid)}
 .note{opacity:.92}
 
-/* ── EL GAP DEL MES ── */
-.gp3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-bottom:var(--s4)}
-.gp3 > div{padding:var(--s4);border-radius:var(--r-s);background:var(--surface2);
-  border:1px solid var(--border)}
-.gp3 > div.brk{border-color:rgba(229,72,77,.32);background:rgba(229,72,77,.05)}
-.gp3-m{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--low);margin-bottom:var(--s2)}
-.gp3-v{font-size:24px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--warn)}
-.gp3 > div.brk .gp3-v{color:var(--danger)}
-.gp3-q{display:inline-block;margin-top:var(--s2);font-size:9.5px;font-weight:700;
-  letter-spacing:.07em;text-transform:uppercase;color:var(--gold);
-  border:1px solid rgba(216,168,71,.4);border-radius:var(--r-pill);padding:2px 9px}
-.gp3-d{font-size:var(--t-xs);color:var(--low);line-height:1.45;margin-top:var(--s3)}
-.gp-r{padding:var(--s3) var(--s4);border-radius:var(--r-s);
-  background:rgba(229,72,77,.07);border:1px solid rgba(229,72,77,.28);
-  font-size:var(--t-s);color:var(--hi);line-height:1.5}
-.gp-r b{display:block;font-size:9.5px;font-weight:700;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--danger);margin-bottom:4px}
-.pal{display:grid;grid-template-columns:1.6fr 1fr 108px 132px;gap:var(--s3);
-  align-items:center;padding:var(--s3) 0;border-bottom:1px solid var(--border)}
-.pal:last-of-type{border-bottom:0}
-.pal-b{height:9px;border-radius:3px;background:var(--surface3);overflow:hidden;
-  border:1px solid var(--border)}
-.pal-b i{display:block;height:100%;border-radius:3px;background:var(--gold)}
-.pal.live .pal-b i{background:var(--good)}
-.pal.mid .pal-b i{background:var(--warn)}
-.pal-v{font-size:var(--t-l);font-weight:700;text-align:right}
-.pal.live .pal-v{color:var(--good)}
-.pal-d{font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--low);text-align:right}
+/* ── LA META DEL MES ── */
+.mta{display:grid;grid-template-columns:auto 1fr auto auto;gap:var(--s5);
+  align-items:center;padding:var(--s4) var(--s5);border-radius:var(--r-s);
+  background:var(--surface2);border:1px solid var(--border);margin-bottom:var(--s3)}
+.mta-p{font-size:var(--t-l);font-weight:700;text-transform:capitalize}
+.mta-d{display:flex;gap:var(--s3)}
+.mta-d i{width:38px;height:38px;border-radius:50%;
+  border:2px dashed var(--border-hi);flex:0 0 auto}
+.mta-d i.on{border:2px solid var(--good);background:rgba(74,222,128,.16)}
+.mta-n,.mta-t{text-align:right;white-space:nowrap}
+.mta-n b{font-size:var(--n-m);font-weight:700;letter-spacing:-.03em;
+  line-height:1;color:var(--danger)}
+.mta-t{font-size:var(--t-l);font-weight:700;color:var(--gold)}
+.mta-n span,.mta-t span{display:block;font-size:var(--t-micro);font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--low);margin-top:3px}
+.mta-x{padding:var(--s3) var(--s4);border-radius:var(--r-s);
+  background:rgba(216,168,71,.07);border:1px solid rgba(216,168,71,.3);
+  font-size:var(--t-s);color:var(--hi);line-height:1.5;margin-bottom:var(--s3)}
 
 /* ── CALENDARIO DEL MES ── */
 .cal-t{font-size:var(--t-l);font-weight:700;letter-spacing:-.02em;
@@ -5584,9 +5528,8 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .pg-c,.pg-m{grid-row:2;text-align:left;justify-self:start}
   .pg .k2{grid-column:1/-1}
   .mt{grid-template-columns:1fr}
-  .gp3{grid-template-columns:1fr}
-  .pal{grid-template-columns:1fr 96px;row-gap:var(--s1)}
-  .pal-b{grid-column:1/-1}
+  .mta{grid-template-columns:1fr auto;row-gap:var(--s3)}
+  .mta-d{grid-column:1/-1}
   .bal{flex-wrap:wrap}
   .bal > div{flex:1 1 22%!important}
   .ld-h{display:none}
@@ -5653,6 +5596,7 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   <div class="topnav-in">
     <div class="tabs" id="tabs"><span class="slider" id="slider"></span></div>
     <div class="navdate" id="navdate"></div>
+    <div class="navver" id="navver"></div>
   </div>
 </nav>
 
@@ -6067,26 +6011,21 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
     });
     dh+='<div class="concl"><b>Conclusión</b>'+esc(dl.concl)+'</div>';
 
-    /* el gap del mes, traducido a ventas */
-    var gp=b.gap, clp=function(n){ return (n<0?'−$':'$')+Math.abs(n).toLocaleString('es-CL'); };
-    var gh='<div class="note" style="margin:0 0 var(--s4)">'+esc(gp.lead)+'</div>';
-    gh+='<div class="gp3">'+gp.meses.map(function(x){
-      return '<div class="'+esc(x.e)+'"><div class="gp3-m">'+esc(x.m)+'</div>'
-        +'<div class="gp3-v">'+clp(x.res)+'</div>'
-        +'<div class="gp3-q">'+esc(x.q)+'</div>'
-        +'<div class="gp3-d">'+esc(x.d)+'</div></div>'; }).join('')+'</div>';
-    gh+='<div class="gp-r"><b>El riesgo que domina</b>'+esc(gp.riesgo)+'</div>';
-    gh+='<div class="card-t" style="margin:var(--s5) 0 var(--s3)">Palancas — cuánto libera cada una</div>';
-    var maxp2=Math.max.apply(null,gp.palancas.map(function(x){return x.v}))||1;
-    gp.palancas.forEach(function(x){
-      gh+='<div class="pal '+esc(x.e)+'"><div class="k1">'+esc(x.n)+'</div>'
-        +'<div class="pal-b"><i style="width:'+Math.round(x.v/maxp2*100)+'%"></i></div>'
-        +'<div class="pal-v">'+clp(x.v)+'</div>'
-        +'<div class="pal-d">'+esc(x.dif)+'</div></div>';
-    });
-    gh+='<div class="note">Piso fijo de deuda estructural: '+clp(gp.piso)
-      +' al mes hasta 2028, pase lo que pase.</div>'
-      +'<div class="concl"><b>Conclusión</b>'+esc(gp.concl)+'</div>';
+    /* la meta del mes: cuántos cierres faltan, no cuántos pesos */
+    var mt2=b.meta;
+    var gh='<div class="note" style="margin:0 0 var(--s4)">'+esc(mt2.lead)+'</div>';
+    gh+='<div class="mta">'
+      +'<div class="mta-p">'+esc(mt2.mes)+'</div>'
+      +'<div class="mta-d">'
+      + Array.from({length:mt2.necesita+mt2.cerrado}).map(function(_,i){
+          return '<i class="'+(i<mt2.cerrado?'on':'')+'"></i>'; }).join('')
+      +'</div>'
+      +'<div class="mta-n"><b>'+mt2.necesita+'</b><span>cierres nuevos</span></div>'
+      +'<div class="mta-t">$'+money(mt2.ticket)+'<span>ticket objetivo</span></div>'
+      +'</div>';
+    gh+='<div class="mta-x">'+esc(mt2.detalle)+'</div>'
+      +'<div class="note">'+esc(mt2.cobertura)+'</div>'
+      +'<div class="concl"><b>Conclusión</b>'+esc(mt2.concl)+'</div>';
 
     var lt=b.ltv, lh='<div class="ltv-h"><span>Cliente</span><span>Meses</span>'
       +'<span>Contrato</span><span>Renovación</span><span>LTV</span><span>Por qué</span></div>';
@@ -6115,7 +6054,7 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
       + tiles(b.stats)
       + '<div class="stack">'
       + card(esc(pg.t), ph)
-      + card(esc(gp.t), gh)
+      + card(esc(mt2.t), gh)
       + card(esc(cj.t), ch)
       + '</div>'
 
@@ -6739,6 +6678,8 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   ];
 
   document.getElementById('navdate').textContent = D.meta.fecha;
+  var nv=document.getElementById('navver');
+  if(nv) nv.textContent = 'v' + (D.meta.build || D.meta.fecha);
   document.getElementById('footL').textContent = D.meta.os+' — '+D.meta.operador;
   document.getElementById('fresh').innerHTML = D.meta.frescura.map(function(f){
     var cls=f.al===null?'none':(f.lag>5?'lag':'');

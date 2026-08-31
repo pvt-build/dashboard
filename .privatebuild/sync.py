@@ -368,6 +368,8 @@ def main():
 
     hoy = date.today().isoformat()
     data["meta"]["fecha"] = datetime.now().strftime("%d·%m·%y")
+    # sello de build: sirve para saber si el navegador está mostrando lo último
+    data["meta"]["build"] = datetime.now().strftime("%d%m.%H%M")
 
     # El lag se recalcula SIEMPRE contra hoy, con o sin token. Antes solo se
     # tocaba al refrescar desde Notion, así que una fuente vieja seguía
