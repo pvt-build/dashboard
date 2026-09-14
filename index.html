@@ -41,7 +41,7 @@
         "lag": null
       }
     ],
-    "build": "1409.1349"
+    "build": "1409.1350"
   },
   "radar": {
     "lectura": "Los mismos ocho sistemas en el gráfico, en la lista y en cada cliente. Setting es el piso, Entrega el techo.",
@@ -6250,6 +6250,12 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;
 /* filas de tabla: altura mínima pareja, texto recortado */
 .pg,.ld,.pal,.ltv,.win,.tm,.pp,.rw{min-height:48px}
 
+/* el título del bloque: nombre fuerte, bajada tenue, una sola línea */
+.card-t{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  color:var(--mid)}
+.card-sub{font-style:normal;color:var(--low);font-weight:500}
+.pg-c{letter-spacing:.08em;white-space:nowrap}
+
 /* ── 4 · NAVEGACIÓN ────────────────────────────────────────── */
 .tabs button{font-family:var(--sans);font-weight:600;letter-spacing:-.005em}
 .navver{font-size:9px}
@@ -6268,6 +6274,7 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;
   .tiles{gap:8px}
   .tile{min-height:112px}
   .tile .f{-webkit-line-clamp:2}
+  .card-sub{display:none}
   .concl{font-size:13px}
   .oz-s{margin-top:24px}
 }
@@ -6323,7 +6330,12 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;
     NB++; var n=(NB<10?'0':'')+NB;
     return '<details class="glass card" open><summary class="card-h">'
       + '<span class="card-nb">'+n+'</span>'
-      + '<span class="card-t">'+(t?esc(t):'')+'</span>'
+      + (function(){
+          var tt=String(t||''), k=tt.indexOf(' — ');
+          if(k<0) return '<span class="card-t">'+tt+'</span>';
+          return '<span class="card-t">'+tt.slice(0,k)
+            +'<em class="card-sub"> — '+tt.slice(k+3)+'</em></span>';
+        })()
       + '<span class="card-cv">›</span></summary>'
       + '<div class="card-in">'+inner+'</div></details>'; }
   function tile(t){
