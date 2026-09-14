@@ -12,8 +12,8 @@ Sin token, los dos bloques de Notion quedan intactos: el script nunca borra
 data que no puede recalcular, solo marca la fuente como vieja en el header.
 
 Uso:
-    python3 Webs/panel-troncal/.privatebuild/sync.py            # en seco
-    python3 Webs/panel-troncal/.privatebuild/sync.py --aplicar
+    python3 ECOSISTEMA/panel-troncal/.privatebuild/sync.py            # en seco
+    python3 ECOSISTEMA/panel-troncal/.privatebuild/sync.py --aplicar
 """
 
 import json
@@ -25,8 +25,9 @@ import urllib.request
 from datetime import date, datetime
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parents[3]
-PANEL = RAIZ / "Webs" / "panel-troncal" / "index.html"
+# el panel es el padre de .privatebuild/: mover la carpeta no rompe el sync
+PANEL = Path(__file__).resolve().parents[1] / "index.html"
+RAIZ = PANEL.parents[2]
 
 BLOQUE = re.compile(
     r'(<script id="pvt-data" type="application/json">)(.*?)(</script>)', re.S
@@ -108,6 +109,9 @@ CLAVE_AREA = {
     "Marketing": "mkt", "Setting": "cml", "Comercial": "cml",
     "Onboarding": "ent", "Producto": "prd", "Entrega": "ent",
     "Comunidad": "cmn", "Backend": "bkd",
+    # la cascada de 7 sistemas (24/08): Foundations absorbió Backend
+    "Foundations": "fnd", "Captura": "cml", "Ventas": "cml",
+    "Delivery": "ent", "Nutrición": "cmn", "Nutrición / Fidelización": "cmn",
 }
 
 
@@ -127,7 +131,8 @@ def bloque_tiempo(previo):
         if linea.startswith("### "):
             # "### Marketing — Contenido · agente mano · urgencia alta"
             cab = linea[4:]
-            area = cab.split("—")[0].strip()
+            # "1. Foundations — ..." o "Marketing — ...": el número de cascada se descarta
+            area = re.sub(r"^\d+\.\s*", "", cab.split("—")[0].strip())
             if area not in CLAVE_AREA:
                 sis = None
                 continue

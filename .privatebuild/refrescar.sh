@@ -5,11 +5,9 @@
 #
 # Si hay NOTION_TOKEN en el entorno, también baja CRM y contenido.
 set -euo pipefail
-cd "$(dirname "$0")/../../.."
-
-python3 Webs/panel-troncal/.privatebuild/sync.py --aplicar
-
-cd Webs/panel-troncal
+PANEL="$(cd "$(dirname "$0")/.." && pwd)"
+python3 "$PANEL/.privatebuild/sync.py" --aplicar
+cd "$PANEL"
 if git diff --quiet; then
   echo "Sin cambios: el panel ya estaba al día."
   exit 0

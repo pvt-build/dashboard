@@ -22,17 +22,17 @@
     "os": "PRIVATE-OS",
     "modulo": "Business",
     "ref": "PVT-BIZ-24",
-    "fecha": "31·08·26",
+    "fecha": "14·09·26",
     "operador": "Patricio Rubio",
     "frescura": [
       {
         "n": "CRM · Notion",
         "al": "2026-08-09",
-        "lag": 22
+        "lag": 36
       },
       {
         "n": "Filesystem · OS",
-        "al": "2026-08-31",
+        "al": "2026-09-14",
         "lag": 0
       },
       {
@@ -41,7 +41,7 @@
         "lag": null
       }
     ],
-    "build": "3108.1544"
+    "build": "1409.1349"
   },
   "radar": {
     "lectura": "Los mismos ocho sistemas en el gráfico, en la lista y en cada cliente. Setting es el piso, Entrega el techo.",
@@ -292,7 +292,7 @@
         "n": "Backend",
         "e": "mid",
         "et": "Sobrada, hay que adelgazarla",
-        "r": "30 skills y 6 sistemas. El siguiente movimiento es podar, no construir.",
+        "r": "35 skills y 6 sistemas. El siguiente movimiento es podar, no construir.",
         "falta": [
           {
             "q": "Base de tareas Private Build",
@@ -317,7 +317,7 @@
         ],
         "v": 0.75,
         "t": 0.85,
-        "nota": "30 skills y 8 sistemas. Sobra superficie, falta SOP",
+        "nota": "35 skills y 8 sistemas. Sobra superficie, falta SOP",
         "ver": "backend"
       }
     ],
@@ -330,7 +330,7 @@
       "ago"
     ],
     "parcial": 2,
-    "dias": "día 31 de 31",
+    "dias": "día 14 de 30",
     "series": [
       {
         "n": "Leads",
@@ -3582,9 +3582,195 @@
       "concl": "El ahorro se concentra en los dos sistemas con agente. Casi todo el 'qué falta' dice lo mismo: la skill existe y espera que la invoquen a mano — falta el gatillo, no la herramienta. Y la mitad de las acciones no tiene métrica, así que no se pueden auditar, solo recordar.",
       "arbol": [
         {
+          "a": "Foundations",
+          "k": "fnd",
+          "sis": "el setup",
+          "agente": "mixto",
+          "urg": "alta",
+          "skills": [
+            {
+              "id": "pvt-arsenal-agent",
+              "rol": "el registro, el árbol de tiempo y el scouting de conectores",
+              "acciones": [
+                {
+                  "n": "Sincronizar el registro de skills",
+                  "min": 15,
+                  "frec": 2,
+                  "manual": 60,
+                  "auto": "semi",
+                  "met": "Skills registradas",
+                  "imp": "habilita",
+                  "falta": "Que el `ls` dispare el diff sin que se lo pidan"
+                },
+                {
+                  "n": "Mantener el árbol del OS",
+                  "min": 12,
+                  "frec": 2,
+                  "manual": 60,
+                  "auto": "semi",
+                  "met": "Acciones mapeadas",
+                  "imp": "habilita",
+                  "falta": "Que el tiempo se mida solo, no que se estime"
+                }
+              ]
+            },
+            {
+              "id": "pvt-asistente-agent",
+              "rol": "correo, agenda y morning",
+              "acciones": [
+                {
+                  "n": "Morning brief",
+                  "min": 0,
+                  "frec": 22,
+                  "manual": 20,
+                  "auto": "auto",
+                  "met": "Briefs entregados",
+                  "imp": "habilita",
+                  "falta": "Ya corre solo. Falta que pida el check de cadencias"
+                },
+                {
+                  "n": "Barrido de correo",
+                  "min": 5,
+                  "frec": 22,
+                  "manual": 25,
+                  "auto": "semi",
+                  "met": "Correos accionables",
+                  "imp": "habilita",
+                  "falta": "Solo lectura: no archiva ni responde"
+                }
+              ]
+            },
+            {
+              "id": "pvt-finance-agent",
+              "rol": "la billetera",
+              "acciones": [
+                {
+                  "n": "Cierre de finanzas del mes",
+                  "min": 20,
+                  "frec": 1,
+                  "manual": 90,
+                  "auto": "semi",
+                  "met": "Margen del mes",
+                  "imp": "habilita",
+                  "falta": "Captura de movimientos a mano en el JSON"
+                }
+              ]
+            },
+            {
+              "id": "pvt-backlog-agent",
+              "rol": "la cola de despacho",
+              "acciones": [
+                {
+                  "n": "Despacho del backlog",
+                  "min": 10,
+                  "frec": 4,
+                  "manual": 25,
+                  "auto": "semi",
+                  "met": "Filas despachadas",
+                  "imp": "habilita",
+                  "falta": "Que agrupe por agente sin pedir la base cada vez"
+                }
+              ]
+            },
+            {
+              "id": "pvt-architect-agent",
+              "rol": "la estructura del OS",
+              "acciones": [
+                {
+                  "n": "Ubicar una pieza nueva en la anatomía",
+                  "min": 8,
+                  "frec": 2,
+                  "manual": 25,
+                  "auto": "semi",
+                  "met": "—",
+                  "imp": "cero",
+                  "falta": "Se corre poco: candidata a fusión con arsenal"
+                }
+              ]
+            },
+            {
+              "id": "pvt-sessions-agent",
+              "rol": "la barra lateral de Claude Code *(alta 2026-09-12)*",
+              "acciones": [
+                {
+                  "n": "Auditar y renombrar sesiones",
+                  "min": 5,
+                  "frec": 4,
+                  "manual": 30,
+                  "auto": "semi",
+                  "met": "Sueltas + forks sin limpiar",
+                  "imp": "habilita",
+                  "falta": "Estimado, sin cronometrar. Que el morning corra `auditar.py` y avise al pasar umbral"
+                },
+                {
+                  "n": "Reagrupar la barra (ordenar.sh)",
+                  "min": 2,
+                  "frec": 2,
+                  "manual": 25,
+                  "auto": "semi",
+                  "met": "Sesiones movidas",
+                  "imp": "habilita",
+                  "falta": "Estimado. Mover grupos desde el chat, si la app libera `ccd_sidebar`"
+                }
+              ]
+            },
+            {
+              "id": "Panel troncal",
+              "rol": "la superficie de todo esto",
+              "acciones": [
+                {
+                  "n": "Refresco del panel troncal",
+                  "min": 2,
+                  "frec": 8,
+                  "manual": 90,
+                  "auto": "auto",
+                  "met": "Días de lag",
+                  "imp": "habilita",
+                  "falta": "Ya corre solo. Falta el token de Notion en el entorno"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "a": "Producto",
+          "k": "prd",
+          "sis": "la oferta y la currícula",
+          "agente": "mano",
+          "urg": "media",
+          "skills": [
+            {
+              "id": "pvt-infoproduct-agent",
+              "rol": "currícula y empaquetado",
+              "acciones": [
+                {
+                  "n": "Ubicar un hallazgo en la currícula",
+                  "min": 10,
+                  "frec": 2,
+                  "manual": 30,
+                  "auto": "semi",
+                  "met": "Módulos cubiertos",
+                  "imp": "habilita",
+                  "falta": "Que lo proponga al cerrar una sesión"
+                },
+                {
+                  "n": "Empaquetar un hallazgo en 5 capas",
+                  "min": 40,
+                  "frec": 0,
+                  "manual": 120,
+                  "auto": "mano",
+                  "met": "—",
+                  "imp": "directo",
+                  "falta": "Nunca se corrió: falta el primer caso completo"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "a": "Marketing",
           "k": "mkt",
-          "sis": "Contenido",
+          "sis": "contenido",
           "agente": "mano",
           "urg": "alta",
           "skills": [
@@ -3689,69 +3875,79 @@
               ]
             },
             {
-              "id": "pvt-video-agent · pvt-motion-agent",
-              "rol": "corto y movimiento",
+              "id": "pvt-motion-agent",
+              "rol": "captura, edición y movimiento (fusionó a `pvt-video-agent` 24/08)",
               "acciones": [
                 {
-                  "n": "Reel producido",
+                  "n": "Video crudo editado (Remotion)",
                   "min": 30,
-                  "frec": 0,
-                  "manual": 60,
-                  "auto": "mano",
-                  "met": "—",
+                  "frec": 3,
+                  "manual": 90,
+                  "auto": "semi",
+                  "met": "Piezas editadas/mes",
                   "imp": "directo",
-                  "falta": "El pipeline de OBS a export no existe: es el cuello del formato"
+                  "falta": "Corregido 24/08: en uso real, frecuencia todavía sin cronometrar exacta — 3/mes es piso estimado, no medido"
                 },
                 {
-                  "n": "Video largo",
+                  "n": "Video largo producido de punta a punta",
                   "min": 90,
                   "frec": 0,
                   "manual": 180,
                   "auto": "mano",
                   "met": "—",
                   "imp": "directo",
-                  "falta": "Sin guion base ni plantilla de montaje"
+                  "falta": "El pipeline de 7 etapas heredado sigue en V0 — solo la etapa 1 (OBS) está validada"
                 }
               ]
             }
           ]
         },
         {
-          "a": "Setting",
+          "a": "Captura",
           "k": "cml",
-          "sis": "Bandeja que setea",
+          "sis": "la bandeja que setea",
           "agente": "mano",
           "urg": "alta",
           "skills": [
             {
               "id": "pvt-setter-agent",
-              "rol": "clasifica IG y WhatsApp, no responde",
+              "rol": "clasifica IG, WhatsApp y LinkedIn, no responde",
               "acciones": [
                 {
-                  "n": "Barrido de DMs con clasificación",
+                  "n": "Barrido de DMs con clasificación (IG)",
                   "min": 15,
-                  "frec": 0,
+                  "frec": 4,
                   "manual": 45,
                   "auto": "semi",
                   "met": "Leads calificados",
                   "imp": "directo",
-                  "falta": "Solo lee: falta el borrador de respuesta y el registro del envío"
+                  "falta": "Corregido 24/08: Patricio confirmó uso real — frec estimada en 4/mes, sin cronometrar exacto"
                 },
                 {
                   "n": "Barrido de WhatsApp",
                   "min": 20,
-                  "frec": 0,
+                  "frec": 4,
                   "manual": 50,
                   "auto": "semi",
                   "met": "Hilos sin respuesta",
                   "imp": "directo",
-                  "falta": "La app de escritorio no expone histórico sin export manual"
+                  "falta": "Corregido 24/08: mismo caso — en uso real, frecuencia estimada"
+                },
+                {
+                  "n": "Barrido de LinkedIn (V0, sin taxonomía)",
+                  "min": 15,
+                  "frec": 2,
+                  "manual": 40,
+                  "auto": "semi",
+                  "met": "—",
+                  "imp": "habilita",
+                  "falta": "No tiene `taxonomia-li.md` ni reglas de apertura propias todavía"
                 }
               ]
             },
             {
               "id": "pvt-intake-agent",
-              "rol": "rutea material externo a sus tres salidas",
+              "rol": "rutea material externo a sus salidas",
               "acciones": [
                 {
                   "n": "Ruteo de un input externo",
@@ -3764,29 +3960,13 @@
                   "falta": "Que escriba en CRM y contenido sin confirmación por paso"
                 }
               ]
-            },
-            {
-              "id": "pvt-scout-agent",
-              "rol": "busca afuera",
-              "acciones": [
-                {
-                  "n": "Barrido de cuentas objetivo",
-                  "min": 20,
-                  "frec": 0,
-                  "manual": 60,
-                  "auto": "mano",
-                  "met": "Cuentas nuevas",
-                  "imp": "directo",
-                  "falta": "El scrapper de IG existe y nunca se estrenó"
-                }
-              ]
             }
           ]
         },
         {
-          "a": "Comercial",
+          "a": "Ventas",
           "k": "cml",
-          "sis": "CRM y llamadas",
+          "sis": "CRM y llamadas (dashboard)",
           "agente": "semi",
           "urg": "media",
           "skills": [
@@ -3875,8 +4055,44 @@
               ]
             },
             {
+              "id": "pvt-proof-agent",
+              "rol": "produce el activo de prueba (alta 2026-09-02, V0)",
+              "acciones": [
+                {
+                  "n": "Print de un caso (1 imagen, bloques 1·5·6)",
+                  "min": 30,
+                  "frec": 0,
+                  "manual": 45,
+                  "auto": "mano",
+                  "met": "Casos con activo",
+                  "imp": "directo",
+                  "falta": "Nunca corrió: 6 casos con número y 0 activos producidos"
+                },
+                {
+                  "n": "Ficha de caso reenviable (600-1.000 palabras)",
+                  "min": 45,
+                  "frec": 0,
+                  "manual": 90,
+                  "auto": "mano",
+                  "met": "Fichas listas",
+                  "imp": "directo",
+                  "falta": "Nunca corrió. Plantilla existe, falta la primera corrida real"
+                },
+                {
+                  "n": "Captura de prueba al cliente (permiso + video)",
+                  "min": 20,
+                  "frec": 0,
+                  "manual": 40,
+                  "auto": "mano",
+                  "met": "Permisos cerrados",
+                  "imp": "habilita",
+                  "falta": "Que se dispare cuando `pvt-consulting-agent` registre un delta con número"
+                }
+              ]
+            },
+            {
               "id": "pvt-funnel-agent",
-              "rol": "el nivelador",
+              "rol": "el nivelador (Modo Sitio) + auditoría del embudo completo (Modo Auditoría, 24/08)",
               "acciones": [
                 {
                   "n": "Revisar el funnel y su tráfico",
@@ -3887,24 +4103,34 @@
                   "met": "Visitas / conversión",
                   "imp": "habilita",
                   "falta": "Está publicado y sin analítica conectada"
+                },
+                {
+                  "n": "Auditoría del embudo completo (contenido→recompra)",
+                  "min": 30,
+                  "frec": 0,
+                  "manual": 90,
+                  "auto": "mano",
+                  "met": "Tramo más roto",
+                  "imp": "directo",
+                  "falta": "Nunca corrió: es modo nuevo del 24/08, cero reps"
                 }
               ]
             }
           ]
         },
         {
-          "a": "Onboarding",
+          "a": "Delivery",
           "k": "ent",
-          "sis": "Estándar de cliente",
-          "agente": "mano",
-          "urg": "media",
+          "sis": "sesiones, roadmaps y onboarding real",
+          "agente": "semi",
+          "urg": "baja",
           "skills": [
             {
               "id": "pvt-consulting-agent",
-              "rol": "el ciclo de vida del cliente",
+              "rol": "el ciclo de vida completo del cliente",
               "acciones": [
                 {
-                  "n": "Panel para un cliente nuevo",
+                  "n": "Panel para un cliente nuevo (onboarding)",
                   "min": 45,
                   "frec": 1,
                   "manual": 180,
@@ -3914,7 +4140,7 @@
                   "falta": "Plantilla que se clona con los datos del CRM"
                 },
                 {
-                  "n": "Ficha inicial en el CRM",
+                  "n": "Ficha inicial en el CRM (onboarding)",
                   "min": 8,
                   "frec": 1,
                   "manual": 20,
@@ -3922,59 +4148,19 @@
                   "met": "—",
                   "imp": "habilita",
                   "falta": "Que la cree el cierre, no una carga aparte"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "a": "Producto",
-          "k": "prd",
-          "sis": "Currícula e infoproducto",
-          "agente": "mano",
-          "urg": "media",
-          "skills": [
-            {
-              "id": "pvt-infoproduct-agent",
-              "rol": "currícula y empaquetado",
-              "acciones": [
-                {
-                  "n": "Ubicar un hallazgo en la currícula",
-                  "min": 10,
-                  "frec": 2,
-                  "manual": 30,
-                  "auto": "semi",
-                  "met": "Módulos cubiertos",
-                  "imp": "habilita",
-                  "falta": "Que lo proponga al cerrar una sesión"
                 },
                 {
-                  "n": "Empaquetar un hallazgo en 5 capas",
-                  "min": 40,
-                  "frec": 0,
-                  "manual": 120,
+                  "n": "Verificar checklist de onboarding (nuevo 24/08)",
+                  "min": 5,
+                  "frec": 1,
+                  "manual": 15,
                   "auto": "mano",
-                  "met": "—",
+                  "met": "Onboardings verificados",
                   "imp": "directo",
-                  "falta": "Nunca se corrió: falta el primer caso completo"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "a": "Entrega",
-          "k": "ent",
-          "sis": "Sesiones y paneles",
-          "agente": "semi",
-          "urg": "baja",
-          "skills": [
-            {
-              "id": "pvt-consulting-agent",
-              "rol": "sesiones, gaps y bottlenecks",
-              "acciones": [
+                  "falta": "El checklist es nuevo — cero reps, se cronometra en la próxima alta"
+                },
                 {
-                  "n": "Actualizar el panel de un cliente",
+                  "n": "Actualizar panel de un cliente",
                   "min": 25,
                   "frec": 12,
                   "manual": 90,
@@ -4024,9 +4210,9 @@
           ]
         },
         {
-          "a": "Comunidad",
+          "a": "Nutrición / Fidelización",
           "k": "cmn",
-          "sis": "WhatsApp",
+          "sis": "comunidad, referidos, beneficios, pertenencia",
           "agente": "mano",
           "urg": "alta",
           "skills": [
@@ -4043,131 +4229,6 @@
                   "met": "—",
                   "imp": "directo",
                   "falta": "Sin long content no hay de qué hablar: el bloqueo está arriba"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "a": "Backend",
-          "k": "bkd",
-          "sis": "Panel, morning y finanzas",
-          "agente": "auto",
-          "urg": "baja",
-          "skills": [
-            {
-              "id": "pvt-arsenal-agent",
-              "rol": "el registro y este árbol",
-              "acciones": [
-                {
-                  "n": "Sincronizar el registro de skills",
-                  "min": 15,
-                  "frec": 2,
-                  "manual": 60,
-                  "auto": "semi",
-                  "met": "Skills registradas",
-                  "imp": "habilita",
-                  "falta": "Que el `ls` dispare el diff sin que se lo pidan"
-                },
-                {
-                  "n": "Mantener el árbol del OS",
-                  "min": 12,
-                  "frec": 2,
-                  "manual": 60,
-                  "auto": "semi",
-                  "met": "Acciones mapeadas",
-                  "imp": "habilita",
-                  "falta": "Que el tiempo se mida solo, no que se estime"
-                }
-              ]
-            },
-            {
-              "id": "pvt-asistente-agent",
-              "rol": "correo, agenda y morning",
-              "acciones": [
-                {
-                  "n": "Morning brief",
-                  "min": 0,
-                  "frec": 22,
-                  "manual": 20,
-                  "auto": "auto",
-                  "met": "Briefs entregados",
-                  "imp": "habilita",
-                  "falta": "Ya corre solo. Falta que pida el check de cadencias"
-                },
-                {
-                  "n": "Barrido de correo",
-                  "min": 5,
-                  "frec": 22,
-                  "manual": 25,
-                  "auto": "semi",
-                  "met": "Correos accionables",
-                  "imp": "habilita",
-                  "falta": "Solo lectura: no archiva ni responde"
-                }
-              ]
-            },
-            {
-              "id": "pvt-finance-agent",
-              "rol": "la billetera",
-              "acciones": [
-                {
-                  "n": "Cierre de finanzas del mes",
-                  "min": 20,
-                  "frec": 1,
-                  "manual": 90,
-                  "auto": "semi",
-                  "met": "Margen del mes",
-                  "imp": "habilita",
-                  "falta": "Captura de movimientos a mano en el JSON"
-                }
-              ]
-            },
-            {
-              "id": "pvt-backlog-agent",
-              "rol": "la cola de despacho",
-              "acciones": [
-                {
-                  "n": "Despacho del backlog",
-                  "min": 10,
-                  "frec": 4,
-                  "manual": 25,
-                  "auto": "semi",
-                  "met": "Filas despachadas",
-                  "imp": "habilita",
-                  "falta": "Que agrupe por agente sin pedir la base cada vez"
-                }
-              ]
-            },
-            {
-              "id": "pvt-architect-agent",
-              "rol": "la estructura del OS",
-              "acciones": [
-                {
-                  "n": "Ubicar una pieza nueva en la anatomía",
-                  "min": 8,
-                  "frec": 2,
-                  "manual": 25,
-                  "auto": "semi",
-                  "met": "—",
-                  "imp": "cero",
-                  "falta": "Se corre poco: candidata a fusión con arsenal"
-                }
-              ]
-            },
-            {
-              "id": "Panel troncal",
-              "rol": "la superficie de todo esto",
-              "acciones": [
-                {
-                  "n": "Refresco del panel troncal",
-                  "min": 2,
-                  "frec": 8,
-                  "manual": 90,
-                  "auto": "auto",
-                  "met": "Días de lag",
-                  "imp": "habilita",
-                  "falta": "Ya corre solo. Falta el token de Notion en el entorno"
                 }
               ]
             }
@@ -6084,6 +6145,132 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .rw-ar{grid-template-columns:22px 1fr}
   .rw-ar .k3,.rw-ar .meter,.rw-ar .k2{grid-column:2}
 }
+
+/* ══════════════════════════════════════════════════════════════
+   CAPA APP · 2026-09-14
+   Pasada tipo SaaS: menos texto, cajas de tamaño fijo y la tipografía
+   del kit (ECOSISTEMA/privatebuild-os/kit/kit.css). Va al final para
+   ganarle a lo anterior sin reescribirlo: no quita bloques ni gráficos.
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --sans:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,'SF Mono',Menlo,monospace;
+  --bg:#0E0F14;
+  --hi:#ECEDF4; --mid:#A9ADBE; --low:#7A7F92;
+  --danger:#E5322D; --good:#2ED08A;
+  --r-box:14px; --r-in:10px;
+}
+body{font-family:var(--sans);-webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums}
+
+/* ── 1 · MENOS TEXTO ───────────────────────────────────────── */
+/* el párrafo de entrada de cada bloque repetía su título */
+.card-in > .note:first-child{display:none}
+/* lo secundario se corta a dos líneas: la caja no crece por un párrafo */
+.note,.k2,.mt-d,.gp3-d,.ang-q,.fmx-b p,.dg-lr,.cf-r div p,.ld-d,.hk-t,
+.tile .f,.arx-nota,.sal-r,.cn-txt p,.lec p,.gen-q,.gen-e,.des span,
+.pg .k2,.ltv .k2,.win .k2,.mta-x,.bnc-n,.ang-e span,.sk2-r{
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+  overflow:hidden}
+.dg-n em,.cf-meta,.cf-rit{display:-webkit-box;-webkit-box-orient:vertical;
+  -webkit-line-clamp:1;overflow:hidden}
+.note{font-size:11px;line-height:1.45;color:var(--low);margin-top:10px}
+
+/* la conclusión pasa a ser una tarjeta de insight, no un párrafo gigante */
+.concl{margin-top:16px;padding:12px 14px;border:1px solid var(--border);
+  border-left:2px solid var(--gold);border-radius:var(--r-in);
+  background:rgba(255,255,255,.022);font-size:13.5px;font-weight:500;
+  line-height:1.5;color:var(--hi)}
+.concl b{font:600 9.5px/1 var(--mono);letter-spacing:.2em;color:var(--gold);
+  margin-bottom:7px}
+
+/* ── 2 · TIPOGRAFÍA DEL KIT ────────────────────────────────── */
+/* toda etiqueta es mono espaciada y gris: se lee como eyebrow, no compite */
+.card-t,.tile .k,.tile .st,.mt-k,.gp3-m,.arh span,.tsum>div>span,.pgm span,
+.pgm-l span,.cal-h,.sk-area b,.pg-h span,.ld-h span,.tm-h span,.ltv-h span,
+.dg-lbl,.gen-i,.fnl-x span,.lec span,.mta-n span,.mta-t span,.ang-f i,
+.sy-fa i,.bal b,.alg span,.ce-f b,.cf-key b,.cf-bl b,.cf-f b,.fmx-f span,
+.fmx-e,.hk-g,.win-t,.ltv-r,.pg-c,.ac-f b,.via span,.via b,.cf-mas summary,
+.cf-go,.st,.ar-go,.navdate,.navver,.card-nb{
+  font-family:var(--mono)!important;letter-spacing:.16em}
+.card-t{font-size:10px;font-weight:600;color:var(--low)}
+.card-nb{font-size:10px;font-weight:600;letter-spacing:.06em}
+
+/* encabezado de vista: eyebrow → titular con una palabra en rojo → bajada */
+.vhead{margin-bottom:20px;padding:6px 0 18px}
+.vkick{margin-bottom:10px}
+.vkick i{background:var(--danger);width:14px}
+.vkick span{font:600 10.5px/1 var(--mono);letter-spacing:.24em;color:var(--low)}
+.vtitle{font:700 clamp(24px,2.8vw,34px)/1.08 var(--sans);letter-spacing:-.032em;
+  margin-bottom:8px;color:var(--hi)}
+.vtitle .pv{color:var(--danger)}
+.vread{font-size:14px;line-height:1.5;color:var(--mid);max-width:70ch;
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+
+/* separador de sección: eyebrow mono con regla */
+.oz-s{margin:30px 0 12px;font:600 10.5px/1 var(--mono);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--mid)}
+.oz-s span{font-family:var(--mono);border-color:var(--border-hi)}
+
+/* ── 3 · CAJAS DE TAMAÑO FIJO ──────────────────────────────── */
+.stack{gap:12px}
+.card{border-radius:var(--r-box)}
+.card-h{padding:14px 18px;min-height:52px}
+.card-in{padding:2px 18px 18px}
+
+/* KPI: misma altura, cifra arriba, pie abajo */
+.tiles{gap:12px;margin-bottom:12px}
+.tile{padding:14px 16px;min-height:132px;display:flex;flex-direction:column;
+  border-radius:var(--r-box)}
+.tile .k{font-size:9.5px;font-weight:600;margin-bottom:10px;line-height:1.35;
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.tile .n{font-size:30px}
+.tile .f{font-size:11.5px;margin-top:8px}
+.tile .st{margin-top:auto;padding-top:8px;font-size:9px;font-weight:700}
+
+/* toda caja interna: mismo radio, mismo aire, mismas alturas en su fila */
+.mt,.lec,.fnl-x,.gp3,.ang,.fmx,.gen,.des,.cfg,.pgm,.arh,.tsum,.dg-lanes,.mta{
+  align-items:stretch}
+.mt-c,.lec>div,.fnl-x>div,.ang-c,.fmx-c,.gen-c,.des>div,.cf,.pgm>div,
+.arh>div,.tsum>div,.dg-lane,.ce-f,.cf-f,.hk,.dg-n,.cal-d,.bal>div{
+  border-radius:var(--r-in)}
+.mt-c,.lec>div,.fnl-x>div,.ang-c,.gen-c,.dg-lane{display:flex;flex-direction:column}
+.mt-c{min-height:118px;padding:14px 16px}
+.mt-v{font-size:28px;margin:2px 0 0}
+.mt-d{margin-top:auto;padding-top:8px;font-size:11.5px}
+.lec>div,.fnl-x>div{min-height:96px;padding:14px 16px}
+.lec p{margin-top:auto}
+.ang-c{padding:16px}
+.ang-p,.dg-pz{margin-top:auto;padding-top:12px}
+.gen-c{min-height:150px}
+.gen-e{margin-top:auto}
+.fmx-c{min-height:140px}
+.cf{padding:16px}
+
+/* filas de tabla: altura mínima pareja, texto recortado */
+.pg,.ld,.pal,.ltv,.win,.tm,.pp,.rw{min-height:48px}
+
+/* ── 4 · NAVEGACIÓN ────────────────────────────────────────── */
+.tabs button{font-family:var(--sans);font-weight:600;letter-spacing:-.005em}
+.navver{font-size:9px}
+
+/* ── 5 · RESPONSIVO ────────────────────────────────────────── */
+@media(max-width:860px){
+  .card-h{padding:12px 14px}
+  .card-in{padding:0 14px 14px}
+  .tile{min-height:118px;padding:12px 14px}
+  .tile .n{font-size:26px}
+  .mt-c{min-height:0}
+  .gen-c{min-height:0}
+  .vtitle{font-size:24px}
+}
+@media(max-width:520px){
+  .tiles{gap:8px}
+  .tile{min-height:112px}
+  .tile .f{-webkit-line-clamp:2}
+  .concl{font-size:13px}
+  .oz-s{margin-top:24px}
+}
 </style>
 
 <div class="atm"><i class="p1"></i><i class="p4"></i><i class="p3"></i><i class="p2"></i><i class="p5"></i></div>
@@ -6233,9 +6420,12 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   }
   /* kicker + título + lectura: tres niveles, no un bloque de texto suelto */
   function vhead(t,em,read){
+    var fr=String(em||t), w=fr.split(' '), ult=w.pop();
+    var tit=(w.length? esc(w.join(' '))+' ' : '')+'<span class="pv">'+esc(ult)+'</span>';
+    tit=tit.charAt(0).toUpperCase()+tit.slice(1);
     return '<div class="vhead">'
-      + '<div class="vkick"><i></i><span>'+esc(em)+'</span></div>'
-      + '<h1 class="vtitle">'+esc(t)+'</h1>'
+      + '<div class="vkick"><i></i><span>'+esc(t)+'</span></div>'
+      + '<h1 class="vtitle">'+tit+'</h1>'
       + '<p class="vread">'+esc(read)+'</p></div>';
   }
 
