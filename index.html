@@ -1,4 +1,5 @@
-<title>PRIVATE-OS · Business</title>
+<meta charset="utf-8">
+<title>Business OS · Private Build</title>
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -19,20 +20,20 @@
 <script id="pvt-data" type="application/json">
 {
   "meta": {
-    "os": "PRIVATE-OS",
+    "os": "BUSINESS-OS",
     "modulo": "Business",
     "ref": "PVT-BIZ-24",
-    "fecha": "14·09·26",
+    "fecha": "17·09·26",
     "operador": "Patricio Rubio",
     "frescura": [
       {
         "n": "CRM · Notion",
         "al": "2026-08-09",
-        "lag": 36
+        "lag": 39
       },
       {
         "n": "Filesystem · OS",
-        "al": "2026-09-14",
+        "al": "2026-09-17",
         "lag": 0
       },
       {
@@ -41,7 +42,8 @@
         "lag": null
       }
     ],
-    "build": "1409.1350"
+    "build": "1709.1732",
+    "fuente_crm": "Notion · CRM Clientes & Comunidad · 17-09-2026"
   },
   "radar": {
     "lectura": "Los mismos ocho sistemas en el gráfico, en la lista y en cada cliente. Setting es el piso, Entrega el techo.",
@@ -292,7 +294,7 @@
         "n": "Backend",
         "e": "mid",
         "et": "Sobrada, hay que adelgazarla",
-        "r": "35 skills y 6 sistemas. El siguiente movimiento es podar, no construir.",
+        "r": "38 skills y 6 sistemas. El siguiente movimiento es podar, no construir.",
         "falta": [
           {
             "q": "Base de tareas Private Build",
@@ -317,7 +319,7 @@
         ],
         "v": 0.75,
         "t": 0.85,
-        "nota": "35 skills y 8 sistemas. Sobra superficie, falta SOP",
+        "nota": "38 skills y 8 sistemas. Sobra superficie, falta SOP",
         "ver": "backend"
       }
     ],
@@ -330,7 +332,7 @@
       "ago"
     ],
     "parcial": 2,
-    "dias": "día 14 de 30",
+    "dias": "día 17 de 30",
     "series": [
       {
         "n": "Leads",
@@ -3849,6 +3851,42 @@
               ]
             },
             {
+              "id": "pvt-stories-agent",
+              "rol": "genera las stories del día desde la base *(alta 2026-09-15)*",
+              "acciones": [
+                {
+                  "n": "Ingesta de una referencia",
+                  "min": 3,
+                  "frec": 3,
+                  "manual": 30,
+                  "auto": "semi",
+                  "met": "Ejemplos en la base",
+                  "imp": "habilita",
+                  "falta": "Estimado. Manual = pegar en Miro y reescribir a mano. Que la corrida diaria baje las capturas de Notion sola"
+                },
+                {
+                  "n": "Stories del día generadas",
+                  "min": 5,
+                  "frec": 0,
+                  "manual": 30,
+                  "auto": "auto",
+                  "met": "Corridas listas",
+                  "imp": "directo",
+                  "falta": "Arranca con la tarea diaria. `frec` se corrige al primer mes real, no antes"
+                },
+                {
+                  "n": "Resultado de una story cargado",
+                  "min": 3,
+                  "frec": 0,
+                  "manual": 15,
+                  "auto": "mano",
+                  "met": "Resp / 1.000 vistas",
+                  "imp": "directo",
+                  "falta": "Que el setter cuente las respuestas a la palabra sin que Patricio las pase"
+                }
+              ]
+            },
+            {
               "id": "pvt-design-agent",
               "rol": "la piel de toda pieza",
               "acciones": [
@@ -3942,6 +3980,42 @@
                   "met": "—",
                   "imp": "habilita",
                   "falta": "No tiene `taxonomia-li.md` ni reglas de apertura propias todavía"
+                }
+              ]
+            },
+            {
+              "id": "pvt-webinar-agent",
+              "rol": "el webinar como máquina de captura (alta 15/09)",
+              "acciones": [
+                {
+                  "n": "Radiografía del webinar de un competidor (fuentes + pieza visual)",
+                  "min": 180,
+                  "frec": 0,
+                  "manual": 600,
+                  "auto": "semi",
+                  "met": "Puntos de contacto mapeados",
+                  "imp": "habilita",
+                  "falta": "1 corrida (Axis, 14–15/09) sin cadencia; el back semanal (anuncios y correos nuevos) no existe"
+                },
+                {
+                  "n": "Lanzamiento propio (compuerta + calendario T−14 → T+7)",
+                  "min": 120,
+                  "frec": 0,
+                  "manual": 480,
+                  "auto": "mano",
+                  "met": "Inscritos · asistencia · agendas · cierre",
+                  "imp": "directo",
+                  "falta": "Nunca corrió: falta el primer webinar propio"
+                },
+                {
+                  "n": "Auditoría de un webinar funcionando",
+                  "min": 45,
+                  "frec": 0,
+                  "manual": 120,
+                  "auto": "mano",
+                  "met": "Punto de contacto más roto",
+                  "imp": "directo",
+                  "falta": "Nunca corrió: no hay webinar propio ni de cliente que auditar"
                 }
               ]
             },
@@ -4235,6 +4309,744 @@
           ]
         }
       ]
+    }
+  },
+  "crm": {
+    "lectura": "43 fichas en el CRM y 5 clientes activos. Instagram es el canal que más entra y el que menos convierte; los referidos entran menos y cierran más.",
+    "stats": [
+      {
+        "k": "Fichas en el CRM",
+        "v": "43",
+        "u": "",
+        "f": "Histórico completo",
+        "s": "mid"
+      },
+      {
+        "k": "Calificadas",
+        "v": "31",
+        "u": "/ 43",
+        "f": "Fuera: perdidas y no aplica",
+        "s": "mid"
+      },
+      {
+        "k": "Clientes activos",
+        "v": "5",
+        "u": "",
+        "f": "Con programa corriendo",
+        "s": "live"
+      },
+      {
+        "k": "Cobrado histórico",
+        "v": "$14.560",
+        "u": "",
+        "f": "11 fichas pagaron alguna vez",
+        "s": "live"
+      }
+    ],
+    "embudo": [
+      {
+        "n": "Fichas en el CRM",
+        "v": 43,
+        "u": "todo lo que entró",
+        "e": "mid"
+      },
+      {
+        "n": "Calificadas",
+        "v": 31,
+        "u": "pasan el filtro de perfil",
+        "e": "mid"
+      },
+      {
+        "n": "En conversación",
+        "v": 22,
+        "u": "lead, desafío o seguimiento",
+        "e": "brk"
+      },
+      {
+        "n": "Pagaron",
+        "v": 11,
+        "u": "alguna vez compraron",
+        "e": "live"
+      },
+      {
+        "n": "Activos hoy",
+        "v": 5,
+        "u": "programa corriendo",
+        "e": "live"
+      }
+    ],
+    "embudo_lectura": "De 43 fichas, 11 pagaron alguna vez: 26% histórico. El corte más duro está entre conversar y pagar.",
+    "canales": {
+      "t": "De dónde entra cada ficha",
+      "filas": [
+        {
+          "n": "Instagram",
+          "k": "ig",
+          "total": 15,
+          "pago": 2,
+          "activo": 1,
+          "e": "brk",
+          "d": "El que más entra y el que menos cierra. Sandra es el único activo."
+        },
+        {
+          "n": "Directo",
+          "k": "dir",
+          "total": 12,
+          "pago": 4,
+          "activo": 1,
+          "e": "mid",
+          "d": "Red personal. Cierra bien pero no se repone sola."
+        },
+        {
+          "n": "Referido",
+          "k": "ref",
+          "total": 11,
+          "pago": 2,
+          "activo": 2,
+          "e": "live",
+          "d": "La mejor tasa por ficha. El bonus declarado ya produjo uno."
+        },
+        {
+          "n": "Network",
+          "k": "net",
+          "total": 2,
+          "pago": 0,
+          "activo": 0,
+          "e": "blind",
+          "d": "Pares, no compradores. No cuentan como pipeline."
+        },
+        {
+          "n": "Otro",
+          "k": "otr",
+          "total": 1,
+          "pago": 1,
+          "activo": 1,
+          "e": "live",
+          "d": "Egly, que llegó por Advanz."
+        }
+      ],
+      "concl": "Instagram trae volumen y no convierte: 15 fichas, 2 pagos. Referido trae la mitad y cierra al doble. El contenido está trayendo gente que no es el avatar."
+    },
+    "etapas": {
+      "t": "En qué etapa llega el que entra",
+      "filas": [
+        {
+          "n": "Operator",
+          "v": 17,
+          "e": "live",
+          "d": "El ICP. Opera un negocio y es el cuello."
+        },
+        {
+          "n": "Skiller",
+          "v": 13,
+          "e": "mid",
+          "d": "Una capa antes: vende su habilidad, sin sistema."
+        },
+        {
+          "n": "Founder",
+          "v": 6,
+          "e": "brk",
+          "d": "Sobre el tramo de consultoría. Se descalifican."
+        },
+        {
+          "n": "Builder",
+          "v": 2,
+          "e": "mid",
+          "d": "Ya tiene sistema. Avanza solo o no avanza."
+        }
+      ],
+      "concl": "17 de 38 fichas con etapa son Operator: el ICP sí entra. El problema es que 13 Skillers ocupan tiempo de venta que no cierra a este ticket."
+    },
+    "mercado": {
+      "t": "Qué tipo de negocio entra",
+      "filas": [
+        {
+          "n": "Servicio profesional 1a1",
+          "v": 13
+        },
+        {
+          "n": "Retail",
+          "v": 4
+        },
+        {
+          "n": "E-commerce",
+          "v": 3
+        },
+        {
+          "n": "Audiovisual",
+          "v": 3
+        },
+        {
+          "n": "Agencia",
+          "v": 2
+        },
+        {
+          "n": "Distribución",
+          "v": 2
+        },
+        {
+          "n": "SaaS / B2B",
+          "v": 2
+        },
+        {
+          "n": "Infoproducto",
+          "v": 2
+        },
+        {
+          "n": "Fitness",
+          "v": 1
+        }
+      ],
+      "concl": "Servicio 1a1 es un tercio del CRM y es donde el founder siempre es el cuello."
+    },
+    "gaps": {
+      "t": "Qué le falta al que está en conversación",
+      "filas": [
+        {
+          "n": "Oferta",
+          "v": 2,
+          "d": "Sandra y Yoce: no saben qué venden ni a cuánto."
+        },
+        {
+          "n": "Calificación",
+          "v": 1,
+          "d": "Michelle: no filtra a quién le vende."
+        },
+        {
+          "n": "Tráfico",
+          "v": 1,
+          "d": "Cristóbal: tiene oferta, no tiene quién la vea."
+        },
+        {
+          "n": "Data / Sistema",
+          "v": 1,
+          "d": "Juan Pablo: vende sin saber qué funciona."
+        },
+        {
+          "n": "Founder es el cuello",
+          "v": 1,
+          "d": "Daniela: todo pasa por ella."
+        }
+      ],
+      "concl": "Solo 6 de 22 fichas en conversación tienen el gap declarado. Sin ese campo lleno la llamada empieza a ciegas — es el campo más barato de completar y el más caro de dejar vacío."
+    },
+    "accion": {
+      "t": "Lo que está caliente ahora",
+      "filas": [
+        {
+          "n": "Cristóbal Reinoso",
+          "e": "live",
+          "q": "Call de cierre, no de revisión",
+          "d": "Tiene caja ahora. Sin objeción declarada, gap de tráfico."
+        },
+        {
+          "n": "Daniela Johnson",
+          "e": "live",
+          "q": "Llamada agendada 22/09",
+          "d": "Referido del bonus. Negocio más avanzado que la última vez."
+        },
+        {
+          "n": "Michelle Robles",
+          "e": "mid",
+          "q": "Escribir el 19/09",
+          "d": "Standby que ella misma fijó. Co-decisor ausente."
+        },
+        {
+          "n": "Juan Pablo · NAD",
+          "e": "mid",
+          "q": "Alinear con Matías antes de agendar",
+          "d": "48.200 seguidores. Pre-discovery listo."
+        },
+        {
+          "n": "Yoce Montesinos",
+          "e": "mid",
+          "q": "Conversación, no pitch",
+          "d": "133.000 seguidores. Definir formato antes: rev share no es puerta de entrada."
+        }
+      ],
+      "concl": "Cinco fichas calientes y solo una con fecha en el calendario."
+    }
+  },
+  "marketing": {
+    "lectura": "88 piezas y 721 mil de alcance en un año. Cero mensajes atribuidos: el contenido produce audiencia, no conversación.",
+    "stats": [
+      {
+        "k": "Alcance acumulado",
+        "v": "721k",
+        "u": "",
+        "f": "88 piezas desde sept 2024",
+        "s": "live"
+      },
+      {
+        "k": "Guardados",
+        "v": "8.858",
+        "u": "",
+        "f": "El reel top hizo 4.369 solo",
+        "s": "live"
+      },
+      {
+        "k": "Mensajes atribuidos",
+        "v": "0",
+        "u": "",
+        "f": "Ninguna pieza registró DM",
+        "s": "brk"
+      },
+      {
+        "k": "Piezas con CTA",
+        "v": "0",
+        "u": "/ 88",
+        "f": "El campo está vacío en todas",
+        "s": "brk"
+      }
+    ],
+    "formatos": {
+      "t": "Qué formato rinde",
+      "filas": [
+        {
+          "n": "Reel",
+          "v": 78,
+          "alc": 9006,
+          "guard": 8810,
+          "e": "live",
+          "d": "9.006 de alcance medio. Es lo único que escala."
+        },
+        {
+          "n": "Carrusel",
+          "v": 10,
+          "alc": 1892,
+          "guard": 48,
+          "e": "brk",
+          "d": "1.892 de alcance medio: 4,8 veces menos que un reel."
+        }
+      ],
+      "concl": "El carrusel es el formato con sistema armado y el que menos alcance tiene. El reel no tiene sistema y trae el 97% del alcance."
+    },
+    "top": {
+      "t": "Las 5 piezas de más alcance",
+      "filas": [
+        {
+          "f": "22-06-26",
+          "fmt": "Reel",
+          "alc": 339229,
+          "guard": 4369,
+          "e": "live"
+        },
+        {
+          "f": "09-06-26",
+          "fmt": "Reel",
+          "alc": 104975,
+          "guard": 1241,
+          "e": "live"
+        },
+        {
+          "f": "31-07-26",
+          "fmt": "Reel",
+          "alc": 52267,
+          "guard": 1066,
+          "e": "live"
+        },
+        {
+          "f": "30-07-26",
+          "fmt": "Reel",
+          "alc": 42820,
+          "guard": 876,
+          "e": "live"
+        },
+        {
+          "f": "26-08-26",
+          "fmt": "Reel",
+          "alc": 26508,
+          "guard": 578,
+          "e": "mid"
+        }
+      ],
+      "concl": "Una sola pieza hizo 339 mil: el 47% del alcance del año. Ninguna de las cinco tiene CTA registrado, así que no se sabe qué hizo después de verse."
+    },
+    "hueco": {
+      "t": "El hueco que rompe la medición",
+      "filas": [
+        {
+          "n": "Mensajes por pieza",
+          "e": "brk",
+          "d": "Columna vacía en las 88. Sin esto no hay atribución."
+        },
+        {
+          "n": "CTA por pieza",
+          "e": "brk",
+          "d": "Vacía también. No se sabe a dónde mandaba cada una."
+        },
+        {
+          "n": "Pilar y ángulo",
+          "e": "brk",
+          "d": "Sin clasificar: no se puede saber qué tema rinde."
+        },
+        {
+          "n": "Alcance y guardados",
+          "e": "live",
+          "d": "Lo único completo, y es lo que menos decide."
+        }
+      ],
+      "concl": "Se mide lo que Instagram entrega solo y no se mide lo que decide la venta. El panel no puede inventar el dato: se registra al publicar o no existe."
+    },
+    "fuente": "CONTENIDO/00_METRICAS/tablero.csv · 88 piezas"
+  },
+  "delivery": {
+    "lectura": "26 sesiones registradas en tres programas. El bloqueo que más aparece es closing: los clientes no tienen problema de tráfico, tienen problema de cerrar.",
+    "stats": [
+      {
+        "k": "Sesiones registradas",
+        "v": "26",
+        "u": "",
+        "f": "Casabliss 13 · Kathe 8 · STM 7",
+        "s": "live"
+      },
+      {
+        "k": "Programas activos",
+        "v": "5",
+        "u": "",
+        "f": "Con sesiones agendadas",
+        "s": "live"
+      },
+      {
+        "k": "Ejecución media",
+        "v": "4",
+        "u": "/ 5",
+        "f": "Predice la renovación mejor que la satisfacción",
+        "s": "live"
+      },
+      {
+        "k": "Bloqueos resueltos",
+        "v": "0",
+        "u": "/ 26",
+        "f": "Ninguno marcado como resuelto",
+        "s": "brk"
+      }
+    ],
+    "bloqueos": {
+      "t": "Dónde se traba el cliente — las 10 capas",
+      "filas": [
+        {
+          "n": "03 Closing",
+          "v": 5,
+          "e": "brk",
+          "d": "STM ×3 y Kathe ×2. La capa más repetida."
+        },
+        {
+          "n": "07 Datos y medición",
+          "v": 4,
+          "e": "brk",
+          "d": "Casabliss ×3 y Kathe. Deciden sin datos limpios."
+        },
+        {
+          "n": "01 Adquisición",
+          "v": 4,
+          "e": "mid",
+          "d": "STM ×2, Kathe, Casabliss."
+        },
+        {
+          "n": "02 Conversión conversacional",
+          "v": 3,
+          "e": "mid",
+          "d": "Casabliss ×3. El carro no cierra."
+        },
+        {
+          "n": "04 Oferta y precio",
+          "v": 2,
+          "e": "mid",
+          "d": "Casabliss ×2."
+        },
+        {
+          "n": "05 Operación y capacidad",
+          "v": 2,
+          "e": "mid",
+          "d": "Casabliss ×2."
+        },
+        {
+          "n": "06 Retención y recompra",
+          "v": 1,
+          "e": "mid",
+          "d": "Casabliss."
+        },
+        {
+          "n": "08 Estructura comercial",
+          "v": 1,
+          "e": "mid",
+          "d": "Kathe."
+        },
+        {
+          "n": "09 Sistema y automatización IA",
+          "v": 0,
+          "e": "blind",
+          "d": "Nunca apareció como bloqueo principal."
+        },
+        {
+          "n": "10 Founder / decisión",
+          "v": 0,
+          "e": "blind",
+          "d": "Nunca se marcó, aunque aparece en la conversación."
+        }
+      ],
+      "concl": "Closing y datos son el 35% de los bloqueos. Es exactamente lo que Private vende — y es lo mismo que le falta a Patricio en su propio negocio."
+    },
+    "estado": {
+      "t": "En qué estado quedan los bloqueos",
+      "filas": [
+        {
+          "n": "En trabajo",
+          "v": 16,
+          "e": "mid",
+          "d": "Se está moviendo, sin cerrar."
+        },
+        {
+          "n": "Detectado",
+          "v": 5,
+          "e": "brk",
+          "d": "Nombrado y sin tocar."
+        },
+        {
+          "n": "Resuelto",
+          "v": 0,
+          "e": "brk",
+          "d": "Ninguno. O no se cierra o no se marca."
+        },
+        {
+          "n": "Fuera de alcance",
+          "v": 0,
+          "e": "blind",
+          "d": "Sin usar."
+        }
+      ],
+      "concl": "Cero bloqueos resueltos en 26 sesiones. O el campo no se cierra al terminar, o los programas no están resolviendo lo que detectan. Las dos posibilidades son caras."
+    },
+    "clientes": {
+      "t": "Los programas, sesión por sesión",
+      "filas": [
+        {
+          "n": "Casabliss · Egly",
+          "ses": 13,
+          "tot": 13,
+          "e": "live",
+          "ej": "3 — parcial",
+          "ren": "Renueva",
+          "d": "Programa completo. Renovó en la sesión 13 sin objeción de precio."
+        },
+        {
+          "n": "Kathe · GMDS",
+          "ses": 8,
+          "tot": 12,
+          "e": "mid",
+          "ej": "5 — ejecuta todo",
+          "ren": "Renueva",
+          "d": "Pausado por crisis familiar. No presionar el cobro del tercer mes."
+        },
+        {
+          "n": "Laura · STM",
+          "ses": 7,
+          "tot": 12,
+          "e": "mid",
+          "ej": "4 — la mayoría",
+          "ren": "Neutro",
+          "d": "Quedan 4 sesiones después de la 8. Pago al día."
+        },
+        {
+          "n": "Marjorie · Emma Clara",
+          "ses": 0,
+          "tot": 0,
+          "e": "mid",
+          "ej": "Sin registrar",
+          "ren": "Renueva",
+          "d": "Sesiones retroactivas sin cargar hasta la 13. Es el hueco del registro."
+        },
+        {
+          "n": "Sandra · Ovistra",
+          "ses": 0,
+          "tot": 12,
+          "e": "mid",
+          "ej": "Sin empezar",
+          "ren": "Muy temprano",
+          "d": "Arranca el 05/10. Falta publicar el panel y mandar la bienvenida."
+        }
+      ],
+      "concl": "Tres programas con registro y dos sin él. Emma lleva 13 sesiones sin cargar: lo que no está en la base no alimenta ni el caso ni el contenido."
+    },
+    "frameworks": {
+      "t": "Lo que se entregó y es reusable",
+      "lead": "Si un framework se repite en 3 clientes, dejó de ser consultoría y es producto.",
+      "filas": [
+        {
+          "n": "Proceso de venta de 4 pasos",
+          "q": "miedo → validación → encuadre → micro-victoria",
+          "c": "STM"
+        },
+        {
+          "n": "FOMO + oferta + upfront",
+          "q": "Las 3 palancas para cerrar sin bajar precio",
+          "c": "Kathe"
+        },
+        {
+          "n": "Escalera de diagnóstico del funnel",
+          "q": "Mal CTR → anuncio · clics sin carro → oferta · carro sin compra → checkout",
+          "c": "Kathe"
+        },
+        {
+          "n": "Contribution margin como techo de CAC",
+          "q": "El fee liberado del marketplace es el presupuesto del canal propio",
+          "c": "Kathe"
+        },
+        {
+          "n": "Preguntas cerradas A/B/C",
+          "q": "Establecen autoridad donde la pregunta abierta la pierde",
+          "c": "STM"
+        },
+        {
+          "n": "Ticket de salida vía SOP",
+          "q": "La salida del cliente se monetiza: el SOP es el producto",
+          "c": "Kathe"
+        }
+      ],
+      "concl": "Seis frameworks nombrados, todos de dos clientes. Ninguno se repitió en tres todavía: por eso aún no hay módulo que empaquetar."
+    }
+  },
+  "success": {
+    "lectura": "Tres de cinco dan señal de renovación y ninguno de churn. El resultado está: lo que falta es capturarlo como prueba.",
+    "stats": [
+      {
+        "k": "Señal de renovación",
+        "v": "3",
+        "u": "/ 5",
+        "f": "Egly, Kathe y Emma",
+        "s": "live"
+      },
+      {
+        "k": "Riesgo de churn",
+        "v": "0",
+        "u": "",
+        "f": "Nadie marcado en rojo",
+        "s": "live"
+      },
+      {
+        "k": "Casos con número",
+        "v": "6",
+        "u": "",
+        "f": "Resultado verificado y citable",
+        "s": "live"
+      },
+      {
+        "k": "Casos publicados",
+        "v": "0",
+        "u": "/ 6",
+        "f": "Ninguno salió de Notion",
+        "s": "brk"
+      }
+    ],
+    "senal": {
+      "t": "La señal de cada cliente",
+      "filas": [
+        {
+          "n": "Egly · Casabliss",
+          "s": "Renueva",
+          "e": "live",
+          "ej": 3,
+          "d": "Renovó 3 meses en la sesión 13, sin objeción del co-decisor."
+        },
+        {
+          "n": "Kathe · GMDS",
+          "s": "Renueva",
+          "e": "live",
+          "ej": 5,
+          "d": "Ejecución 5/5. Pausa por crisis familiar, no por el programa."
+        },
+        {
+          "n": "Marjorie · Emma Clara",
+          "s": "Renueva",
+          "e": 4,
+          "ej": 4,
+          "d": "Renovó y paga el saldo entre el 22 y el 25/09."
+        },
+        {
+          "n": "Laura · STM",
+          "s": "Neutro",
+          "e": "mid",
+          "ej": 4,
+          "d": "Ejecuta la mayoría. Vence en octubre y no hay conversación de renovación."
+        },
+        {
+          "n": "Sandra · Ovistra",
+          "s": "Muy temprano",
+          "e": "blind",
+          "ej": 0,
+          "d": "Arranca el 05/10. Pagó la primera cuota en la llamada."
+        }
+      ],
+      "concl": "La señal de renovación se toma de la sesión, no de la intuición. Laura en neutro a 4 sesiones del final es el único riesgo real de la cartera."
+    },
+    "casos": {
+      "t": "El resultado, con número",
+      "filas": [
+        {
+          "n": "Doctora · estética",
+          "r": "0 → $60.000 USD/mes en 9 meses",
+          "d": "High ticket, margen 40%. El caso que vendió otros cinco.",
+          "e": "live"
+        },
+        {
+          "n": "Marjorie · Emma Clara",
+          "r": "Cierre en tienda 5% → 36%",
+          "d": "Ticket $253k → $363k · horas 120 → 78 · equipo 1 → 3.",
+          "e": "live"
+        },
+        {
+          "n": "Egly · Casabliss",
+          "r": "CPA $112k → $42-53k · ROAS ×7",
+          "d": "Contra un histórico de $84k por adquisición.",
+          "e": "live"
+        },
+        {
+          "n": "Kathe · GMDS",
+          "r": "$939 en 5 días con el canal email",
+          "d": "Desde cero. $16,8 por suscriptor, 2 canales nuevos.",
+          "e": "live"
+        },
+        {
+          "n": "Nacho · Fénix",
+          "r": "Gerente de operaciones, sueldo al doble",
+          "d": "Verificado a 1 año y 3 meses. El papá soltó la operación.",
+          "e": "live"
+        },
+        {
+          "n": "Laura · STM",
+          "r": "Flujo de preguntas escrito por Jairo",
+          "d": "13 preguntas + flujo técnico. Ya no depende de la memoria de Laura.",
+          "e": "mid"
+        }
+      ],
+      "concl": "Seis casos con número y cero publicados. El activo más caro del negocio sigue siendo texto dentro de Notion."
+    },
+    "riesgo": {
+      "t": "Lo que amenaza la cartera",
+      "filas": [
+        {
+          "n": "Laura vence en octubre",
+          "e": "brk",
+          "d": "Señal neutra y sin conversación de renovación abierta."
+        },
+        {
+          "n": "Kathe pausada",
+          "e": "mid",
+          "d": "Crisis familiar. El tercer mes ($550) no se está cobrando."
+        },
+        {
+          "n": "Emma sin registro",
+          "e": "brk",
+          "d": "13 sesiones sin cargar: no hay evidencia del trabajo hecho."
+        },
+        {
+          "n": "Cero bloqueos cerrados",
+          "e": "brk",
+          "d": "En 26 sesiones ninguno se marcó resuelto."
+        }
+      ],
+      "concl": "La cartera no tiene churn declarado, pero tiene dos contratos venciendo y un registro incompleto. El riesgo no es que se vayan: es no poder demostrar por qué deberían quedarse."
     }
   }
 }
@@ -6146,6 +6958,156 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .rw-ar .k3,.rw-ar .meter,.rw-ar .k2{grid-column:2}
 }
 
+/* ══ BUSINESS OS · vistas del embudo ══ */
+.bq{height:8px;border-radius:3px;background:var(--surface3);overflow:hidden;
+  border:1px solid var(--border)}
+.bq i{display:block;height:100%;border-radius:3px;background:var(--mid)}
+.bq i.live{background:var(--good)} .bq i.mid{background:var(--warn)}
+.bq i.brk{background:var(--danger)} .bq i.blind{background:var(--border-hi)}
+
+/* CRM · canales */
+.cnl-h,.cnl{display:grid;grid-template-columns:120px 62px 68px 56px 1fr 1.5fr;
+  gap:var(--s3);align-items:center}
+.cnl{padding:var(--s3) 0;min-height:48px}
+.cnl-h span{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--low);font-family:var(--mono)}
+.cnl-h span:nth-child(n+2):nth-child(-n+4){text-align:right}
+.cnl-v{font-size:var(--t-l);font-weight:700;text-align:right}
+.cnl-t{font-size:var(--t-m);font-weight:700;text-align:right;color:var(--low)}
+.cnl.live .cnl-t{color:var(--good)} .cnl.brk .cnl-t{color:var(--danger)}
+
+/* CRM · etapas */
+.etp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3)}
+.etp-c{padding:14px 16px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--r-in);display:flex;flex-direction:column}
+.etp-c.live{border-color:rgba(46,208,138,.3)} .etp-c.brk{border-color:rgba(229,50,45,.3)}
+.etp-v{font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.etp-c.live .etp-v{color:var(--good)} .etp-c.brk .etp-v{color:var(--danger)}
+.etp-c.mid .etp-v{color:var(--warn)}
+.etp-n{font-size:var(--t-m);font-weight:700;margin:4px 0 10px}
+.etp-c .k2{margin-top:10px}
+
+/* CRM · mercado */
+.mrk{display:flex;flex-direction:column;gap:7px}
+.mrk-r{display:grid;grid-template-columns:200px 1fr 36px;gap:var(--s3);align-items:center}
+.mrk-r span{font-size:var(--t-s);color:var(--mid)}
+.mrk-r b{font-size:var(--t-m);font-weight:700;text-align:right}
+
+/* CRM · gaps y acción */
+.gpr{display:grid;grid-template-columns:40px 190px 1fr;gap:var(--s3);align-items:center;
+  padding:var(--s3) 0;border-bottom:1px solid var(--border);min-height:46px}
+.gpr:last-of-type{border-bottom:0}
+.gpr-v{font-size:var(--t-l);font-weight:700;color:var(--gold);text-align:center}
+.acc{display:grid;grid-template-columns:180px 240px 1fr;gap:var(--s3);align-items:center;
+  padding:var(--s3) 0;border-bottom:1px solid var(--border);min-height:46px}
+.acc:last-of-type{border-bottom:0}
+.acc-q{font-size:var(--t-s);font-weight:600;color:var(--hi)}
+.acc.live .acc-q{color:var(--good)}
+
+/* MARKETING */
+.fmt2{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.fmt2-c{padding:16px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--r-in)}
+.fmt2-c.live{border-color:rgba(46,208,138,.3)} .fmt2-c.brk{border-color:rgba(229,50,45,.3)}
+.fmt2-h{display:flex;align-items:baseline;gap:var(--s2);margin-bottom:10px}
+.fmt2-h b{font-size:var(--t-l);font-weight:700;flex:1}
+.fmt2-h span{font-size:9.5px;color:var(--low);font-family:var(--mono);letter-spacing:.12em}
+.fmt2-v{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:8px}
+.fmt2-v u{display:block;text-decoration:none;font-size:9px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--low);margin-top:4px;
+  font-family:var(--mono)}
+.fmt2-g{font-size:var(--t-xs);color:var(--mid);margin:8px 0}
+.tp-h,.tp{display:grid;grid-template-columns:90px 80px 100px 1fr 100px;gap:var(--s3);
+  align-items:center}
+.tp{padding:var(--s3) 0;border-bottom:1px solid var(--border);min-height:44px}
+.tp:last-of-type{border-bottom:0}
+.tp-h span{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--low);font-family:var(--mono)}
+.tp-h span:nth-child(3),.tp-h span:nth-child(5){text-align:right}
+.tp-f{font-size:var(--t-s);color:var(--mid);font-variant-numeric:tabular-nums}
+.tp-t{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--low);font-family:var(--mono)}
+.tp-v{font-size:var(--t-l);font-weight:700;text-align:right;color:var(--good)}
+.tp-g{font-size:var(--t-m);font-weight:600;text-align:right;color:var(--mid)}
+
+/* DELIVERY */
+.blq{display:grid;grid-template-columns:230px 1fr 40px 1.4fr;gap:var(--s3);align-items:center;
+  padding:var(--s3) 0;border-bottom:1px solid var(--border);min-height:44px}
+.blq:last-of-type{border-bottom:0}
+.blq-v{font-size:var(--t-l);font-weight:700;text-align:right}
+.blq.brk .blq-v{color:var(--danger)} .blq.blind .blq-v{color:var(--low)}
+.prg{display:grid;grid-template-columns:180px 78px 1fr 130px 100px 1.4fr;gap:var(--s3);
+  align-items:center;padding:var(--s3) 0;border-bottom:1px solid var(--border);min-height:48px}
+.prg:last-of-type{border-bottom:0}
+.prg-s{font-size:var(--t-l);font-weight:700;text-align:right}
+.prg-s span{font-size:var(--t-xs);color:var(--low);font-weight:500}
+.prg-e{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--low);font-family:var(--mono)}
+.prg-r{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  text-align:center;padding:3px 0;border-radius:var(--r-pill);border:1px solid var(--border);
+  color:var(--low);font-family:var(--mono)}
+.prg-r.ok{color:var(--good);border-color:rgba(46,208,138,.4)}
+.frw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
+.frw-c{padding:14px 16px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--r-in);border-left:2px solid var(--gold);display:flex;flex-direction:column}
+.frw-n{font-size:var(--t-m);font-weight:700;margin-bottom:6px}
+.frw-c p{font-size:11.5px;color:var(--mid);line-height:1.45}
+.frw-c2{margin-top:auto;padding-top:10px;font-size:9px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--low);font-family:var(--mono)}
+
+/* SUCCESS */
+.sig{display:grid;grid-template-columns:190px 110px 130px 1fr;gap:var(--s3);align-items:center;
+  padding:var(--s3) 0;border-bottom:1px solid var(--border);min-height:48px}
+.sig:last-of-type{border-bottom:0}
+.sig-s{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  text-align:center;padding:4px 0;border-radius:var(--r-pill);
+  border:1px solid var(--border);color:var(--low);font-family:var(--mono)}
+.sig-s.ok{color:var(--good);border-color:rgba(46,208,138,.4);background:rgba(46,208,138,.08)}
+.sig-s.mid{color:var(--warn);border-color:rgba(232,179,57,.4)}
+.sig-e{font-size:var(--t-xs);font-weight:600;color:var(--mid)}
+.cso-w{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
+.cso{padding:16px;background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--r-in);display:flex;flex-direction:column}
+.cso.live{border-color:rgba(46,208,138,.28)}
+.cso-n{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--low);font-family:var(--mono);margin-bottom:8px}
+.cso-r{font-size:var(--t-l);font-weight:700;line-height:1.3;color:var(--good);margin-bottom:8px}
+.cso.mid .cso-r{color:var(--hi)}
+.cso .k2{margin-top:auto}
+
+@media(max-width:1240px){
+  .cnl-h,.cnl{grid-template-columns:110px 54px 60px 50px 1fr}
+  .cnl-h span:nth-child(6),.cnl .k2{display:none}
+  .etp{grid-template-columns:1fr 1fr}
+  .frw,.cso-w{grid-template-columns:1fr 1fr}
+  .prg{grid-template-columns:150px 70px 1fr 110px 92px}
+  .prg .k2{display:none}
+  .blq{grid-template-columns:200px 1fr 36px}
+  .blq .k2{display:none}
+  .acc{grid-template-columns:160px 1fr}
+  .acc .k2{grid-column:1/-1}
+}
+@media(max-width:860px){
+  .cnl-h,.tp-h{display:none}
+  .cnl{grid-template-columns:1fr 50px 50px;row-gap:var(--s2)}
+  .cnl > div:nth-child(5){grid-column:1/-1}
+  .etp,.fmt2,.frw,.cso-w{grid-template-columns:1fr}
+  .mrk-r{grid-template-columns:130px 1fr 32px}
+  .tp{grid-template-columns:1fr 90px;row-gap:6px}
+  .tp-t,.tp-g{grid-row:2}
+  .tp > div:nth-child(4){display:none}
+  .prg{grid-template-columns:1fr 70px;row-gap:var(--s2)}
+  .prg > div:nth-child(3){grid-column:1/-1}
+  .prg-e,.prg-r{grid-column:auto}
+  .blq{grid-template-columns:1fr 40px;row-gap:6px}
+  .blq > div:nth-child(2){grid-column:1/-1}
+  .gpr{grid-template-columns:36px 1fr;row-gap:4px}
+  .gpr .k2{grid-column:2}
+  .acc{grid-template-columns:1fr;row-gap:4px}
+  .sig{grid-template-columns:1fr 110px;row-gap:var(--s2)}
+  .sig-e,.sig .k2{grid-column:1/-1}
+}
+
 /* ══════════════════════════════════════════════════════════════
    CAPA APP · 2026-09-14
    Pasada tipo SaaS: menos texto, cajas de tamaño fijo y la tipografía
@@ -6439,6 +7401,182 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;
       + '<div class="vkick"><i></i><span>'+esc(t)+'</span></div>'
       + '<h1 class="vtitle">'+tit+'</h1>'
       + '<p class="vread">'+esc(read)+'</p></div>';
+  }
+
+  /* ══ CRM · cómo vienen los leads ══ */
+  function vCRM(){
+    var C=D.crm;
+    var barra=function(v,max,cls){
+      return '<div class="bq"><i class="'+(cls||'')+'" style="width:'
+        +Math.round(v/max*100)+'%"></i></div>'; };
+
+    var cn=C.canales, mx=Math.max.apply(null,cn.filas.map(function(x){return x.total}));
+    var ch='<div class="cnl-h"><span>Canal</span><span>Fichas</span><span>Pagaron</span>'
+      +'<span>Tasa</span><span>Volumen</span><span>Qué pasa</span></div>';
+    cn.filas.forEach(function(f){
+      var t=f.total?Math.round(f.pago/f.total*100):0;
+      ch+='<div class="cnl '+esc(f.e)+'"><div class="k1">'+esc(f.n)+'</div>'
+        +'<div class="cnl-v">'+f.total+'</div>'
+        +'<div class="cnl-v">'+f.pago+'</div>'
+        +'<div class="cnl-t">'+t+'%</div>'
+        +'<div>'+barra(f.total,mx,f.e)+'</div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>';
+    });
+    ch+='<div class="concl"><b>Conclusión</b>'+esc(cn.concl)+'</div>';
+
+    var et=C.etapas, me=Math.max.apply(null,et.filas.map(function(x){return x.v}));
+    var eh='<div class="etp">'+et.filas.map(function(f){
+      return '<div class="etp-c '+esc(f.e)+'"><div class="etp-v">'+f.v+'</div>'
+        +'<div class="etp-n">'+esc(f.n)+'</div>'+barra(f.v,me,f.e)
+        +'<div class="k2">'+esc(f.d)+'</div></div>'; }).join('')+'</div>'
+      +'<div class="concl"><b>Conclusión</b>'+esc(et.concl)+'</div>';
+
+    var mk=C.mercado, mm=Math.max.apply(null,mk.filas.map(function(x){return x.v}));
+    var mh='<div class="mrk">'+mk.filas.map(function(f){
+      return '<div class="mrk-r"><span>'+esc(f.n)+'</span>'+barra(f.v,mm)
+        +'<b>'+f.v+'</b></div>'; }).join('')+'</div>'
+      +'<div class="concl"><b>Conclusión</b>'+esc(mk.concl)+'</div>';
+
+    var gp=C.gaps, gh=gp.filas.map(function(f){
+      return '<div class="gpr"><div class="gpr-v">'+f.v+'</div>'
+        +'<div class="k1">'+esc(f.n)+'</div><div class="k2">'+esc(f.d)+'</div></div>';
+      }).join('')+'<div class="concl"><b>Conclusión</b>'+esc(gp.concl)+'</div>';
+
+    var ac=C.accion, ah=ac.filas.map(function(f){
+      return '<div class="acc '+esc(f.e)+'"><div class="k1">'+esc(f.n)+'</div>'
+        +'<div class="acc-q">'+esc(f.q)+'</div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>';
+      }).join('')+'<div class="concl"><b>Conclusión</b>'+esc(ac.concl)+'</div>';
+
+    return vhead('CRM','cómo entra cada ficha',C.lectura)
+      + tiles(C.stats)
+      + '<div class="stack">'
+      + card('El embudo del CRM — de ficha a cliente activo',
+             funnelHTML(C.embudo)
+             + '<div class="fnl-c">'+esc(C.embudo_lectura)+'</div>')
+      + card(esc(cn.t), ch)
+      + card(esc(et.t), eh)
+      + card(esc(mk.t), mh)
+      + card(esc(gp.t), gh)
+      + card(esc(ac.t), ah)
+      + '</div>' + skArea('crm');
+  }
+
+  /* ══ MARKETING · solo métricas ══ */
+  function vMarketing(){
+    var M=D.marketing;
+    var fm=M.formatos, mx=Math.max.apply(null,fm.filas.map(function(x){return x.alc}));
+    var fh='<div class="fmt2">'+fm.filas.map(function(f){
+      return '<div class="fmt2-c '+esc(f.e)+'">'
+        +'<div class="fmt2-h"><b>'+esc(f.n)+'</b><span>'+f.v+' piezas</span></div>'
+        +'<div class="fmt2-v">'+money(f.alc)+'<u>alcance medio</u></div>'
+        +'<div class="bq"><i class="'+esc(f.e)+'" style="width:'
+        +Math.round(f.alc/mx*100)+'%"></i></div>'
+        +'<div class="fmt2-g">'+money(f.guard)+' guardados</div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>'; }).join('')+'</div>'
+      +'<div class="concl"><b>Conclusión</b>'+esc(fm.concl)+'</div>';
+
+    var tp=M.top, tm=tp.filas[0].alc;
+    var th='<div class="tp-h"><span>Fecha</span><span>Formato</span><span>Alcance</span>'
+      +'<span>Volumen</span><span>Guardados</span></div>';
+    tp.filas.forEach(function(f){
+      th+='<div class="tp '+esc(f.e)+'"><div class="tp-f">'+esc(f.f)+'</div>'
+        +'<div class="tp-t">'+esc(f.fmt)+'</div>'
+        +'<div class="tp-v">'+money(f.alc)+'</div>'
+        +'<div><div class="bq"><i class="live" style="width:'
+        +Math.round(f.alc/tm*100)+'%"></i></div></div>'
+        +'<div class="tp-g">'+money(f.guard)+'</div></div>';
+    });
+    th+='<div class="concl"><b>Conclusión</b>'+esc(tp.concl)+'</div>';
+
+    var hu=M.hueco, hh=hu.filas.map(function(f){
+      return '<div class="rw rw-sy"><span class="dot '+esc(f.e)+'"></span>'
+        +'<div class="k1">'+esc(f.n)+'</div><div class="k2">'+esc(f.d)+'</div>'
+        +'<div class="k3">'+(f.e==='live'?'se mide':'sin dato')+'</div></div>';
+      }).join('')+'<div class="concl"><b>Conclusión</b>'+esc(hu.concl)+'</div>';
+
+    return vhead('Marketing','qué rinde el contenido',M.lectura)
+      + tiles(M.stats)
+      + '<div class="stack">'
+      + card(esc(fm.t), fh)
+      + card(esc(tp.t), th)
+      + card(esc(hu.t), hh + '<div class="tm-src">Fuente: '+esc(M.fuente)+'</div>')
+      + '</div>' + skArea('marketing');
+  }
+
+  /* ══ DELIVERY · las sesiones ══ */
+  function vDelivery(){
+    var V=D.delivery;
+    var bl=V.bloqueos, mb=Math.max.apply(null,bl.filas.map(function(x){return x.v}));
+    var bh=bl.filas.map(function(f){
+      return '<div class="blq '+esc(f.e)+'"><div class="k1">'+esc(f.n)+'</div>'
+        +'<div><div class="bq"><i class="'+esc(f.e)+'" style="width:'
+        +Math.round(f.v/mb*100)+'%"></i></div></div>'
+        +'<div class="blq-v">'+f.v+'</div><div class="k2">'+esc(f.d)+'</div></div>';
+      }).join('')+'<div class="concl"><b>Conclusión</b>'+esc(bl.concl)+'</div>';
+
+    var es=V.estado, eh='<div class="mt">'+es.filas.map(function(f){
+      return '<div class="mt-c '+esc(f.e)+'"><div class="mt-k">'+esc(f.n)+'</div>'
+        +'<div class="mt-v">'+f.v+'</div><div class="mt-d">'+esc(f.d)+'</div></div>';
+      }).join('')+'</div><div class="concl"><b>Conclusión</b>'+esc(es.concl)+'</div>';
+
+    var cl=V.clientes, chh=cl.filas.map(function(f){
+      var pc=f.tot?Math.round(f.ses/f.tot*100):0;
+      return '<div class="prg '+esc(f.e)+'"><div class="k1">'+esc(f.n)+'</div>'
+        +'<div class="prg-s">'+f.ses+'<span> / '+(f.tot||'—')+'</span></div>'
+        +'<div><div class="bq"><i class="'+esc(f.e)+'" style="width:'+pc+'%"></i></div></div>'
+        +'<div class="prg-e">'+esc(f.ej)+'</div>'
+        +'<div class="prg-r '+(f.ren==='Renueva'?'ok':'')+'">'+esc(f.ren)+'</div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>';
+      }).join('')+'<div class="concl"><b>Conclusión</b>'+esc(cl.concl)+'</div>';
+
+    var fw=V.frameworks, fh='<div class="note" style="margin:0 0 var(--s4)">'+esc(fw.lead)+'</div>'
+      +'<div class="frw">'+fw.filas.map(function(f){
+        return '<div class="frw-c"><div class="frw-n">'+esc(f.n)+'</div>'
+          +'<p>'+esc(f.q)+'</p><div class="frw-c2">'+esc(f.c)+'</div></div>'; }).join('')
+      +'</div><div class="concl"><b>Conclusión</b>'+esc(fw.concl)+'</div>';
+
+    return vhead('Delivery','qué pasa dentro de la sesión',V.lectura)
+      + tiles(V.stats)
+      + '<div class="stack">'
+      + card(esc(bl.t), bh)
+      + card(esc(es.t), eh)
+      + card(esc(cl.t), chh)
+      + card(esc(fw.t), fh)
+      + '</div>' + skArea('delivery');
+  }
+
+  /* ══ SUCCESS · resultado y renovación ══ */
+  function vSuccess(){
+    var S=D.success;
+    var sn=S.senal, sh=sn.filas.map(function(f){
+      return '<div class="sig"><div class="k1">'+esc(f.n)+'</div>'
+        +'<div class="sig-s '+(f.s==='Renueva'?'ok':f.s==='Neutro'?'mid':'')+'">'
+        +esc(f.s)+'</div>'
+        +'<div class="sig-e">'+(f.ej?'Ejecución '+f.ej+'/5':'Sin medir')+'</div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>';
+      }).join('')+'<div class="concl"><b>Conclusión</b>'+esc(sn.concl)+'</div>';
+
+    var cs=S.casos, ch=cs.filas.map(function(f){
+      return '<div class="cso '+esc(f.e)+'"><div class="cso-n">'+esc(f.n)+'</div>'
+        +'<div class="cso-r">'+esc(f.r)+'</div>'
+        +'<div class="k2">'+esc(f.d)+'</div></div>';
+      }).join('');
+    ch='<div class="cso-w">'+ch+'</div><div class="concl"><b>Conclusión</b>'+esc(cs.concl)+'</div>';
+
+    var rg=S.riesgo, rh=rg.filas.map(function(f){
+      return '<div class="rw rw-sy"><span class="dot '+esc(f.e)+'"></span>'
+        +'<div class="k1">'+esc(f.n)+'</div><div class="k2">'+esc(f.d)+'</div>'
+        +'<div class="k3">'+(f.e==='brk'?'atender':'vigilar')+'</div></div>';
+      }).join('')+'<div class="concl"><b>Conclusión</b>'+esc(rg.concl)+'</div>';
+
+    return vhead('Success','si renueva y por qué',S.lectura)
+      + tiles(S.stats)
+      + '<div class="stack">'
+      + card(esc(sn.t), sh)
+      + card(esc(cs.t), ch)
+      + card(esc(rg.t), rh)
+      + '</div>' + skArea('success');
   }
 
   /* ── RADAR ── */
@@ -7419,25 +8557,23 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;
   /* ── PUNTO CERO — dónde estoy, cómo vengo, a dónde puedo llegar ── */
   /* resumen de cada pestaña, para leer el negocio sin entrar a ninguna */
   function resumenGlobal(){
+    /* una fila por pestaña del embudo, con sus tres números que deciden */
     var R=[
-     {v:'daily',n:'Daily',k:[
-       {l:'Acciones diarias',v:'6',e:'live'},{l:'Domingo construye',v:'6 bloques',e:'mid'},
-       {l:'Cumplimiento',v:'sin registro',e:'blind'}]},
-     {v:'contenido',n:'Contenido',k:[
-       {l:'Piezas del mes',v:'5 / 90',e:'brk'},{l:'Formatos activos',v:'1 / 5',e:'brk'},
-       {l:'Carrusel',v:'10 min',e:'live'}]},
-     {v:'canales',n:'Canales',k:[
-       {l:'Leads',v:'27',e:'mid'},{l:'Clientes',v:'11',e:'live'},
-       {l:'Canales activos',v:'1 / 4',e:'brk'}]},
-     {v:'comercial',n:'Comercial',k:[
-       {l:'MRR vigente',v:'$1.300',e:'mid'},{l:'En pipeline',v:'12',e:'mid'},
+     {v:'crm',n:'CRM',k:[
+       {l:'Fichas en el CRM',v:'43',e:'mid'},{l:'Calificadas',v:'31 / 43',e:'mid'},
+       {l:'Clientes activos',v:'5',e:'live'}]},
+     {v:'marketing',n:'Marketing',k:[
+       {l:'Alcance del año',v:'721k',e:'live'},{l:'Guardados',v:'8.858',e:'live'},
+       {l:'Mensajes atribuidos',v:'0',e:'brk'}]},
+     {v:'ventas',n:'Ventas',k:[
+       {l:'Cobrado histórico',v:'$14.560',e:'live'},{l:'Meta de septiembre',v:'2 cierres',e:'brk'},
        {l:'Cierre en propuesta',v:'100%',e:'live'}]},
-     {v:'consultoria',n:'Consultoría',k:[
-       {l:'En programa',v:'3',e:'live'},{l:'Con resultado',v:'1 / 3',e:'brk'},
-       {l:'Día fijo de call',v:'1 / 3',e:'brk'}]},
-     {v:'backend',n:'Backend',k:[
-       {l:'Sistemas activos',v:'2 / 8',e:'brk'},{l:'A medias',v:'3 / 8',e:'mid'},
-       {l:'Replicables',v:'6 / 8',e:'live'}]}
+     {v:'delivery',n:'Delivery',k:[
+       {l:'Sesiones registradas',v:'26',e:'live'},{l:'Bloqueo que más pesa',v:'Closing',e:'brk'},
+       {l:'Bloqueos resueltos',v:'0 / 26',e:'brk'}]},
+     {v:'success',n:'Success',k:[
+       {l:'Señal de renovación',v:'3 / 5',e:'live'},{l:'Casos con número',v:'6',e:'live'},
+       {l:'Casos publicados',v:'0 / 6',e:'brk'}]},
     ];
     return '<div class="res">'+R.map(function(r){
       return '<div class="res-c" data-go="'+r.v+'">'
@@ -7491,13 +8627,14 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;
   /* El punto cero: dónde estoy, cómo vengo y a dónde puedo llegar.
      Las demás pestañas siguen el orden del embudo. */
   var VIEWS=[
-    {id:'os',          l:'Dashboard',   cero:true,  r:vOS},
-    {id:'daily',       l:'Daily',       cero:false, r:vDaily},
-    {id:'contenido',   l:'Contenido',   r:vContenido},
-    {id:'canales',     l:'Canales',     r:vCanales},
-    {id:'comercial',   l:'Comercial',   r:vComercial},
-    {id:'consultoria', l:'Consultoría', r:vConsultoria},
-    {id:'backend',     l:'Backend',     r:vBackend}
+    /* el embudo del negocio, en orden. Contenido salió a su propio Content OS;
+       Daily y Backend siguen en el archivo pero fuera de la barra. */
+    {id:'os',        l:'Dashboard', cero:true,  r:vOS},
+    {id:'crm',       l:'CRM',       cero:false, r:vCRM},
+    {id:'marketing', l:'Marketing', r:vMarketing},
+    {id:'ventas',    l:'Ventas',    r:vComercial},
+    {id:'delivery',  l:'Delivery',  r:vDelivery},
+    {id:'success',   l:'Success',   r:vSuccess}
   ];
 
   document.getElementById('navdate').textContent = D.meta.fecha;
