@@ -42,7 +42,7 @@
         "lag": null
       }
     ],
-    "build": "2009.2345",
+    "build": "2009.2357",
     "fuente_crm": "Notion · CRM Clientes & Comunidad · 17-09-2026",
     "refresco": "Viernes"
   },
@@ -435,32 +435,32 @@
   "comercial": {
     "stats": [
       {
+        "k": "Cobrado en agosto",
+        "v": "$1.988",
+        "u": "mil",
+        "f": "Laura $1.500 + Kathe $488",
+        "s": "live"
+      },
+      {
+        "k": "Cobrado en septiembre",
+        "v": "$1.122",
+        "u": "mil",
+        "f": "Emma $481 + Sandra $641",
+        "s": "live"
+      },
+      {
+        "k": "Por cobrar",
+        "v": "$3.707",
+        "u": "mil",
+        "f": "Promesas, no caja",
+        "s": "mid"
+      },
+      {
         "k": "Meta de septiembre",
         "v": "2",
         "u": "cierres",
-        "f": "Emma ya renovó. Faltan dos nuevos",
+        "f": "Sandra hecho. Falta uno",
         "s": "brk"
-      },
-      {
-        "k": "Cerrado este mes",
-        "v": "1",
-        "u": "/ 3",
-        "f": "Solo la renovación de Emma",
-        "s": "mid"
-      },
-      {
-        "k": "Pipeline vivo",
-        "v": "12",
-        "u": "",
-        "f": "Ninguno es cliente todavía",
-        "s": "mid"
-      },
-      {
-        "k": "Cobertura de la meta",
-        "v": "2,3",
-        "u": "×",
-        "f": "Si los tres de arriba cierran",
-        "s": "live"
       }
     ],
     "kpis": [
@@ -532,7 +532,7 @@
       }
     ],
     "obj_lectura": "La objeción de timing es la que más aparece y la que peor se maneja: las dos veces terminó en standby. Standby no es una objeción vencida, es una call sin cerrar.",
-    "lectura": "Agosto cerró en cero cierres. Emma renovó y sostiene la cartera sola. Septiembre necesita dos operadores nuevos para no depender de una sola firma.",
+    "lectura": "Agosto cerró $1.988.000 y septiembre va en $1.122.000 con la renovación de Emma y la primera cuota de Sandra. Quedan $3.707.000 prometidos sin entrar.",
     "funnel": [
       {
         "n": "Leads en el CRM",
@@ -817,110 +817,100 @@
       "concl": "Los seis salieron de dos llamadas. El patrón es el mismo: diagnóstico largo, riesgo antes del precio y cerrar en vivo."
     },
     "pagos": {
-      "t": "Pagos y caja — qué entró, cuándo y por qué no coincide con lo firmado",
-      "lead": "Cada pago recibido, no cada contrato firmado. La barra compara lo firmado ese mes contra lo que efectivamente entró.",
+      "t": "Ventas de consultoría — lo que entró de verdad",
+      "lead": "Solo consultoría y programas; la agencia queda fuera. El monto es el neto después de comisión, en miles de pesos.",
       "filas": [
         {
-          "n": "Emma Clara",
-          "con": "Contrato inicial",
-          "mes": "jun",
-          "monto": 1250,
+          "n": "Laura — STM",
+          "con": "Programa",
+          "mes": "ago",
+          "monto": 1500,
           "e": "live",
-          "d": "3 meses. Cerrado por referido de LinkedIn."
+          "d": "Consulting agosto · cobrado el 31/08"
         },
         {
-          "n": "Kathe · GMDS",
-          "con": "Contrato inicial",
-          "mes": "jul",
-          "monto": 1050,
+          "n": "Kathe — GMDS",
+          "con": "Programa",
+          "mes": "ago",
+          "monto": 488,
           "e": "live",
-          "d": "3 meses. Único caso con descuento cedido."
-        },
-        {
-          "n": "Laura · STM",
-          "con": "Contrato inicial",
-          "mes": "jul",
-          "monto": 1600,
-          "e": "live",
-          "d": "3 meses. Cerró a valor completo, con co-decisor en la call."
+          "d": "Mensual agosto · cobrado el 31/08"
         },
         {
           "n": "Emma Clara",
           "con": "Renovación",
           "mes": "sept",
-          "monto": 1500,
+          "monto": 481,
           "e": "live",
-          "d": "3 meses más, con alza de precio. La primera renovación del negocio."
+          "d": "Renovación septiembre · 1er abono · cobrado el 28/08"
+        },
+        {
+          "n": "Sandra Quitián — Ovistra",
+          "con": "Programa",
+          "mes": "sept",
+          "monto": 641,
+          "e": "live",
+          "d": "Consultoría 12 semanas · 1ª cuota · cobrado el 15/09"
         }
       ],
       "meses": [
         {
-          "m": "jun",
-          "v": 1250,
-          "cerrado": 0
-        },
-        {
-          "m": "jul",
-          "v": 2650,
-          "cerrado": 2650
-        },
-        {
           "m": "ago",
-          "v": 0,
-          "cerrado": 0
+          "v": 1988,
+          "cerrado": 1988
         },
         {
           "m": "sept",
-          "v": 1500,
-          "cerrado": 1500
+          "v": 1122,
+          "cerrado": 1122
         }
       ],
-      "concl": "Cuatro pagos en cuatro meses y agosto en blanco en las dos series: ni firma ni caja. La renovación de Emma vale más que su contrato inicial — subirle el precio a quien ya te compró es más barato que buscar uno nuevo.",
-      "desfase": "Junio cobró sin cerrar: Emma firmó antes y pagó ese mes. Es la única vez que las dos series se separan — nadie quedó debiendo."
+      "concl": "Cuatro pagos en dos meses y ninguno del mismo tamaño. Los $3.707.000 por cobrar valen más que todo lo cobrado hasta ahora — cobrarlos es más barato que vender de nuevo.",
+      "desfase": "Emma pagó el 28/08 pero es caja de septiembre: el Finance OS imputa al mes que corresponde, no al día del voucher."
     },
     "mcierre": {
       "t": "Métricas de cierre — lo firmado y sus tres lecturas",
       "filas": [
         {
           "k": "Programas vendidos",
-          "v": "3",
-          "d": "Desde que Private empezó a cobrar",
+          "v": "7",
+          "d": "Desde que Private cobra",
           "e": "live"
         },
         {
           "k": "Programas activos",
-          "v": "3",
-          "d": "Los tres corriendo hoy",
+          "v": "5",
+          "d": "Con sesiones agendadas",
           "e": "live"
         },
         {
           "k": "Renovaciones",
-          "v": "1 / 3",
-          "d": "Solo Emma. Kathe y Laura vencen en octubre",
-          "e": "mid"
+          "v": "3 / 5",
+          "d": "Emma, Egly y Kathe",
+          "e": "live"
         }
       ],
       "lecturas": [
         {
-          "n": "TCV",
-          "v": "$5.400",
-          "d": "El valor del contrato. Mide la venta, no la caja.",
+          "n": "Cobrado",
+          "v": "$3.110",
+          "d": "Lo que entró neto en agosto y septiembre.",
+          "e": "live"
+        },
+        {
+          "n": "Por cobrar",
+          "v": "$3.707",
+          "d": "Prometido y sin entrar. Es la mitad del año.",
           "e": "mid"
         },
         {
-          "n": "MRR",
-          "v": "$1.383",
-          "d": "El TCV dividido por sus meses. De esto vives.",
-          "e": "live"
-        },
-        {
-          "n": "Cash collected",
-          "v": "$5.400",
-          "d": "Lo que entró a la cuenta. Hoy coincide: nadie debe.",
-          "e": "live"
+          "n": "Ticket medio",
+          "v": "$778",
+          "d": "Por pago, no por contrato: casi todos van en cuotas.",
+          "e": "mid"
         }
       ],
-      "concl": "Tres vendidos, tres activos, una sola renovación. El negocio todavía no probó que retiene — probó que Emma renueva. Y el próximo cierre no suma al MRR: reemplaza al que vence."
+      "concl": "Tres de cinco clientes renovaron: la retención está probada. Lo que no está resuelto es la cobranza — hay más prometido que cobrado."
     },
     "mleads": {
       "t": "El embudo completo — de lead a cierre",
@@ -1185,16 +1175,54 @@
       "concl": "Marketing, Ventas y Captura concentran el dolor: nadie te pide mejor entrega, te piden que les llegue gente y saber venderla. El contenido que convierte habla de eso, no de sistemas."
     },
     "meta": {
-      "t": "La meta del mes — cuánto hay que cerrar",
-      "lead": "Lo que falta vender este mes, en la moneda con la que vendes: operadores, no pesos.",
+      "t": "La meta del mes — cuánto falta cerrar",
+      "lead": "Lo que falta vender este mes, en cierres.",
       "mes": "Septiembre",
-      "necesita": 2,
+      "necesita": 1,
       "cerrado": 1,
-      "detalle": "Emma renovó por $1.500. Faltan dos cierres nuevos para no depender de una sola firma.",
-      "ticket": 1580,
-      "cobertura": "El pipeline vivo cubre la meta 2,3× si los tres de arriba cierran.",
-      "concl": "Dos operadores en septiembre. Los tres de cierre cercano —Egly, Nacho y Pablo— valen más que los nueve fríos juntos: ahí está la meta, no en la cola."
-    }
+      "detalle": "Sandra cerró el 15/09 con la primera cuota. Falta un cierre nuevo para la meta de dos.",
+      "ticket": 2000,
+      "cobertura": "El pipeline vivo cubre la meta si cierra uno de los tres de arriba.",
+      "concl": "Un cierre más en septiembre. Cristóbal es el único con caja declarada y fecha posible."
+    },
+    "finanzas": {
+      "cobrado": 3110,
+      "por_cobrar": 3707,
+      "ticket": 778,
+      "fuente": "Finance OS · plan-financiero.data.json",
+      "al": "2026-09-15",
+      "pendientes": [
+        {
+          "n": "Emma Clara",
+          "c": "Saldo del tramo",
+          "v": 1000,
+          "m": "sept",
+          "e": "mid"
+        },
+        {
+          "n": "Egly — Casabliss",
+          "c": "Renovación 3m",
+          "v": 850,
+          "m": "sept",
+          "e": "mid"
+        },
+        {
+          "n": "Kathe — GMDS",
+          "c": "Renovación mensual",
+          "v": 522,
+          "m": "sept",
+          "e": "mid"
+        },
+        {
+          "n": "Sandra Quitián — Ovistra",
+          "c": "Saldo del programa · link en octubre para pagar con cuotas de tarjeta (PIF por MP)",
+          "v": 1335,
+          "m": "oct",
+          "e": "mid"
+        }
+      ]
+    },
+    "fuente_caja": "Finance OS · plan-financiero.data.json · 15-09-2026"
   },
   "canales": {
     "lectura": "La red trae el volumen y el cierre. Instagram trae leads que no convierten.",
@@ -4874,7 +4902,7 @@
   },
   "sistemas": {
     "t": "Los 8 sistemas — dónde estás en cada uno",
-    "lectura": "Los mismos ocho del Founder OS. El que palpita es el más débil: mejorar cualquier otro antes que ese no mueve la aguja.",
+    "lectura": "Una card por sistema con el número que manda. El que palpita es el más lejos de su objetivo: mover otro antes no cambia nada.",
     "areas": [
       {
         "i": "01",
@@ -4931,6 +4959,22 @@
             "n": "Energía y dirección",
             "e": "live",
             "d": "Cadencia diaria corriendo. Athlete OS al día."
+          }
+        ],
+        "ic": "escudo",
+        "m1": {
+          "v": "$3,75M",
+          "k": "sin documentar",
+          "e": "brk"
+        },
+        "m2": [
+          {
+            "k": "Provisión",
+            "v": "25%"
+          },
+          {
+            "k": "Piso de deuda",
+            "v": "$502k/mes"
           }
         ]
       },
@@ -5004,7 +5048,23 @@
           "Sin liquidez propia: 3 casos",
           "Co-decisor ausente en la llamada"
         ],
-        "falta": "El campo Gap principal está vacío en 16 de 22 fichas activas."
+        "falta": "El campo Gap principal está vacío en 16 de 22 fichas activas.",
+        "ic": "persona",
+        "m1": {
+          "v": "17",
+          "k": "fichas Operator · el ICP",
+          "e": "live"
+        },
+        "m2": [
+          {
+            "k": "Pagaron",
+            "v": "8 de 17"
+          },
+          {
+            "k": "Gap declarado",
+            "v": "6 / 22"
+          }
+        ]
       },
       {
         "i": "03",
@@ -5078,7 +5138,23 @@
             "v": 2000
           }
         ],
-        "esc_d": "El ticket se triplicó en 6 meses sin cambiar el producto: cambió a quién se le vende."
+        "esc_d": "El ticket se triplicó en 6 meses sin cambiar el producto: cambió a quién se le vende.",
+        "ic": "etiqueta",
+        "m1": {
+          "v": "$2.000",
+          "k": "ticket de hoy",
+          "e": "live"
+        },
+        "m2": [
+          {
+            "k": "Crecimiento",
+            "v": "×3,3 en 6 meses"
+          },
+          {
+            "k": "Capas activas",
+            "v": "1 / 3"
+          }
+        ]
       },
       {
         "i": "04",
@@ -5124,7 +5200,23 @@
             "d": "10 piezas. 4,8 veces menos."
           }
         ],
-        "falta": "El registro de seguidores nuevos también está roto: 4 en un año es imposible."
+        "falta": "El registro de seguidores nuevos también está roto: 4 en un año es imposible.",
+        "ic": "senal",
+        "m1": {
+          "v": "721k",
+          "k": "alcance del año",
+          "e": "live"
+        },
+        "m2": [
+          {
+            "k": "Piezas",
+            "v": "88"
+          },
+          {
+            "k": "Mensajes",
+            "v": "0"
+          }
+        ]
       },
       {
         "i": "05",
@@ -5182,7 +5274,23 @@
             "e": "brk"
           }
         ],
-        "falta": "Comunidad vive acá y está en cero. El grupo existe, la cadencia declarada es lunes, miércoles y sábado, y no se cumple ninguno."
+        "falta": "Comunidad vive acá y está en cero. El grupo existe, la cadencia declarada es lunes, miércoles y sábado, y no se cumple ninguno.",
+        "ic": "iman",
+        "m1": {
+          "v": "1",
+          "k": "agendamiento este mes",
+          "e": "brk"
+        },
+        "m2": [
+          {
+            "k": "Fichas",
+            "v": "43"
+          },
+          {
+            "k": "Calificadas",
+            "v": "72%"
+          }
+        ]
       },
       {
         "i": "06",
@@ -5191,53 +5299,69 @@
         "e": "mid",
         "v": 0.6,
         "t": 0.85,
-        "mv": "Pedir el pago en la llamada, no después",
+        "mv": "Cobrar los $3.707 mil prometidos",
         "kpis": [
           {
-            "k": "Ventas totales",
-            "v": "$14.560",
+            "k": "Cobrado ago",
+            "v": "$1.988",
             "e": "live"
           },
           {
-            "k": "Ticket promedio",
-            "v": "$1.323",
+            "k": "Cobrado sept",
+            "v": "$1.122",
             "e": "live"
+          },
+          {
+            "k": "Por cobrar",
+            "v": "$3.707",
+            "e": "mid"
           },
           {
             "k": "Cierre en propuesta",
             "v": "100%",
             "e": "live"
-          },
-          {
-            "k": "Por cobrar",
-            "v": "$1.335k",
-            "e": "mid"
           }
         ],
         "mes": [
           {
-            "n": "Ventas del mes",
-            "v": "$710",
-            "e": "mid",
-            "d": "Primera cuota de Sandra."
-          },
-          {
-            "n": "Llamadas del mes",
-            "v": "2",
-            "e": "brk",
-            "d": "Discovery y cierre de Sandra."
-          },
-          {
-            "n": "Cierre sobre agendas",
-            "v": "100%",
+            "n": "Emma Clara · renovación",
+            "v": "$481",
             "e": "live",
-            "d": "1 de 1. Base muy chica."
+            "d": "Cobrado el 28/08, caja de septiembre."
+          },
+          {
+            "n": "Sandra · 1ª cuota",
+            "v": "$641",
+            "e": "live",
+            "d": "Cobrado el 15/09 en la llamada."
+          },
+          {
+            "n": "Saldo de Sandra",
+            "v": "$1.335",
+            "e": "mid",
+            "d": "Link en octubre, en cuotas."
           },
           {
             "n": "Meta de septiembre",
-            "v": "2 cierres",
+            "v": "1 de 2",
             "e": "brk",
-            "d": "Va 1 de 2."
+            "d": "Falta un cierre nuevo."
+          }
+        ],
+        "ic": "apreton",
+        "m1": {
+          "v": "$3.110",
+          "k": "mil cobrados · ago + sept",
+          "e": "live"
+        },
+        "m2": [
+          {
+            "k": "Por cobrar",
+            "v": "$3.707 mil"
+          },
+          {
+            "k": "Renovaciones",
+            "v": "3 de 5"
           }
         ]
       },
@@ -5295,6 +5419,22 @@
             "v": "13",
             "e": "brk",
             "d": "Todas de Emma."
+          }
+        ],
+        "ic": "caja",
+        "m1": {
+          "v": "26",
+          "k": "sesiones entregadas",
+          "e": "live"
+        },
+        "m2": [
+          {
+            "k": "Bloqueos cerrados",
+            "v": "0 / 26"
+          },
+          {
+            "k": "Más consultado",
+            "v": "Closing"
           }
         ]
       },
@@ -5355,7 +5495,23 @@
             "d": "USD/mes, todavía lead"
           }
         ],
-        "falta": "Un solo referido en todo el histórico, y el bonus recién se declaró por escrito. 78 mil dólares al mes de facturación agregada y cero piezas que lo muestren."
+        "falta": "Un solo referido en todo el histórico, y el bonus recién se declaró por escrito. 78 mil dólares al mes de facturación agregada y cero piezas que lo muestren.",
+        "ic": "trofeo",
+        "m1": {
+          "v": "$78k",
+          "k": "USD/mes que factura la cartera",
+          "e": "live"
+        },
+        "m2": [
+          {
+            "k": "Casos con número",
+            "v": "6"
+          },
+          {
+            "k": "Publicados",
+            "v": "0"
+          }
+        ]
       }
     ],
     "concl": "Captura es el sistema más débil y el que alimenta a todos los de abajo. Marketing produce alcance sin conversación, y Success tiene la prueba sin publicar."
@@ -7269,34 +7425,73 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .rw-ar .k3,.rw-ar .meter,.rw-ar .k2{grid-column:2}
 }
 
+/* ══ SUPERFICIE · glass del Content OS ══
+   Tokens tomados de CONTENIDO/00_METRICAS/content-os: la misma piel en los
+   dos paneles. Translúcido con blur en vez de bloques opacos. */
+:root{
+  --card:rgba(21,22,29,.86); --card2:rgba(30,32,41,.72);
+  --line:rgba(255,255,255,.13); --line2:rgba(255,255,255,.22);
+  --ink:#FFFFFF; --ink2:#DADCE6; --ink3:#A3A7BA;
+  --red:#E5322D; --redbd:rgba(229,50,45,.55);
+  --grn:#2ED08A; --grnbd:rgba(46,208,138,.5);
+  --gold:#D8A847; --goldbd:rgba(216,168,71,.5);
+  --surface:rgba(21,22,29,.86); --surface2:rgba(30,32,41,.66);
+  --surface3:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.13); --border-hi:rgba(255,255,255,.22);
+  --hi:#FFFFFF; --mid:#DADCE6; --low:#A3A7BA;
+  --good:#2ED08A; --danger:#E5322D;
+}
+.glass,.card{backdrop-filter:blur(16px) saturate(1.1);
+  -webkit-backdrop-filter:blur(16px) saturate(1.1)}
+/* el peso lo lleva el dato, no la caja */
+.tile,.mt-c,.k8-c,.lec > div,.fnl-x > div,.gp3 > div,.arh div,.tsum div,
+.etp-c,.fmt2-c,.avt-c,.cap3-c,.cso,.frw-c,.dos-c,.ce-f,.cf-f,.cf,.dg-lane,
+.pgm > div,.bal > div,.cal-d,.bx-c,.s8-c,.ang-c,.fmx-c,.gen-c{
+  background:var(--card2);border-color:var(--line)}
+.bq{background:rgba(255,255,255,.08);border-color:transparent}
+hr,.rw,.pg,.ld,.pal,.ltv,.win,.tm,.cnl,.blq,.prg,.sig,.gpr,.acc,.tp,.ce,.arx{
+  border-color:var(--line)}
+
 /* ══ DASHBOARD · los 8 sistemas ══ */
-.s8{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3)}
-.s8-c{padding:14px 16px;background:var(--surface2);border:1px solid var(--border);
-  border-radius:var(--r-in);cursor:pointer;display:flex;flex-direction:column;
-  transition:border-color .15s,transform .15s}
-.s8-c:hover{border-color:var(--border-hi);transform:translateY(-1px)}
-.s8-c.live{border-color:rgba(46,208,138,.32)}
-.s8-c.mid{border-color:rgba(232,179,57,.3)}
-.s8-c.brk{border-color:rgba(229,50,45,.35)}
-.s8-c.pulse{animation:lat 1.9s ease-in-out infinite}
+.s8{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.s8-c{padding:15px;border-radius:14px;background:var(--card2);
+  border:1px solid var(--line);cursor:pointer;display:flex;flex-direction:column;
+  min-height:214px;transition:border-color .15s,transform .15s,box-shadow .25s}
+.s8-c:hover{border-color:var(--line2);transform:translateY(-2px)}
+.s8-c.live{border-color:var(--grnbd)}
+.s8-c.mid{border-color:var(--goldbd)}
+.s8-c.brk{border-color:var(--redbd)}
+.s8-c.pulse{animation:lat 2.2s ease-in-out infinite}
 @keyframes lat{
-  0%,100%{box-shadow:0 0 0 0 rgba(229,50,45,0);border-color:rgba(229,50,45,.35)}
-  50%{box-shadow:0 0 0 4px rgba(229,50,45,.14);border-color:rgba(229,50,45,.85)}}
-@media(prefers-reduced-motion:reduce){.s8-c.pulse{animation:none;border-color:rgba(229,50,45,.85)}}
-.s8-i{display:flex;align-items:center;gap:6px;font:600 9.5px/1 var(--mono);
-  letter-spacing:.16em;color:var(--low)}
-.s8-i em{font-style:normal;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--bg);background:var(--danger);border-radius:3px;padding:2px 5px}
-.s8-n{font-size:var(--t-l);font-weight:700;margin:6px 0 2px}
-.s8-v{font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:8px}
-.s8-v u{text-decoration:none;font-size:var(--t-s);color:var(--low);font-weight:600;margin-left:3px}
-.s8-c.live .s8-v{color:var(--good)} .s8-c.mid .s8-v{color:var(--warn)}
-.s8-c.brk .s8-v{color:var(--danger)}
-.bq{position:relative}
-.bq s{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--hi);opacity:.5}
-.s8-m{margin-top:auto;padding-top:10px;font-size:11px;color:var(--mid);line-height:1.4}
-.s8-m span{display:block;font:600 8.5px/1 var(--mono);letter-spacing:.16em;
-  text-transform:uppercase;color:var(--low);margin-bottom:4px}
+  0%,100%{box-shadow:0 0 22px rgba(229,50,45,.12)}
+  50%{box-shadow:0 0 34px rgba(229,50,45,.42)}}
+@media(prefers-reduced-motion:reduce){.s8-c.pulse{animation:none;box-shadow:0 0 26px rgba(229,50,45,.3)}}
+
+.s8-t{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.ico{width:17px;height:17px;flex:0 0 auto;opacity:.9}
+.s8-c.live .ico{color:var(--grn)} .s8-c.mid .ico{color:var(--gold)}
+.s8-c.brk .ico{color:var(--red)}
+.s8-t b{font:600 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink3);flex:1}
+.s8-t em{font-style:normal;font:700 8.5px/1 var(--mono);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--bg);background:var(--red);
+  border-radius:4px;padding:3px 6px}
+.s8-m1{font-size:30px;font-weight:700;letter-spacing:-.035em;line-height:1}
+.s8-m1.live{color:var(--grn)} .s8-m1.brk{color:var(--red)} .s8-m1.mid{color:var(--gold)}
+.s8-k{font-size:11.5px;color:var(--ink2);line-height:1.35;margin-top:5px}
+.s8-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:13px 0 0;
+  padding-top:12px;border-top:1px solid var(--line)}
+.s8-2 span{display:block;font:600 8.5px/1.25 var(--mono);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink3);margin-bottom:4px}
+.s8-2 b{font-size:13px;font-weight:700;color:var(--ink)}
+.s8-sc{margin-top:auto;padding-top:13px;display:grid;grid-template-columns:60px 1fr;
+  gap:9px;align-items:center}
+.s8-sc > span{font-size:17px;font-weight:700;letter-spacing:-.02em}
+.s8-sc u{text-decoration:none;font-size:10px;color:var(--ink3);font-weight:600}
+.s8-c.live .s8-sc > span{color:var(--grn)} .s8-c.mid .s8-sc > span{color:var(--gold)}
+.s8-c.brk .s8-sc > span{color:var(--red)}
+.s8-mv{margin-top:9px;font-size:11px;color:var(--ink3);line-height:1.4;
+  padding-left:11px;border-left:2px solid var(--line2)}
 
 /* radar grande */
 .r8-w{display:flex;justify-content:center}
@@ -7376,7 +7571,12 @@ details.ar.brk > summary{box-shadow:inset 2px 0 0 var(--danger);padding-left:var
   .b8-r{grid-template-columns:150px 1fr 76px}
 }
 @media(max-width:860px){
-  .s8,.k8,.avt,.dos{grid-template-columns:1fr}
+  .s8{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .s8-c{min-height:0;padding:12px}
+  .s8-m1{font-size:23px}
+  .s8-2{grid-template-columns:1fr;gap:6px}
+  .s8-mv{display:none}
+  .k8,.avt,.dos{grid-template-columns:1fr}
   .esc{grid-template-columns:repeat(5,1fr);gap:4px}
   .esc-c b{font-size:10px}
   .esc-c span{font-size:8px;letter-spacing:.06em}
@@ -9013,6 +9213,25 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;
 
   /* el radar de los 8 sistemas: figura y nada más. Las etiquetas son
      legibles de lejos, que es para lo que sirve el radar. */
+  /* iconos de área: trazo simple, heredan currentColor. Mismo peso visual
+     que el resto del sistema — no son adorno, ubican de un vistazo. */
+  var ICO={
+    escudo:'M12 3l7 3v5c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6z',
+    persona:'M12 12a4 4 0 100-8 4 4 0 000 8zM4.5 20a7.5 7.5 0 0115 0',
+    etiqueta:'M3 12V4h8l9 9-8 8-9-9zM7.5 7.5h.01',
+    senal:'M4 11v2M8 8v8M12 4v16M16 8v8M20 11v2',
+    iman:'M6 4v7a6 6 0 0012 0V4M6 9h4M14 9h4',
+    apreton:'M4 12l4-4 4 4 4-4 4 4M8 16l4 4 4-4',
+    caja:'M3 7l9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10',
+    trofeo:'M7 4h10v5a5 5 0 01-10 0zM4 5h3M17 5h3M9 19h6M12 14v5'
+  };
+  function icono(k){
+    var dpath=ICO[k]; if(!dpath) return '';
+    return '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+      +'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+      +'<path d="'+dpath+'"/></svg>';
+  }
+
   function radarOcho(){
     var A=D.sistemas.areas, N=A.length, W=460, C=W/2, R=W*.30, PX=118, PY=54;
     var pt=function(i,v){ var a=-Math.PI/2+i*2*Math.PI/N;
@@ -9049,18 +9268,22 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;
     var peor=A.reduce(function(m,a){ return gap(a)>gap(m)?a:m; }, A[0]);
     var pct=function(a){ return Math.round(a.v*100); };
 
-    /* 01 · el semáforo: los 8 en una pantalla, el más débil palpita */
+    /* 01 · una card por sistema: el número que manda arriba, el score abajo */
     var sem='<div class="s8">'+A.map(function(a){
       var w=(a.k===peor.k);
       return '<div class="s8-c '+esc(a.e)+(w?' pulse':'')+'" data-go="'
         +esc({fnd:'os',avt:'crm',ofr:'ventas',mkt:'marketing',
               cap:'crm',vta:'ventas',ent:'delivery',suc:'success'}[a.k])+'">'
-        +'<div class="s8-i">'+esc(a.i)+(w?'<em>el cuello</em>':'')+'</div>'
-        +'<div class="s8-n">'+esc(a.n)+'</div>'
-        +'<div class="s8-v">'+pct(a)+'<u>/ '+Math.round(a.t*100)+'</u></div>'
+        +'<div class="s8-t">'+icono(a.ic)+'<b>'+esc(a.n)+'</b>'
+        +(w?'<em>cuello</em>':'')+'</div>'
+        +'<div class="s8-m1 '+esc(a.m1.e)+'">'+esc(a.m1.v)+'</div>'
+        +'<div class="s8-k">'+esc(a.m1.k)+'</div>'
+        +'<div class="s8-2">'+a.m2.map(function(x){
+            return '<div><span>'+esc(x.k)+'</span><b>'+esc(x.v)+'</b></div>'; }).join('')+'</div>'
+        +'<div class="s8-sc"><span>'+pct(a)+'<u>/'+Math.round(a.t*100)+'</u></span>'
         +'<div class="bq"><i class="'+esc(a.e)+'" style="width:'+pct(a)+'%"></i>'
-        +'<s style="left:calc('+Math.round(a.t*100)+'% - 1px)"></s></div>'
-        +'<div class="s8-m"><span>Mínimo viable</span>'+esc(a.mv)+'</div>'
+        +'<s style="left:calc('+Math.round(a.t*100)+'% - 1px)"></s></div></div>'
+        +'<div class="s8-mv">'+esc(a.mv)+'</div>'
         +'</div>'; }).join('')+'</div>'
       +'<div class="concl"><b>Conclusión</b>'+esc(SI.concl)+'</div>';
 

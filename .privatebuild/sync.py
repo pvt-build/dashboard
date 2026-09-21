@@ -115,6 +115,71 @@ CLAVE_AREA = {
 }
 
 
+# El Finance OS es el dueño de la caja. El panel NO guarda sus propios montos:
+# los lee de plan-financiero.data.json para que no haya dos verdades.
+PLAN = Path.home() / "Desktop" / "03_FINANZAS" / "00_SISTEMA" / "plan-financiero.data.json"
+# Advanz es la agencia, no consultoría de Private: nunca entra a ventas.
+FUERA_DE_VENTAS = ("advanz",)
+
+
+def bloque_ventas(previo):
+    """
+    Arma pagos y métricas de venta desde el Finance OS. Solo consultoría y
+    programas; la agencia queda fuera. El monto que manda es el NETO: es lo
+    que llegó a la cuenta después de comisión.
+    """
+    if not PLAN.exists():
+        return previo, None
+
+    plan = json.loads(PLAN.read_text(encoding="utf-8"))
+    filas = [x for x in plan.get("por_cobrar", [])
+             if not any(t in (x.get("cliente") or "").lower() for t in FUERA_DE_VENTAS)]
+    if not filas:
+        return previo, None
+
+    MES = {"01": "ene", "02": "feb", "03": "mar", "04": "abr", "05": "may", "06": "jun",
+           "07": "jul", "08": "ago", "09": "sept", "10": "oct", "11": "nov", "12": "dic"}
+    corto = lambda mes: MES.get((mes or "")[5:7], mes or "")
+
+    cobrado = [x for x in filas if x.get("estado") == "cobrado"]
+    pend = [x for x in filas if x.get("estado") != "cobrado"]
+
+    b = json.loads(json.dumps(previo))
+    pg = b.setdefault("pagos", {})
+    pg["filas"] = [{
+        "n": x["cliente"],
+        "con": "Renovación" if "renov" in (x.get("concepto") or "").lower() else "Programa",
+        "mes": corto(x.get("mes")),
+        "monto": int(round((x.get("neto") or x.get("bruto") or 0) / 1000)),
+        "e": "live",
+        "d": (x.get("concepto") or "") + (" · cobrado el "
+              + x["cobrado_el"][8:10] + "/" + x["cobrado_el"][5:7] if x.get("cobrado_el") else ""),
+    } for x in cobrado]
+
+    # la serie mensual se arma por el mes CONTABLE, no por el día del voucher
+    meses = {}
+    for x in cobrado:
+        k = x.get("mes") or ""
+        meses[k] = meses.get(k, 0) + int(round((x.get("neto") or 0) / 1000))
+    pg["meses"] = [{"m": corto(k), "v": v, "cerrado": v}
+                   for k, v in sorted(meses.items())]
+
+    tot_cob = sum(f["monto"] for f in pg["filas"])
+    tot_pend = sum(int(round((x.get("bruto") or 0) / 1000)) for x in pend)
+    b["finanzas"] = {
+        "cobrado": tot_cob,
+        "por_cobrar": tot_pend,
+        "ticket": int(round(tot_cob / max(len(pg["filas"]), 1))),
+        "fuente": "Finance OS · plan-financiero.data.json",
+        "al": plan.get("_meta", {}).get("ultima_actualizacion", ""),
+        "pendientes": [{"n": x["cliente"], "c": x.get("concepto", ""),
+                        "v": int(round((x.get("bruto") or 0) / 1000)),
+                        "m": corto(x.get("mes")),
+                        "e": "mid" if x.get("confianza") != "baja" else "brk"} for x in pend],
+    }
+    return b, len(pg["filas"])
+
+
 def bloque_tiempo(previo):
     """
     Arma el árbol sistema → agente → skill → acción desde tiempo.md.
@@ -349,6 +414,12 @@ def main():
         print("infra      ✓  %d skills contadas desde el filesystem" % n_skills)
     else:
         print("infra      —  no encontré ~/.claude/skills")
+
+    data["comercial"], n_pagos = bloque_ventas(data["comercial"])
+    if n_pagos:
+        print("ventas     ✓  %d pagos leídos del Finance OS" % n_pagos)
+    else:
+        print("ventas     —  no encontré el plan financiero, se conserva el bloque")
 
     if "tiempo" in data["backend"]:
         data["backend"]["tiempo"], n_corridas = bloque_tiempo(data["backend"]["tiempo"])
