@@ -180,6 +180,85 @@ def bloque_ventas(previo):
     return b, len(pg["filas"])
 
 
+# Los iconos de las 8 áreas son los del Founder OS. Se leen de su fuente única
+# (assets/sistemas.js) en vez de copiarlos: si allá cambian, acá cambian.
+SISTEMAS_JS = Path(__file__).resolve().parents[2] / "privatebuild-os" / "assets" / "sistemas.js"
+CSV_CONTENIDO = RAIZ / "CONTENIDO" / "00_METRICAS" / "tablero.csv"
+
+
+def bloque_iconos(data):
+    if not SISTEMAS_JS.exists():
+        return None
+    txt = SISTEMAS_JS.read_text(encoding="utf-8")
+    m = re.search(r"PB_ICONOS\s*=\s*\{(.*?)\n\};", txt, re.S)
+    if not m:
+        return None
+    ic = dict(re.findall(r"(\w+)\s*:\s*'(.*?)'\s*,?\s*(?=\n\s*\w+\s*:|$)",
+                          m.group(1), re.S))
+    if not ic:
+        return None
+    data["iconos"] = ic
+    return len(ic)
+
+
+def serie_caja(data):
+    """La serie histórica de consultoría sale del plan financiero, mes a mes."""
+    if not PLAN.exists():
+        return None
+    plan = json.loads(PLAN.read_text(encoding="utf-8"))
+    cons = (plan.get("ingresos") or {}).get("consultorias") or {}
+    if not cons:
+        return None
+    MES = {"01": "ene", "02": "feb", "03": "mar", "04": "abr", "05": "may", "06": "jun",
+           "07": "jul", "08": "ago", "09": "sep", "10": "oct", "11": "nov", "12": "dic"}
+    hoy = date.today().strftime("%Y-%m")
+
+    # por_cobrar es más fresco que el resumen anual: si un mes ya tiene pagos
+    # cobrados, mandan esos. El resumen quedó viejo en septiembre.
+    real = {}
+    for x in plan.get("por_cobrar", []):
+        if x.get("estado") != "cobrado":
+            continue
+        if any(t in (x.get("cliente") or "").lower() for t in FUERA_DE_VENTAS):
+            continue
+        k = x.get("mes") or ""
+        real[k] = real.get(k, 0) + (x.get("neto") or x.get("bruto") or 0)
+
+    serie = []
+    for k, v in sorted(cons.items()):
+        monto = real.get(k, v)
+        serie.append({"m": MES.get(k[5:7], k), "v": int(round(monto / 1000)),
+                      "proy": k > hoy})
+    data.setdefault("series", {})["caja"] = serie
+    return len(serie)
+
+
+def serie_contenido(data):
+    """Alcance y piezas por mes, desde el tablero de métricas."""
+    if not CSV_CONTENIDO.exists():
+        return None
+    import csv
+    filas = list(csv.DictReader(CSV_CONTENIDO.open(encoding="utf-8")))
+    MES = {"01": "ene", "02": "feb", "03": "mar", "04": "abr", "05": "may", "06": "jun",
+           "07": "jul", "08": "ago", "09": "sep", "10": "oct", "11": "nov", "12": "dic"}
+    por = {}
+    for f in filas:
+        k = (f.get("fecha_pub") or "")[:7]
+        if len(k) != 7:
+            continue
+        try:
+            alc = float(f.get("alcance") or 0)
+        except ValueError:
+            alc = 0
+        d = por.setdefault(k, {"alc": 0, "n": 0})
+        d["alc"] += alc
+        d["n"] += 1
+    ult = sorted(por)[-12:]
+    data.setdefault("series", {})["contenido"] = [
+        {"m": MES.get(k[5:7], k), "a": int(por[k]["alc"]), "n": por[k]["n"]} for k in ult]
+    return len(ult)
+
+
 def bloque_tiempo(previo):
     """
     Arma el árbol sistema → agente → skill → acción desde tiempo.md.
@@ -414,6 +493,13 @@ def main():
         print("infra      ✓  %d skills contadas desde el filesystem" % n_skills)
     else:
         print("infra      —  no encontré ~/.claude/skills")
+
+    n_ico = bloque_iconos(data)
+    print("iconos     %s  %s" % ("✓" if n_ico else "—",
+          "%d iconos leídos del Founder OS" % n_ico if n_ico else "no encontré assets/sistemas.js"))
+    n_sc, n_sk = serie_caja(data), serie_contenido(data)
+    print("series     %s  caja %s · contenido %s" % ("✓" if (n_sc or n_sk) else "—",
+          n_sc or "—", n_sk or "—"))
 
     data["comercial"], n_pagos = bloque_ventas(data["comercial"])
     if n_pagos:
