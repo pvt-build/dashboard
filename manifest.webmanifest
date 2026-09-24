@@ -1,14 +1,17 @@
 {
-  "name": "PRIVATE-OS · Business",
-  "short_name": "PRIVATE-OS",
-  "description": "Panel de negocio de Private Build",
-  "start_url": "./",
+  "name": "Business OS · Private Build",
+  "short_name": "Business OS",
+  "description": "Los 8 sistemas del negocio, en una pantalla",
+  "start_url": "./?app=1",
   "scope": "./",
+  "id": "/dashboard/",
   "display": "standalone",
-  "orientation": "any",
-  "background_color": "#0E1014",
-  "theme_color": "#0E1014",
+  "orientation": "portrait-primary",
+  "background_color": "#0E0F14",
+  "theme_color": "#0E0F14",
+  "categories": ["business", "productivity"],
   "icons": [
-    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }
